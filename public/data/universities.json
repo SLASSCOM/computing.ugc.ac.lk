@@ -1,122 +1,234 @@
 [
   {
     "university_hei": "University of Colombo",
-    "image": "ucsc.jpg",
+    "image": "1.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "UoC"
-  },
-  {
-    "university_hei": "University of Moratuwa",
-    "image": "uom.jpg",
-    "type": "University",
-    "associated_university": null,
-    "established_under": "University Grants Commission",
-    "abbreviation": "UoM"
+    "abbreviation": null
   },
   {
     "university_hei": "University of Peradeniya",
-    "image": "uop.jpg",
-    "type": "University", 
-    "associated_university": null,
-    "established_under": "University Grants Commission",
-    "abbreviation": "UoP"
-  },
-  {
-    "university_hei": "University of Kelaniya",
-    "image": "uok.jpg",
+    "image": "2.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "UoK"
+    "abbreviation": null
   },
   {
     "university_hei": "University of Sri Jayewardenepura",
-    "image": "usj.jpg",
+    "image": "3.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "USJ"
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of Kelaniya",
+    "image": "4.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of Moratuwa",
+    "image": "5.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of Jaffna",
+    "image": "6.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
   },
   {
     "university_hei": "University of Ruhuna",
-    "image": "uor.jpg",
+    "image": "7.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "UoR"
+    "abbreviation": null
+  },
+  {
+    "university_hei": "The Open University of Sri Lanka",
+    "image": "8.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
   },
   {
     "university_hei": "Eastern University, Sri Lanka",
-    "image": "eusl.jpg",
+    "image": "9.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "EUSL"
+    "abbreviation": null
   },
   {
     "university_hei": "South Eastern University of Sri Lanka",
-    "image": "seusl.jpg",
+    "image": "10.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "SEUSL"
-  },
-  {
-    "university_hei": "Sabaragamuwa University of Sri Lanka",
-    "image": "susl.jpg",
-    "type": "University",
-    "associated_university": null,
-    "established_under": "University Grants Commission",
-    "abbreviation": "SUSL"
-  },
-  {
-    "university_hei": "Wayamba University of Sri Lanka",
-    "image": "wusl.jpg",
-    "type": "University",
-    "associated_university": null,
-    "established_under": "University Grants Commission",
-    "abbreviation": "WUSL"
+    "abbreviation": null
   },
   {
     "university_hei": "Rajarata University of Sri Lanka",
-    "image": "rusl.jpg",
+    "image": "11.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "RUSL"
+    "abbreviation": null
   },
   {
-    "university_hei": "Uva Wellassa University",
-    "image": "uwu.jpg",
+    "university_hei": "Sabaragamuwa University of Sri Lanka",
+    "image": "12.jpg",
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": "UWU"
+    "abbreviation": null
   },
   {
-    "university_hei": "Postgraduate Institute of Science",
-    "image": "pgis.jpg",
+    "university_hei": "Wayamba University of Sri Lanka",
+    "image": "13.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Uva Wellassa University of Sri Lanka",
+    "image": "14.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of the Visual & Performing Arts",
+    "image": "15.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Gampaha Wickramarachchi University of Indigenous Medicine",
+    "image": "37.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of Vavuniya",
+    "image": "40.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Sri Palee Campus",
+    "image": "38.jpg",
+    "type": "Campus",
+    "associated_university": "University of Colombo",
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Trincomalee Campus",
+    "image": "39.jpg",
+    "type": "Campus",
+    "associated_university": "Eastern University, Sri Lanka",
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "University of Colombo School of Computing",
+    "image": "31.jpg",
     "type": "Institute",
-    "associated_university": "University of Peradeniya",
+    "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
-    "abbreviation": "PGIS"
+    "abbreviation": null
   },
   {
-    "university_hei": "Institute of Technology, University of Moratuwa",
-    "image": "itum.jpg",
+    "university_hei": "Institute of Technology University of Moratuwa",
+    "image": "33.jpg",
     "type": "Institute",
     "associated_university": "University of Moratuwa",
     "established_under": "University Grants Commission",
-    "abbreviation": "ITUM"
+    "abbreviation": null
   },
   {
-    "university_hei": "Sri Lanka Institute of Information Technology",
-    "image": "sliit.jpg",
+    "university_hei": "Institute of Human Resource Advancement",
+    "image": "29.jpg",
+    "type": "Institute",
+    "associated_university": "University of Colombo",
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Postgraduate Institute of Science",
+    "image": "21.jpg",
+    "type": "Institute",
+    "associated_university": "University of Peradeniya",
+    "established_under": "University Grants Commission",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "The General Sir John Kotelawala Defence University",
+    "image": null,
+    "type": "University",
+    "associated_university": null,
+    "established_under": "Ministry of Defense",
+    "abbreviation": "KDU"
+  },
+  {
+    "university_hei": "University of Vocational Technology",
+    "image": null,
+    "type": "University",
+    "associated_university": null,
+    "established_under": "Ministry of Vocational & Technical Training",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Ocean University of Sri Lanka",
+    "image": null,
+    "type": "University",
+    "associated_university": null,
+    "established_under": "Ministry of Skills Development and Vocational Training",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "National Institute of Education",
+    "image": null,
     "type": "Institute",
     "associated_university": null,
-    "established_under": "University Grants Commission",
-    "abbreviation": "SLIIT"
+    "established_under": "Ministry of Education",
+    "abbreviation": "NIE"
+  },
+  {
+    "university_hei": "Buddhist and Pali University of Sri Lanka",
+    "image": null,
+    "type": "University",
+    "associated_university": null,
+    "established_under": "Ministry of Higher Education",
+    "abbreviation": null
+  },
+  {
+    "university_hei": "Bhiksu University of Sri Lanka",
+    "image": null,
+    "type": "University",
+    "associated_university": null,
+    "established_under": "Ministry of Higher Education",
+    "abbreviation": null
   }
 ]
