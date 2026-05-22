@@ -1,0 +1,122 @@
+[
+  {
+    "university_hei": "University of Colombo",
+    "image": "ucsc.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UoC"
+  },
+  {
+    "university_hei": "University of Moratuwa",
+    "image": "uom.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UoM"
+  },
+  {
+    "university_hei": "University of Peradeniya",
+    "image": "uop.jpg",
+    "type": "University", 
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UoP"
+  },
+  {
+    "university_hei": "University of Kelaniya",
+    "image": "uok.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UoK"
+  },
+  {
+    "university_hei": "University of Sri Jayewardenepura",
+    "image": "usj.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "USJ"
+  },
+  {
+    "university_hei": "University of Ruhuna",
+    "image": "uor.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UoR"
+  },
+  {
+    "university_hei": "Eastern University, Sri Lanka",
+    "image": "eusl.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "EUSL"
+  },
+  {
+    "university_hei": "South Eastern University of Sri Lanka",
+    "image": "seusl.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "SEUSL"
+  },
+  {
+    "university_hei": "Sabaragamuwa University of Sri Lanka",
+    "image": "susl.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "SUSL"
+  },
+  {
+    "university_hei": "Wayamba University of Sri Lanka",
+    "image": "wusl.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "WUSL"
+  },
+  {
+    "university_hei": "Rajarata University of Sri Lanka",
+    "image": "rusl.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "RUSL"
+  },
+  {
+    "university_hei": "Uva Wellassa University",
+    "image": "uwu.jpg",
+    "type": "University",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "UWU"
+  },
+  {
+    "university_hei": "Postgraduate Institute of Science",
+    "image": "pgis.jpg",
+    "type": "Institute",
+    "associated_university": "University of Peradeniya",
+    "established_under": "University Grants Commission",
+    "abbreviation": "PGIS"
+  },
+  {
+    "university_hei": "Institute of Technology, University of Moratuwa",
+    "image": "itum.jpg",
+    "type": "Institute",
+    "associated_university": "University of Moratuwa",
+    "established_under": "University Grants Commission",
+    "abbreviation": "ITUM"
+  },
+  {
+    "university_hei": "Sri Lanka Institute of Information Technology",
+    "image": "sliit.jpg",
+    "type": "Institute",
+    "associated_university": null,
+    "established_under": "University Grants Commission",
+    "abbreviation": "SLIIT"
+  }
+]
