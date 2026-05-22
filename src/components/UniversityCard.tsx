@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, BookOpen, Award } from 'lucide-react';
 import { UniversityData, ProgramData } from '../types';
+import UniversityLogo from './UniversityLogo';
 
 interface UniversityCardProps {
   university: UniversityData;
@@ -8,69 +9,78 @@ interface UniversityCardProps {
   onClick: () => void;
 }
 
-const UniversityCard: React.FC<UniversityCardProps> = ({ university, programs, onClick }) => {
-  const universityPrograms = programs.filter(p => p.university_hei === university.university_hei);
-  const ugCount = universityPrograms.filter(p => p.ug_pg === 'UG').length;
-  const pgCount = universityPrograms.filter(p => p.ug_pg === 'PG').length;
-
-  const getImageSrc = () => {
-    if (university.image) {
-      return `/images/${university.image}`;
-    }
-    return '/images/placeholder-university.jpg';
-  };
+const UniversityCard: React.FC<UniversityCardProps> = ({
+  university,
+  programs,
+  onClick,
+}) => {
+  const universityPrograms = programs.filter(
+    (p) => p.university_hei === university.university_hei
+  );
+  const ugCount = universityPrograms.filter((p) => p.ug_pg === 'UG').length;
+  const pgCount = universityPrograms.filter((p) => p.ug_pg === 'PG').length;
 
   return (
-    <div 
+    <div
+      role="button"
+      tabIndex={0}
       onClick={onClick}
-      className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      className="group flex h-full min-h-[320px] cursor-pointer flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-ugc-gold/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold"
     >
-      <div className="p-6">
-        {/* University Logo */}
-        <div className="flex items-center justify-center mb-4">
-          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
-            <img 
-              src={getImageSrc()}
-              alt={`${university.university_hei} logo`}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = '/images/placeholder-university.jpg';
-              }}
-            />
-          </div>
+      <div className="flex flex-1 flex-col items-center p-6">
+        <div className="mb-4 flex items-center justify-center">
+          <UniversityLogo
+            universityHei={university.university_hei}
+            image={university.image}
+          />
         </div>
 
-        {/* University Name */}
-        <h3 className="text-lg font-bold text-gray-900 mb-2 text-center line-clamp-2 group-hover:text-blue-600 transition-colors duration-200">
+        <h3 className="mb-2 line-clamp-2 min-h-[3rem] text-center text-lg font-bold leading-snug text-ugc-navy transition-colors duration-200 group-hover:text-ugc-navyLight">
           {university.university_hei}
         </h3>
 
-        {/* Type Badge */}
-        <div className="flex justify-center mb-4">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+        <div className="mb-3 flex justify-center">
+          <span className="inline-flex items-center rounded-full bg-ugc-navy/10 px-3 py-1 text-xs font-medium text-ugc-navy">
             {university.type}
           </span>
         </div>
 
-        {/* Associated University */}
         {university.associated_university && (
-          <div className="flex items-center text-sm text-gray-600 mb-4 justify-center">
-            <MapPin className="h-4 w-4 mr-1" />
-            <span className="text-center line-clamp-1">{university.associated_university}</span>
+          <div className="mb-2 flex items-center justify-center text-sm text-slate-500">
+            <MapPin className="mr-1 h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="line-clamp-1 text-center">{university.associated_university}</span>
           </div>
         )}
+      </div>
 
-        {/* Program Counts */}
-        <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-          <div className="flex items-center space-x-1 text-green-600">
-            <BookOpen className="h-4 w-4" />
-            <span className="text-sm font-semibold">{ugCount} UG</span>
+      <div className="mt-auto grid grid-cols-2 gap-3 border-t border-slate-100 px-6 py-4">
+        <div>
+          <div className="flex items-center gap-1 text-emerald-700">
+            <BookOpen className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="text-sm font-bold">{ugCount}</span>
           </div>
-          <div className="flex items-center space-x-1 text-purple-600">
-            <Award className="h-4 w-4" />
-            <span className="text-sm font-semibold">{pgCount} PG</span>
+          <p className="mt-0.5 text-xs leading-tight text-slate-600">
+            Undergraduate
+            <br />
+            Programs
+          </p>
+        </div>
+        <div className="text-right">
+          <div className="flex items-center justify-end gap-1 text-ugc-navy">
+            <Award className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="text-sm font-bold">{pgCount}</span>
           </div>
+          <p className="mt-0.5 text-xs leading-tight text-slate-600">
+            Postgraduate
+            <br />
+            Programs
+          </p>
         </div>
       </div>
     </div>

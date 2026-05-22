@@ -13,7 +13,7 @@ export interface ProgramData {
   faculty_name: string;
   department_name: string;
   name_of_the_course_s_: string;
-  specialization: string | null;
+  discipline: string | null;
   academic_stream: string | null;
   external: string | null;
   special_subject: string | null;
