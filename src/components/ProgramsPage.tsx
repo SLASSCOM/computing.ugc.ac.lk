@@ -51,8 +51,8 @@ const ProgramsPage = () => {
     const loadData = async () => {
       try {
         const [universitiesResponse, programsResponse] = await Promise.all([
-          fetch('/data/universities.json'),
-          fetch('/data/programs.json'),
+          fetch(`${import.meta.env.BASE_URL}data/universities.json`),
+          fetch(`${import.meta.env.BASE_URL}data/programs.json`),
         ]);
 
         const universitiesData = await universitiesResponse.json();

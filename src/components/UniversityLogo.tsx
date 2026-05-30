@@ -33,7 +33,7 @@ const UniversityLogo: React.FC<UniversityLogoProps> = ({
   return (
     <div className={`overflow-hidden flex-shrink-0 ${className}`}>
       <img
-        src={`/images/${image}`}
+        src={`${import.meta.env.BASE_URL}images/${image}`}
         alt={`${universityHei} logo`}
         className="w-full h-full object-cover"
         onError={() => setImageError(true)}

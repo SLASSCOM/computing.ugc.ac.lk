@@ -26,7 +26,7 @@ const Header = () => {
           >
             <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white p-0.5">
               <img
-                src="/images/ugc.jpg"
+                src={`${import.meta.env.BASE_URL}images/ugc.jpg`}
                 alt="University Grants Commission Sri Lanka"
                 className="h-full w-full object-contain"
               />

@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border border-ugc-gold/30 bg-white p-0.5">
                 <img
-                  src="/images/ugc.jpg"
+                  src={`${import.meta.env.BASE_URL}images/ugc.jpg`}
                   alt="University Grants Commission Sri Lanka"
                   className="h-full w-full object-contain"
                 />
