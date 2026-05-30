@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-ugc-cream">
         <Header />
