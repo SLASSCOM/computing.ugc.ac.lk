@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Search, Filter, X, ChevronLeft } from 'lucide-react';
 import ProgramCard from './ProgramCard';
@@ -226,9 +226,8 @@ const ProgramsPage = () => {
             <li>
               <Link
                 to="/programs"
-                className={`hover:text-ugc-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded ${
-                  !singleUniversityFromUrl ? 'font-medium text-ugc-navy' : ''
-                }`}
+                className={`hover:text-ugc-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded ${!singleUniversityFromUrl ? 'font-medium text-ugc-navy' : ''
+                  }`}
                 onClick={() => {
                   setSelectedUniversities([]);
                   setSearchParams({});
