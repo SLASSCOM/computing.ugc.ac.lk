@@ -6,6 +6,7 @@ export interface UniversityData {
   established_under: string;
   abbreviation: string | null;
   members?: string[];
+  url?: string | null;
 }
 
 export interface ProgramData {

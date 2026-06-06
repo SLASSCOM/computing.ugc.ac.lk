@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Search, Filter, X, ChevronLeft } from 'lucide-react';
+import { Search, Filter, X, ChevronLeft, ExternalLink } from 'lucide-react';
 import ProgramCard from './ProgramCard';
 import ProgramModal from './ProgramModal';
 import MultiSelectFilter from './MultiSelectFilter';
@@ -269,10 +269,26 @@ const ProgramsPage = () => {
                 <h1 className="font-display text-2xl font-bold text-ugc-navy sm:text-3xl">
                   {singleUniversityFromUrl}
                 </h1>
-                <p className="mt-1 text-slate-600">
-                  {filteredPrograms.length} computing program
-                  {filteredPrograms.length !== 1 ? 's' : ''} found
-                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
+                  <span>
+                    {filteredPrograms.length} computing program
+                    {filteredPrograms.length !== 1 ? 's' : ''} found
+                  </span>
+                  {selectedUniversityData.url && (
+                    <>
+                      <span className="hidden text-slate-300 sm:inline">•</span>
+                      <a
+                        href={selectedUniversityData.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-medium text-ugc-navyLight hover:text-ugc-gold hover:underline transition-colors duration-150"
+                      >
+                        <span>Visit Website</span>
+                        <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           ) : (

@@ -6,7 +6,8 @@
     "associated_university": null,
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "http://www.cmb.ac.lk/"
   },
   {
     "university_hei": "University of Peradeniya",
@@ -17,7 +18,8 @@
     "abbreviation": null,
     "members": [
       "Head/ Dept. of Computer Engineering/Faculty of Engineering"
-    ]
+    ],
+    "url": "http://www.pdn.ac.lk/"
   },
   {
     "university_hei": "University of Sri Jayewardenepura",
@@ -28,7 +30,8 @@
     "abbreviation": null,
     "members": [
       "Dean/Faculty of Computing"
-    ]
+    ],
+    "url": "http://www.sjp.ac.lk/"
   },
   {
     "university_hei": "University of Kelaniya",
@@ -41,7 +44,8 @@
       "Head/ Dept.of Computer Systems Engineering/ Faculty of Computing &Technology",
       "Representative for the Dean/Faculty of Science",
       "Dean/ Faculty of Computing & Technology"
-    ]
+    ],
+    "url": "http://www.kln.ac.lk/"
   },
   {
     "university_hei": "University of Moratuwa",
@@ -53,7 +57,8 @@
     "members": [
       "Dean/ Faculty of Information Technology",
       "Head /Dept. of Computer Science & Engineering"
-    ]
+    ],
+    "url": "http://www.mrt.ac.lk/"
   },
   {
     "university_hei": "University of Jaffna",
@@ -64,7 +69,8 @@
     "abbreviation": null,
     "members": [
       "Head/Dept. of Computer Science"
-    ]
+    ],
+    "url": "http://www.jfn.ac.lk/"
   },
   {
     "university_hei": "University of Ruhuna",
@@ -75,7 +81,8 @@
     "abbreviation": null,
     "members": [
       "Head Dept. of Computer Science"
-    ]
+    ],
+    "url": "http://www.ruh.ac.lk/"
   },
   {
     "university_hei": "The Open University of Sri Lanka",
@@ -86,7 +93,8 @@
     "abbreviation": null,
     "members": [
       "Representative/Head/ Electrical & Computer Engineering"
-    ]
+    ],
+    "url": "http://www.ou.ac.lk/"
   },
   {
     "university_hei": "Eastern University, Sri Lanka",
@@ -97,7 +105,8 @@
     "abbreviation": null,
     "members": [
       "Head/Dept. of Computing /Faculty of Science"
-    ]
+    ],
+    "url": "http://www.esn.ac.lk/"
   },
   {
     "university_hei": "South Eastern University of Sri Lanka",
@@ -108,7 +117,8 @@
     "abbreviation": null,
     "members": [
       "Head /Dept. of Computer Science /Faculty of Applied Sciences"
-    ]
+    ],
+    "url": "http://www.seu.ac.lk/"
   },
   {
     "university_hei": "Rajarata University of Sri Lanka",
@@ -119,7 +129,8 @@
     "abbreviation": null,
     "members": [
       "Head/ Dept. of Computer/ Faculty of Applied Science"
-    ]
+    ],
+    "url": "http://www.rjt.ac.lk/"
   },
   {
     "university_hei": "Sabaragamuwa University of Sri Lanka",
@@ -130,7 +141,8 @@
     "abbreviation": null,
     "members": [
       "Dean/Faculty of Computing"
-    ]
+    ],
+    "url": "http://www.sab.ac.lk/"
   },
   {
     "university_hei": "Wayamba University of Sri Lanka",
@@ -141,7 +153,8 @@
     "abbreviation": null,
     "members": [
       "Head/ Dept. of Computing & Information Systems"
-    ]
+    ],
+    "url": "http://www.wyb.ac.lk/"
   },
   {
     "university_hei": "Uva Wellassa University of Sri Lanka",
@@ -152,7 +165,8 @@
     "abbreviation": null,
     "members": [
       "Head/ Dept. of Computer Science & Informatics/Faculty of Science"
-    ]
+    ],
+    "url": "http://www.uwu.ac.lk/"
   },
   {
     "university_hei": "University of the Visual & Performing Arts",
@@ -163,7 +177,8 @@
     "abbreviation": null,
     "members": [
       "Head/ Dept. Information Technology/Faculty of Dance & Drama"
-    ]
+    ],
+    "url": "http://www.vpa.ac.lk/"
   },
   {
     "university_hei": "Gampaha Wickramarachchi University of Indigenous Medicine",
@@ -172,7 +187,8 @@
     "associated_university": null,
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "http://gwu.ac.lk/"
   },
   {
     "university_hei": "University of Vavuniya",
@@ -184,7 +200,8 @@
     "members": [
       "Dean/ Faculty of Technical Studies",
       "Head/ Dept. of Physical Science/ Faculty of Applied Science"
-    ]
+    ],
+    "url": "http://www.vau.ac.lk/"
   },
   {
     "university_hei": "Sri Palee Campus",
@@ -193,7 +210,8 @@
     "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "http://spc.cmb.ac.lk/"
   },
   {
     "university_hei": "Trincomalee Campus",
@@ -204,7 +222,8 @@
     "abbreviation": null,
     "members": [
       "Head/Dept. of Computer Science/ Faculty of Applied Science"
-    ]
+    ],
+    "url": "https://trinco.esn.ac.lk/"
   },
   {
     "university_hei": "University of Colombo School of Computing",
@@ -215,7 +234,8 @@
     "abbreviation": null,
     "members": [
       "Director"
-    ]
+    ],
+    "url": "https://ucsc.cmb.ac.lk/"
   },
   {
     "university_hei": "Institute of Technology University of Moratuwa",
@@ -224,7 +244,8 @@
     "associated_university": "University of Moratuwa",
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "https://www.itum.mrt.ac.lk"
   },
   {
     "university_hei": "Institute of Human Resource Advancement",
@@ -233,7 +254,8 @@
     "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "https://ihra.cmb.ac.lk"
   },
   {
     "university_hei": "Postgraduate Institute of Science",
@@ -242,7 +264,8 @@
     "associated_university": "University of Peradeniya",
     "established_under": "University Grants Commission",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "https://pgis.lk"
   },
   {
     "university_hei": "The General Sir John Kotelawala Defence University",
@@ -253,7 +276,8 @@
     "abbreviation": "KDU",
     "members": [
       "Dean/Faculty of Computing"
-    ]
+    ],
+    "url": "https://www.kdu.ac.lk"
   },
   {
     "university_hei": "University of Vocational Technology",
@@ -262,7 +286,8 @@
     "associated_university": null,
     "established_under": "Ministry of Vocational & Technical Training",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "https://uovt.ac.lk/"
   },
   {
     "university_hei": "Ocean University of Sri Lanka",
@@ -271,7 +296,8 @@
     "associated_university": null,
     "established_under": "Ministry of Skills Development and Vocational Training",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "https://ocu.ac.lk/"
   },
   {
     "university_hei": "National Institute of Education",
@@ -280,7 +306,8 @@
     "associated_university": null,
     "established_under": "Ministry of Education",
     "abbreviation": "NIE",
-    "members": []
+    "members": [],
+    "url": "http://www.nie.ac.lk"
   },
   {
     "university_hei": "Buddhist and Pali University of Sri Lanka",
@@ -289,7 +316,8 @@
     "associated_university": null,
     "established_under": "Ministry of Higher Education",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "http://www.bpu.ac.lk/"
   },
   {
     "university_hei": "Bhiksu University of Sri Lanka",
@@ -298,6 +326,7 @@
     "associated_university": null,
     "established_under": "Ministry of Higher Education",
     "abbreviation": null,
-    "members": []
+    "members": [],
+    "url": "http://www.busl.ac.lk/"
   }
 ]
