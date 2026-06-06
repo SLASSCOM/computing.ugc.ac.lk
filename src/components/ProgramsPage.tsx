@@ -268,12 +268,25 @@ const ProgramsPage = () => {
               <div>
                 <h1 className="font-display text-2xl font-bold text-ugc-navy sm:text-3xl">
                   {singleUniversityFromUrl}
+                  {selectedUniversityData.abbreviation && ` (${selectedUniversityData.abbreviation})`}
                 </h1>
                 <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
                   <span>
                     {filteredPrograms.length} computing program
                     {filteredPrograms.length !== 1 ? 's' : ''} found
                   </span>
+                  {selectedUniversityData.associated_university && (
+                    <>
+                      <span className="hidden text-slate-300 sm:inline">•</span>
+                      <span>Associated with {selectedUniversityData.associated_university}</span>
+                    </>
+                  )}
+                  {selectedUniversityData.established_under && (
+                    <>
+                      <span className="hidden text-slate-300 sm:inline">•</span>
+                      <span>Established under {selectedUniversityData.established_under}</span>
+                    </>
+                  )}
                   {selectedUniversityData.url && (
                     <>
                       <span className="hidden text-slate-300 sm:inline">•</span>

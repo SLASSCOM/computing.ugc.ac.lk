@@ -19,6 +19,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
   );
   const ugCount = universityPrograms.filter((p) => p.ug_pg === 'UG').length;
   const pgCount = universityPrograms.filter((p) => p.ug_pg === 'PG').length;
+  const hasPrograms = universityPrograms.length > 0;
 
   return (
     <div
@@ -31,7 +32,11 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
           onClick();
         }
       }}
-      className="group flex h-full min-h-[320px] cursor-pointer flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-ugc-gold/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold"
+      className={`group flex h-full min-h-[320px] cursor-pointer flex-col overflow-hidden rounded-xl border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 ${
+        hasPrograms
+          ? 'border-slate-200 bg-white shadow-md hover:-translate-y-1 hover:border-ugc-gold/40 hover:shadow-xl focus-visible:ring-ugc-gold'
+          : 'border-slate-300 bg-slate-50/70 opacity-60 grayscale-[40%] shadow-sm hover:-translate-y-0.5 hover:border-slate-400 hover:opacity-90 hover:grayscale-0 hover:shadow-md focus-visible:ring-slate-400'
+      }`}
     >
       <div className="flex flex-1 flex-col items-center p-6">
         <div className="mb-4 flex items-center justify-center">

@@ -4,6 +4,7 @@ import UniversityCard from './UniversityCard';
 import StatsStrip from './StatsStrip';
 import LoadingSpinner from './LoadingSpinner';
 import { UniversityData, ProgramData } from '../types';
+import { ChevronRight } from 'lucide-react';
 
 const HomePage = () => {
   const [universities, setUniversities] = useState<UniversityData[]>([]);
@@ -38,6 +39,9 @@ const HomePage = () => {
     loadData();
   }, []);
 
+  const [showAllInstitutes, setShowAllInstitutes] = useState(false);
+  const [showAllOtherGov, setShowAllOtherGov] = useState(false);
+
   const handleUniversityClick = (universityName: string) => {
     navigate(`/programs?university=${encodeURIComponent(universityName)}`);
   };
@@ -59,6 +63,19 @@ const HomePage = () => {
     (u) => u.established_under !== 'University Grants Commission'
   );
 
+  const sortUniversities = (list: UniversityData[]) => {
+    return [...list].sort((a, b) => {
+      const countA = programs.filter((p) => p.university_hei === a.university_hei).length;
+      const countB = programs.filter((p) => p.university_hei === b.university_hei).length;
+      return countB - countA;
+    });
+  };
+
+  const sortedUgcUniversities = sortUniversities(ugcUniversities);
+  const sortedUgcCampuses = sortUniversities(ugcCampuses);
+  const sortedUgcInstitutes = sortUniversities(ugcInstitutes);
+  const sortedOtherGovUniversities = sortUniversities(otherGovUniversities);
+
   return (
     <div>
       {/* Compact hero + inline stats */}
@@ -66,9 +83,6 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(199,145,0,0.12)_0%,_transparent_50%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ugc-gold">
-              Standing Committee of Computing
-            </p>
             <h1 className="mb-4 font-display text-3xl font-bold leading-snug text-white sm:text-4xl lg:text-5xl">
               <span className="block">Computing Programs in</span>
               <span className="mt-1 block text-ugc-goldSoft">Sri Lanka</span>
@@ -106,11 +120,11 @@ const HomePage = () => {
                   </span>
                 </div>
                 <p className="pl-4 text-sm text-slate-500">
-                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission
+                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission/ Universities Act No. 16 of 1978 (as amended)
                 </p>
               </div>
               <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {ugcUniversities.map((university, index) => (
+                {sortedUgcUniversities.map((university, index) => (
                   <UniversityCard
                     key={index}
                     university={university}
@@ -136,11 +150,11 @@ const HomePage = () => {
                   </span>
                 </div>
                 <p className="pl-4 text-sm text-slate-500">
-                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission
+                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission/ Universities Act No. 16 of 1978 (as amended)
                 </p>
               </div>
               <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {ugcCampuses.map((university, index) => (
+                {sortedUgcCampuses.map((university, index) => (
                   <UniversityCard
                     key={index}
                     university={university}
@@ -166,11 +180,11 @@ const HomePage = () => {
                   </span>
                 </div>
                 <p className="pl-4 text-sm text-slate-500">
-                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission
+                  Universities and Higher Educational Institutions established under the purview of the University Grants Commission/ Universities Act No. 16 of 1978 (as amended)
                 </p>
               </div>
               <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {ugcInstitutes.map((university, index) => (
+                {(showAllInstitutes ? sortedUgcInstitutes : sortedUgcInstitutes.slice(0, 3)).map((university, index) => (
                   <UniversityCard
                     key={index}
                     university={university}
@@ -178,6 +192,24 @@ const HomePage = () => {
                     onClick={() => handleUniversityClick(university.university_hei)}
                   />
                 ))}
+                {sortedUgcInstitutes.length > 3 && (
+                  <button
+                    onClick={() => setShowAllInstitutes(!showAllInstitutes)}
+                    className="flex h-full min-h-[320px] w-full flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50/50 p-6 text-center shadow-sm transition-all duration-300 hover:border-ugc-gold hover:bg-ugc-cream/20 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold"
+                  >
+                    <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-ugc-navy/5 text-ugc-navy transition-transform duration-300 ${showAllInstitutes ? 'rotate-180' : ''}`}>
+                      <ChevronRight className="h-6 w-6" />
+                    </div>
+                    <span className="font-display text-base font-bold text-ugc-navy">
+                      {showAllInstitutes ? 'Show Less' : 'Show More Institutes'}
+                    </span>
+                    {!showAllInstitutes && (
+                      <p className="mt-1 text-xs text-slate-500">
+                        View all {sortedUgcInstitutes.length} Institutes
+                      </p>
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           )}
@@ -200,7 +232,7 @@ const HomePage = () => {
                 </p>
               </div>
               <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {otherGovUniversities.map((university, index) => (
+                {(showAllOtherGov ? sortedOtherGovUniversities : sortedOtherGovUniversities.slice(0, 3)).map((university, index) => (
                   <UniversityCard
                     key={index}
                     university={university}
@@ -208,6 +240,24 @@ const HomePage = () => {
                     onClick={() => handleUniversityClick(university.university_hei)}
                   />
                 ))}
+                {sortedOtherGovUniversities.length > 3 && (
+                  <button
+                    onClick={() => setShowAllOtherGov(!showAllOtherGov)}
+                    className="flex h-full min-h-[320px] w-full flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50/50 p-6 text-center shadow-sm transition-all duration-300 hover:border-ugc-gold hover:bg-ugc-cream/20 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold"
+                  >
+                    <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-ugc-navy/5 text-ugc-navy transition-transform duration-300 ${showAllOtherGov ? 'rotate-180' : ''}`}>
+                      <ChevronRight className="h-6 w-6" />
+                    </div>
+                    <span className="font-display text-base font-bold text-ugc-navy">
+                      {showAllOtherGov ? 'Show Less' : 'Show More Universities'}
+                    </span>
+                    {!showAllOtherGov && (
+                      <p className="mt-1 text-xs text-slate-500">
+                        View all {sortedOtherGovUniversities.length} Universities
+                      </p>
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           )}

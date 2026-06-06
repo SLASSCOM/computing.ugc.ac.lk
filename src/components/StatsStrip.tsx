@@ -1,5 +1,5 @@
 import React from 'react';
-import { CaseSensitive as University, Users, BookOpen, Award } from 'lucide-react';
+import { CaseSensitive as University, BookOpen, Award } from 'lucide-react';
 import { UniversityData, ProgramData } from '../types';
 
 interface StatsStripProps {
@@ -10,9 +10,6 @@ interface StatsStripProps {
 const StatsStrip: React.FC<StatsStripProps> = ({ universities, programs }) => {
   const ugPrograms = programs.filter((p) => p.ug_pg === 'UG').length;
   const pgPrograms = programs.filter((p) => p.ug_pg === 'PG').length;
-  const totalDisciplines = new Set(
-    programs.map((p) => p.discipline).filter(Boolean)
-  ).size;
 
   const stats = [
     {
@@ -33,16 +30,10 @@ const StatsStrip: React.FC<StatsStripProps> = ({ universities, programs }) => {
       value: pgPrograms,
       color: 'text-purple-300',
     },
-    {
-      icon: Users,
-      label: 'Disciplines',
-      value: totalDisciplines,
-      color: 'text-orange-300',
-    },
   ];
 
   return (
-    <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
       {stats.map((stat, index) => (
         <div
           key={index}
