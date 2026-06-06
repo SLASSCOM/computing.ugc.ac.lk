@@ -5,6 +5,7 @@ export interface UniversityData {
   associated_university: string | null;
   established_under: string;
   abbreviation: string | null;
+  members?: string[];
 }
 
 export interface ProgramData {

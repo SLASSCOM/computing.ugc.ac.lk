@@ -5,7 +5,8 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "University of Peradeniya",
@@ -13,7 +14,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept. of Computer Engineering/Faculty of Engineering"
+    ]
   },
   {
     "university_hei": "University of Sri Jayewardenepura",
@@ -21,7 +25,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Dean/Faculty of Computing"
+    ]
   },
   {
     "university_hei": "University of Kelaniya",
@@ -29,7 +36,12 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept.of Computer Systems Engineering/ Faculty of Computing &Technology",
+      "Representative for the Dean/Faculty of Science",
+      "Dean/ Faculty of Computing & Technology"
+    ]
   },
   {
     "university_hei": "University of Moratuwa",
@@ -37,7 +49,11 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Dean/ Faculty of Information Technology",
+      "Head /Dept. of Computer Science & Engineering"
+    ]
   },
   {
     "university_hei": "University of Jaffna",
@@ -45,7 +61,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/Dept. of Computer Science"
+    ]
   },
   {
     "university_hei": "University of Ruhuna",
@@ -53,7 +72,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head Dept. of Computer Science"
+    ]
   },
   {
     "university_hei": "The Open University of Sri Lanka",
@@ -61,7 +83,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Representative/Head/ Electrical & Computer Engineering"
+    ]
   },
   {
     "university_hei": "Eastern University, Sri Lanka",
@@ -69,7 +94,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/Dept. of Computing /Faculty of Science"
+    ]
   },
   {
     "university_hei": "South Eastern University of Sri Lanka",
@@ -77,7 +105,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head /Dept. of Computer Science /Faculty of Applied Sciences"
+    ]
   },
   {
     "university_hei": "Rajarata University of Sri Lanka",
@@ -85,7 +116,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept. of Computer/ Faculty of Applied Science"
+    ]
   },
   {
     "university_hei": "Sabaragamuwa University of Sri Lanka",
@@ -93,7 +127,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Dean/Faculty of Computing"
+    ]
   },
   {
     "university_hei": "Wayamba University of Sri Lanka",
@@ -101,7 +138,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept. of Computing & Information Systems"
+    ]
   },
   {
     "university_hei": "Uva Wellassa University of Sri Lanka",
@@ -109,7 +149,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept. of Computer Science & Informatics/Faculty of Science"
+    ]
   },
   {
     "university_hei": "University of the Visual & Performing Arts",
@@ -117,7 +160,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/ Dept. Information Technology/Faculty of Dance & Drama"
+    ]
   },
   {
     "university_hei": "Gampaha Wickramarachchi University of Indigenous Medicine",
@@ -125,7 +171,8 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "University of Vavuniya",
@@ -133,7 +180,11 @@
     "type": "University",
     "associated_university": null,
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Dean/ Faculty of Technical Studies",
+      "Head/ Dept. of Physical Science/ Faculty of Applied Science"
+    ]
   },
   {
     "university_hei": "Sri Palee Campus",
@@ -141,7 +192,8 @@
     "type": "Campus",
     "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "Trincomalee Campus",
@@ -149,7 +201,10 @@
     "type": "Campus",
     "associated_university": "Eastern University, Sri Lanka",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Head/Dept. of Computer Science/ Faculty of Applied Science"
+    ]
   },
   {
     "university_hei": "University of Colombo School of Computing",
@@ -157,7 +212,10 @@
     "type": "Institute",
     "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": [
+      "Director"
+    ]
   },
   {
     "university_hei": "Institute of Technology University of Moratuwa",
@@ -165,7 +223,8 @@
     "type": "Institute",
     "associated_university": "University of Moratuwa",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "Institute of Human Resource Advancement",
@@ -173,7 +232,8 @@
     "type": "Institute",
     "associated_university": "University of Colombo",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "Postgraduate Institute of Science",
@@ -181,7 +241,8 @@
     "type": "Institute",
     "associated_university": "University of Peradeniya",
     "established_under": "University Grants Commission",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "The General Sir John Kotelawala Defence University",
@@ -189,7 +250,10 @@
     "type": "University",
     "associated_university": null,
     "established_under": "Ministry of Defense",
-    "abbreviation": "KDU"
+    "abbreviation": "KDU",
+    "members": [
+      "Dean/Faculty of Computing"
+    ]
   },
   {
     "university_hei": "University of Vocational Technology",
@@ -197,7 +261,8 @@
     "type": "University",
     "associated_university": null,
     "established_under": "Ministry of Vocational & Technical Training",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "Ocean University of Sri Lanka",
@@ -205,7 +270,8 @@
     "type": "University",
     "associated_university": null,
     "established_under": "Ministry of Skills Development and Vocational Training",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "National Institute of Education",
@@ -213,7 +279,8 @@
     "type": "Institute",
     "associated_university": null,
     "established_under": "Ministry of Education",
-    "abbreviation": "NIE"
+    "abbreviation": "NIE",
+    "members": []
   },
   {
     "university_hei": "Buddhist and Pali University of Sri Lanka",
@@ -221,7 +288,8 @@
     "type": "University",
     "associated_university": null,
     "established_under": "Ministry of Higher Education",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   },
   {
     "university_hei": "Bhiksu University of Sri Lanka",
@@ -229,6 +297,7 @@
     "type": "University",
     "associated_university": null,
     "established_under": "Ministry of Higher Education",
-    "abbreviation": null
+    "abbreviation": null,
+    "members": []
   }
 ]

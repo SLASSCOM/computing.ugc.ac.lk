@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ExternalLink, Home, Menu, Search, X } from 'lucide-react';
+import { ExternalLink, Home, Menu, Search, X, Info } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -48,6 +48,10 @@ const Header = () => {
               <Search className="h-4 w-4" aria-hidden="true" />
               <span>Programs</span>
             </Link>
+            <Link to="/about" className={navLinkClass('/about')}>
+              <Info className="h-4 w-4" aria-hidden="true" />
+              <span>About</span>
+            </Link>
             <a
               href="https://www.ugc.ac.lk/"
               target="_blank"
@@ -80,6 +84,10 @@ const Header = () => {
               <Link to="/programs" className={navLinkClass('/programs')} onClick={closeMobile}>
                 <Search className="h-4 w-4" aria-hidden="true" />
                 <span>Programs</span>
+              </Link>
+              <Link to="/about" className={navLinkClass('/about')} onClick={closeMobile}>
+                <Info className="h-4 w-4" aria-hidden="true" />
+                <span>About</span>
               </Link>
               <a
                 href="https://www.ugc.ac.lk/"
