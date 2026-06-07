@@ -7,7 +7,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "CMB",
     "members": [],
-    "url": "http://www.cmb.ac.lk/"
+    "url": "http://www.cmb.ac.lk/",
+    "uni_code": "A"
   },
   {
     "university_hei": "University of Peradeniya",
@@ -19,7 +20,8 @@
     "members": [
       "Head/ Dept. of Computer Engineering/Faculty of Engineering"
     ],
-    "url": "http://www.pdn.ac.lk/"
+    "url": "http://www.pdn.ac.lk/",
+    "uni_code": "B"
   },
   {
     "university_hei": "University of Sri Jayewardenepura",
@@ -31,7 +33,8 @@
     "members": [
       "Dean/Faculty of Computing"
     ],
-    "url": "http://www.sjp.ac.lk/"
+    "url": "http://www.sjp.ac.lk/",
+    "uni_code": "C"
   },
   {
     "university_hei": "University of Kelaniya",
@@ -45,7 +48,8 @@
       "Representative for the Dean/Faculty of Science",
       "Dean/ Faculty of Computing & Technology"
     ],
-    "url": "http://www.kln.ac.lk/"
+    "url": "http://www.kln.ac.lk/",
+    "uni_code": "D"
   },
   {
     "university_hei": "University of Moratuwa",
@@ -58,7 +62,8 @@
       "Dean/ Faculty of Information Technology",
       "Head /Dept. of Computer Science & Engineering"
     ],
-    "url": "http://www.mrt.ac.lk/"
+    "url": "http://www.mrt.ac.lk/",
+    "uni_code": "G"
   },
   {
     "university_hei": "University of Jaffna",
@@ -70,7 +75,8 @@
     "members": [
       "Head/Dept. of Computer Science"
     ],
-    "url": "http://www.jfn.ac.lk/"
+    "url": "http://www.jfn.ac.lk/",
+    "uni_code": "E"
   },
   {
     "university_hei": "University of Ruhuna",
@@ -82,7 +88,8 @@
     "members": [
       "Head Dept. of Computer Science"
     ],
-    "url": "http://www.ruh.ac.lk/"
+    "url": "http://www.ruh.ac.lk/",
+    "uni_code": "F"
   },
   {
     "university_hei": "The Open University of Sri Lanka",
@@ -94,7 +101,8 @@
     "members": [
       "Representative/Head/ Electrical & Computer Engineering"
     ],
-    "url": "http://www.ou.ac.lk/"
+    "url": "http://www.ou.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Eastern University, Sri Lanka",
@@ -106,7 +114,8 @@
     "members": [
       "Head/Dept. of Computing /Faculty of Science"
     ],
-    "url": "http://www.esn.ac.lk/"
+    "url": "http://www.esn.ac.lk/",
+    "uni_code": "H"
   },
   {
     "university_hei": "South Eastern University of Sri Lanka",
@@ -118,7 +127,8 @@
     "members": [
       "Head /Dept. of Computer Science /Faculty of Applied Sciences"
     ],
-    "url": "http://www.seu.ac.lk/"
+    "url": "http://www.seu.ac.lk/",
+    "uni_code": "J"
   },
   {
     "university_hei": "Rajarata University of Sri Lanka",
@@ -130,7 +140,8 @@
     "members": [
       "Head/ Dept. of Computer/ Faculty of Applied Science"
     ],
-    "url": "http://www.rjt.ac.lk/"
+    "url": "http://www.rjt.ac.lk/",
+    "uni_code": "K"
   },
   {
     "university_hei": "Sabaragamuwa University of Sri Lanka",
@@ -142,7 +153,8 @@
     "members": [
       "Dean/Faculty of Computing"
     ],
-    "url": "http://www.sab.ac.lk/"
+    "url": "http://www.sab.ac.lk/",
+    "uni_code": "L"
   },
   {
     "university_hei": "Wayamba University of Sri Lanka",
@@ -154,7 +166,8 @@
     "members": [
       "Head/ Dept. of Computing & Information Systems"
     ],
-    "url": "http://www.wyb.ac.lk/"
+    "url": "http://www.wyb.ac.lk/",
+    "uni_code": "M"
   },
   {
     "university_hei": "Uva Wellassa University of Sri Lanka",
@@ -166,7 +179,8 @@
     "members": [
       "Head/ Dept. of Computer Science & Informatics/Faculty of Science"
     ],
-    "url": "http://www.uwu.ac.lk/"
+    "url": "http://www.uwu.ac.lk/",
+    "uni_code": "U"
   },
   {
     "university_hei": "University of the Visual & Performing Arts",
@@ -178,7 +192,8 @@
     "members": [
       "Head/ Dept. Information Technology/Faculty of Dance & Drama"
     ],
-    "url": "http://www.vpa.ac.lk/"
+    "url": "http://www.vpa.ac.lk/",
+    "uni_code": "Z"
   },
   {
     "university_hei": "Gampaha Wickramarachchi University of Indigenous Medicine",
@@ -188,7 +203,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "GWUIM",
     "members": [],
-    "url": "http://gwu.ac.lk/"
+    "url": "http://gwu.ac.lk/",
+    "uni_code": "P"
   },
   {
     "university_hei": "University of Vavuniya",
@@ -201,7 +217,8 @@
       "Dean/ Faculty of Technical Studies",
       "Head/ Dept. of Physical Science/ Faculty of Applied Science"
     ],
-    "url": "http://www.vau.ac.lk/"
+    "url": "http://www.vau.ac.lk/",
+    "uni_code": "R"
   },
   {
     "university_hei": "Sri Palee Campus",
@@ -211,7 +228,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "SP",
     "members": [],
-    "url": "http://spc.cmb.ac.lk/"
+    "url": "http://spc.cmb.ac.lk/",
+    "uni_code": "S"
   },
   {
     "university_hei": "Trincomalee Campus",
@@ -223,7 +241,8 @@
     "members": [
       "Head/Dept. of Computer Science/ Faculty of Applied Science"
     ],
-    "url": "https://trinco.esn.ac.lk/"
+    "url": "https://trinco.esn.ac.lk/",
+    "uni_code": "W"
   },
   {
     "university_hei": "University of Colombo School of Computing",
@@ -235,7 +254,8 @@
     "members": [
       "Director"
     ],
-    "url": "https://ucsc.cmb.ac.lk/"
+    "url": "https://ucsc.cmb.ac.lk/",
+    "uni_code": "T"
   },
   {
     "university_hei": "Institute of Technology University of Moratuwa",
@@ -245,7 +265,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": null,
     "members": [],
-    "url": "https://www.itum.mrt.ac.lk"
+    "url": "https://www.itum.mrt.ac.lk",
+    "uni_code": null
   },
   {
     "university_hei": "Institute of Human Resource Advancement",
@@ -255,7 +276,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": null,
     "members": [],
-    "url": "https://ihra.cmb.ac.lk"
+    "url": "https://ihra.cmb.ac.lk",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Science",
@@ -265,7 +287,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": null,
     "members": [],
-    "url": "https://pgis.lk"
+    "url": "https://pgis.lk",
+    "uni_code": null
   },
   {
     "university_hei": "The General Sir John Kotelawala Defence University",
@@ -277,7 +300,8 @@
     "members": [
       "Dean/Faculty of Computing"
     ],
-    "url": "https://www.kdu.ac.lk"
+    "url": "https://www.kdu.ac.lk",
+    "uni_code": null
   },
   {
     "university_hei": "University of Vocational Technology",
@@ -287,7 +311,8 @@
     "established_under": "University of Vocational Technology Act No. 31 of 2008",
     "abbreviation": null,
     "members": [],
-    "url": "https://uovt.ac.lk/"
+    "url": "https://uovt.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Ocean University of Sri Lanka",
@@ -297,7 +322,8 @@
     "established_under": "Ocean University of Sri Lanka Act No. 31 of 2014",
     "abbreviation": null,
     "members": [],
-    "url": "https://ocu.ac.lk/"
+    "url": "https://ocu.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "National Institute of Education",
@@ -307,7 +333,8 @@
     "established_under": "National Institute of Education Act No. 28 of 1985",
     "abbreviation": "NIE",
     "members": [],
-    "url": "http://www.nie.ac.lk"
+    "url": "http://www.nie.ac.lk",
+    "uni_code": null
   },
   {
     "university_hei": "Buddhist and Pali University of Sri Lanka",
@@ -317,7 +344,8 @@
     "established_under": "Buddhist and Pali University of Sri Lanka Act No. 74 of 1981",
     "abbreviation": null,
     "members": [],
-    "url": "http://www.bpu.ac.lk/"
+    "url": "http://www.bpu.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Bhiksu University of Sri Lanka",
@@ -327,7 +355,8 @@
     "established_under": "Bhiksu University of Sri Lanka Act No. 26 of 1997",
     "abbreviation": null,
     "members": [],
-    "url": "http://www.busl.ac.lk/"
+    "url": "http://www.busl.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Swamy Vipulananda Institute of Aesthetic Studies, Eastern University, Sri Lanka",
@@ -337,7 +366,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "SVIAS",
     "members": [],
-    "url": "http://svias.esn.ac.lk/"
+    "url": "http://svias.esn.ac.lk/",
+    "uni_code": "Y"
   },
   {
     "university_hei": "Postgraduate Institute of Medicine",
@@ -347,7 +377,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIM",
     "members": [],
-    "url": "https://pgim.cmb.ac.lk/"
+    "url": "https://pgim.cmb.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Agriculture",
@@ -357,7 +388,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIA",
     "members": [],
-    "url": "https://www.pgia.ac.lk/"
+    "url": "https://www.pgia.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Management",
@@ -367,7 +399,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PIM",
     "members": [],
-    "url": "https://www.pim.sjp.ac.lk/"
+    "url": "https://www.pim.sjp.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Pali and Buddhist Studies",
@@ -377,7 +410,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIPBS",
     "members": [],
-    "url": "https://pgipbs.kln.ac.lk/"
+    "url": "https://pgipbs.kln.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Archaeology",
@@ -387,7 +421,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIAR",
     "members": [],
-    "url": "https://pgiar.kln.ac.lk/"
+    "url": "https://pgiar.kln.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of English",
@@ -397,7 +432,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIE",
     "members": [],
-    "url": "https://pgie.ou.ac.lk/"
+    "url": "https://pgie.ou.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Humanities and Social Sciences",
@@ -407,7 +443,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIHS",
     "members": [],
-    "url": "https://www.pgihs.ac.lk/"
+    "url": "https://www.pgihs.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Indigenous Medicine",
@@ -417,7 +454,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIIM",
     "members": [],
-    "url": "https://pgiim.cmb.ac.lk/"
+    "url": "https://pgiim.cmb.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Postgraduate Institute of Medical Sciences",
@@ -427,7 +465,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PGIMS",
     "members": [],
-    "url": "https://pgims.pdn.ac.lk/"
+    "url": "https://pgims.pdn.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "National Centre for Advanced Studies in Humanities and Social Sciences",
@@ -437,7 +476,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "NCAS",
     "members": [],
-    "url": "https://ncas.ac.lk/"
+    "url": "https://ncas.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "National Institute of Library and Information Sciences",
@@ -447,7 +487,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "NILIS",
     "members": [],
-    "url": "https://nilis.cmb.ac.lk/"
+    "url": "https://nilis.cmb.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "Institute of Biochemistry, Molecular Biology and Biotechnology",
@@ -457,7 +498,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "IBMBB",
     "members": [],
-    "url": "http://www.ibmbb.cmb.ac.lk/"
+    "url": "http://www.ibmbb.cmb.ac.lk/",
+    "uni_code": null
   },
   {
     "university_hei": "University of Colombo Institute of Agro-Technology and Rural Sciences",
@@ -467,6 +509,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "UCIARS",
     "members": [],
-    "url": "http://uciars.cmb.ac.lk/"
+    "url": "http://uciars.cmb.ac.lk/",
+    "uni_code": null
   }
 ]

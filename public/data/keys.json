@@ -109,5 +109,111 @@
       "code": "IT",
       "description": "User support, networking, web applications, technology lifecycle"
     }
+  ],
+  "courses_of_study": [
+    {
+      "number": "008",
+      "name": "Engineering"
+    },
+    {
+      "number": "009",
+      "name": "Engineering (EM)"
+    },
+    {
+      "number": "010",
+      "name": "Engineering (TM)"
+    },
+    {
+      "number": "012",
+      "name": "Computer Science"
+    },
+    {
+      "number": "013",
+      "name": "Physical Science"
+    },
+    {
+      "number": "026",
+      "name": "Information Technology (IT)"
+    },
+    {
+      "number": "027",
+      "name": "Management and Information Technology (MIT)"
+    },
+    {
+      "number": "038",
+      "name": "Information and Communication Technology (ICT)"
+    },
+    {
+      "number": "059",
+      "name": "Industrial Statistics & Mathematical Finance"
+    },
+    {
+      "number": "065",
+      "name": "Computer Science & Technology"
+    },
+    {
+      "number": "075",
+      "name": "Industrial Information Technology"
+    },
+    {
+      "number": "077",
+      "name": "Business Information Systems (Honours) (BIS)"
+    },
+    {
+      "number": "079",
+      "name": "Management and Information Technology (SEUSL)"
+    },
+    {
+      "number": "091",
+      "name": "Information Technology & Management"
+    },
+    {
+      "number": "096",
+      "name": "Information Systems"
+    },
+    {
+      "number": "099",
+      "name": "Software Engineering"
+    },
+    {
+      "number": "101",
+      "name": "Project Management"
+    },
+    {
+      "number": "102",
+      "name": "Engineering Technology (ET)"
+    },
+    {
+      "number": "104",
+      "name": "Information Communication Technology"
+    },
+    {
+      "number": "108",
+      "name": "Physical Science - ICT"
+    },
+    {
+      "number": "117",
+      "name": "Artificial Intelligence"
+    },
+    {
+      "number": "119",
+      "name": "Electronics and Computer Science"
+    },
+    {
+      "number": "127",
+      "name": "Accounting Information Systems"
+    },
+    {
+      "number": "128",
+      "name": "Arts - Information Technology"
+    },
+    {
+      "number": "136",
+      "name": "Data Science"
+    },
+    {
+      "number": "143",
+      "name": "Electronic and Intelligent Systems Engineering"
+    }
   ]
 }
