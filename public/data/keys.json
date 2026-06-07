@@ -1,0 +1,113 @@
+{
+  "slqf": [
+    {
+      "level": 12,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Doctor of Philosophy / MD with Board Certification/Doctor of Letters/Doctor of Science",
+      "minimum_volume_of_learning": "Minimum 3 years of fulltime or equivalent time of original research after SLQL 6 or above"
+    },
+    {
+      "level": 11,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Master of Philosophy",
+      "minimum_volume_of_learning": "Minimum 2 years of fulltime or equivalent time of original research after SLQL 6 or above"
+    },
+    {
+      "level": 10,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Masters with course work and a research component",
+      "minimum_volume_of_learning": "60 credits after SLQL 5 or SLQL 6 including a research component of minimum 15 credits"
+    },
+    {
+      "level": 9,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Masters by course work*",
+      "minimum_volume_of_learning": "30 credits after SLQL 5 or SLQL 6"
+    },
+    {
+      "level": 8,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Postgraduate Diploma*",
+      "minimum_volume_of_learning": "25 credits after SLQL 5 or SLQL 6"
+    },
+    {
+      "level": 7,
+      "qualification_category": "Postgraduate Level",
+      "qualification_awarded": "Postgraduate Certificate*",
+      "minimum_volume_of_learning": "20 credits after SLQL 5 or SLQL 6"
+    },
+    {
+      "level": 6,
+      "qualification_category": "Undergraduate Level",
+      "qualification_awarded": "Bachelors Honours",
+      "minimum_volume_of_learning": "120 credits after SLQL 2 of which 90 credits after SLQL 3, of which 60 credits after SLQL 4, of which 30 credits after SLQL 5"
+    },
+    {
+      "level": 5,
+      "qualification_category": "Undergraduate Level",
+      "qualification_awarded": "Bachelors",
+      "minimum_volume_of_learning": "90 credits after SLQL 2 of which 60 credits after SLQL 3, of which 30 credits after SLQL 4"
+    },
+    {
+      "level": 4,
+      "qualification_category": "Undergraduate Level",
+      "qualification_awarded": "Higher Diploma",
+      "minimum_volume_of_learning": "60 credits after SLQL 2 of which 30 credits after SLQL 3"
+    },
+    {
+      "level": 3,
+      "qualification_category": "Undergraduate Level",
+      "qualification_awarded": "Diploma",
+      "minimum_volume_of_learning": "30 credits after SLQL 2"
+    },
+    {
+      "level": 2,
+      "qualification_category": "Senior Secondary Level",
+      "qualification_awarded": "Advanced Certificate (GCE A/L or equivalent)",
+      "minimum_volume_of_learning": "Minimum volume of learning not specified"
+    },
+    {
+      "level": 1,
+      "qualification_category": "Senior Secondary Level",
+      "qualification_awarded": "Certificate (GCE O/L or equivalent)",
+      "minimum_volume_of_learning": "Minimum volume of learning not specified"
+    }
+  ],
+  "disciplines": [
+    {
+      "name": "Computer Science",
+      "code": "CS",
+      "description": "Theoretical foundations, algorithms, software development, AI/ML"
+    },
+    {
+      "name": "Computer Engineering",
+      "code": "CE",
+      "description": "Hardware design and the hardware–software interface"
+    },
+    {
+      "name": "Software Engineering",
+      "code": "SE",
+      "description": "Large-scale, reliable, safety-critical software systems"
+    },
+    {
+      "name": "Cybersecurity",
+      "code": "CSEC",
+      "description": "Data privacy, digital forensics, system security, risk management"
+    },
+    {
+      "name": "Data Science",
+      "code": "DS",
+      "description": "Data analysis, statistical modelling, big data platforms"
+    },
+    {
+      "name": "Information Systems",
+      "code": "IS",
+      "description": "Business needs and corporate technology infrastructure"
+    },
+    {
+      "name": "Information Technology",
+      "code": "IT",
+      "description": "User support, networking, web applications, technology lifecycle"
+    }
+  ]
+}

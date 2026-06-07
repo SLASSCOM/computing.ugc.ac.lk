@@ -7,6 +7,8 @@ import { BookOpen, Award, Users, ChevronRight, ExternalLink } from 'lucide-react
 
 const AboutPage = () => {
   const [universities, setUniversities] = useState<UniversityData[]>([]);
+  const [slqfLevels, setSlqfLevels] = useState<any[]>([]);
+  const [disciplines, setDisciplines] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,18 +16,24 @@ const AboutPage = () => {
   }, []);
 
   useEffect(() => {
-    const loadUniversities = async () => {
+    const loadData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/universities.json`);
-        const data = await response.json();
-        setUniversities(data);
+        const [uniRes, keysRes] = await Promise.all([
+          fetch(`${import.meta.env.BASE_URL}data/universities.json`),
+          fetch(`${import.meta.env.BASE_URL}data/keys.json`),
+        ]);
+        const uniData = await uniRes.json();
+        const keysData = await keysRes.json();
+        setUniversities(uniData);
+        setSlqfLevels(keysData.slqf || []);
+        setDisciplines(keysData.disciplines || []);
       } catch (error) {
-        console.error('Error loading universities:', error);
+        console.error('Error loading data:', error);
       } finally {
         setLoading(false);
       }
     };
-    loadUniversities();
+    loadData();
   }, []);
 
   const ugcUniversities = universities.filter(
@@ -502,6 +510,104 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Sri Lanka Qualifications Framework (SLQF) */}
+        {slqfLevels.length > 0 && (
+          <div className="mb-12 mt-12">
+            <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div className="h-6 w-1 rounded-full bg-ugc-gold" />
+              <h2 className="flex items-center gap-2 font-display text-2xl font-bold text-ugc-navy">
+                <span>Sri Lanka Qualifications Framework (SLQF)</span>
+                <a
+                  href="https://www.ugc.ac.lk/index.php?option=com_content&view=article&id=1156%3Asri-lanka-qualifications-framework&catid=97%3Anotices-to-universities&Itemid=109&lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-ugc-gold transition-colors duration-150"
+                  aria-label="Sri Lanka Qualifications Framework (SLQF) official page"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+              </h2>
+            </div>
+            <p className="mb-6 text-sm text-slate-600 leading-relaxed">
+              The Sri Lanka Qualifications Framework (SLQF) is a nationally consistent framework for all higher education qualifications in Sri Lanka. It provides a clear pathway for student progression across 12 distinct qualification levels.
+            </p>
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-left text-sm text-slate-600">
+                  <thead>
+                    <tr className="bg-ugc-navy text-xs font-semibold uppercase tracking-wider text-white">
+                      <th scope="col" className="px-6 py-4 font-semibold w-20 text-center">Level</th>
+                      <th scope="col" className="px-6 py-4 font-semibold w-40">Category</th>
+                      <th scope="col" className="px-6 py-4 font-semibold">Qualification Awarded</th>
+                      <th scope="col" className="px-6 py-4 font-semibold">Minimum Volume of Learning</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {slqfLevels.map((lvl) => (
+                      <tr key={lvl.level} className="hover:bg-slate-50/50">
+                        <td className="px-6 py-4 font-bold text-slate-900 text-center">{lvl.level}</td>
+                        <td className="px-6 py-4 text-slate-700">{lvl.qualification_category}</td>
+                        <td className="px-6 py-4 font-medium text-slate-900">{lvl.qualification_awarded}</td>
+                        <td className="px-6 py-4 text-slate-600 text-xs leading-relaxed">{lvl.minimum_volume_of_learning}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Computing Curricula Disciplines */}
+        {disciplines.length > 0 && (
+          <div className="mb-12">
+            <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div className="h-6 w-1 rounded-full bg-ugc-gold" />
+              <h2 className="flex items-center gap-2 font-display text-2xl font-bold text-ugc-navy">
+                <span>Computing Curricula Disciplines</span>
+                <a
+                  href="https://www.acm.org/education/curricula-recommendations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-ugc-gold transition-colors duration-150"
+                  aria-label="Computing Curricula Recommendations official page"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+              </h2>
+            </div>
+            <p className="mb-6 text-sm text-slate-600 leading-relaxed">
+              Computing programs are classified using the core computing disciplines defined by the IEEE and ACM Joint Task Force on Computing Curricula. This taxonomy aligns local degrees with international standards.
+            </p>
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-left text-sm text-slate-600">
+                  <thead>
+                    <tr className="bg-ugc-navy text-xs font-semibold uppercase tracking-wider text-white">
+                      <th scope="col" className="px-6 py-4 font-semibold w-48">Discipline</th>
+                      <th scope="col" className="px-6 py-4 font-semibold w-24">Code</th>
+                      <th scope="col" className="px-6 py-4 font-semibold">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {disciplines.map((disc, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50">
+                        <td className="px-6 py-4 font-semibold text-slate-900">{disc.name}</td>
+                        <td className="px-6 py-4">
+                          <span className="inline-flex items-center rounded-full bg-ugc-navy/10 px-2.5 py-0.5 text-xs font-semibold text-ugc-navy">
+                            {disc.code}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-slate-600 leading-relaxed">{disc.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
