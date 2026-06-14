@@ -7,6 +7,8 @@ import {
   Clock,
   Globe,
   FileText,
+  Hash,
+  Users,
 } from 'lucide-react';
 import { ProgramData, UniversityData } from '../types';
 import UniversityLogo from './UniversityLogo';
@@ -109,6 +111,11 @@ const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClos
                   icon={University}
                 />
                 <InfoRow
+                  label="Code of Study"
+                  value={program.code_of_study || null}
+                  icon={Hash}
+                />
+                <InfoRow
                   label="Discipline"
                   value={program.discipline}
                   icon={BookOpen}
@@ -135,6 +142,11 @@ const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClos
             <div>
               <h3 className="mb-4 text-lg font-semibold text-ugc-navy">Program Details</h3>
               <div>
+                <InfoRow
+                  label="UGC Intake Count"
+                  value={program.intake_count ? String(program.intake_count) : null}
+                  icon={Users}
+                />
                 <InfoRow
                   label="Honors/General"
                   value={program.if_bachelor_general_special_honours_}

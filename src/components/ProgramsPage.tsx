@@ -25,6 +25,9 @@ const ProgramsPage = () => {
   });
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedDisciplines, setSelectedDisciplines] = useState<string[]>([]);
+  const [selectedCoursesOfStudy, setSelectedCoursesOfStudy] = useState<string[]>([]);
+  const [selectedSlqfLevels, setSelectedSlqfLevels] = useState<string[]>([]);
+  const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const skipUniversityUrlSync = useRef(false);
@@ -50,16 +53,19 @@ const ProgramsPage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [universitiesResponse, programsResponse] = await Promise.all([
+        const [universitiesResponse, programsResponse, keysResponse] = await Promise.all([
           fetch(`${import.meta.env.BASE_URL}data/universities.json`),
           fetch(`${import.meta.env.BASE_URL}data/programs.json`),
+          fetch(`${import.meta.env.BASE_URL}data/keys.json`),
         ]);
 
         const universitiesData = await universitiesResponse.json();
         const programsData = await programsResponse.json();
+        const keysData = await keysResponse.json();
 
         setUniversities(universitiesData);
         setPrograms(programsData);
+        setCoursesOfStudy(keysData.courses_of_study || []);
       } catch (error) {
         console.error('Error loading data:', error);
       } finally {
@@ -87,12 +93,22 @@ const ProgramsPage = () => {
       const matchesDiscipline =
         selectedDisciplines.length === 0 ||
         (program.discipline !== null && selectedDisciplines.includes(program.discipline));
+      const matchesCourseOfStudy =
+        selectedCoursesOfStudy.length === 0 ||
+        (program.code_of_study && selectedCoursesOfStudy.includes(program.code_of_study.substring(0, 3))) ||
+        (!program.code_of_study && selectedCoursesOfStudy.includes('Other'));
+      const matchesSlqfLevel =
+        selectedSlqfLevels.length === 0 ||
+        (program.slqf !== null && selectedSlqfLevels.includes(program.slqf)) ||
+        (program.slqf === null && selectedSlqfLevels.includes('N/A'));
 
       return (
         matchesSearch &&
         matchesUniversity &&
         matchesType &&
-        matchesDiscipline
+        matchesDiscipline &&
+        matchesCourseOfStudy &&
+        matchesSlqfLevel
       );
     });
   }, [
@@ -101,6 +117,8 @@ const ProgramsPage = () => {
     selectedUniversities,
     selectedTypes,
     selectedDisciplines,
+    selectedCoursesOfStudy,
+    selectedSlqfLevels,
   ]);
 
   const ugList = useMemo(
@@ -134,6 +152,53 @@ const ProgramsPage = () => {
     [disciplines]
   );
 
+  const courseOfStudyOptions = useMemo(() => {
+    const activeNumbers = new Set(
+      programs
+        .map((p) => p.code_of_study?.substring(0, 3))
+        .filter(Boolean)
+    );
+    const options = coursesOfStudy
+      .filter((c) => activeNumbers.has(c.number))
+      .map((c) => ({
+        value: c.number,
+        label: `${c.number} - ${c.name}`,
+      }))
+      .sort((a, b) => a.value.localeCompare(b.value));
+
+    const hasProgramsWithoutCode = programs.some((p) => !p.code_of_study);
+    if (hasProgramsWithoutCode) {
+      options.push({ value: 'Other', label: 'Other' });
+    }
+
+    return options;
+  }, [programs, coursesOfStudy]);
+
+  const slqfOptions = useMemo(() => {
+    const activeLevels = new Set(
+      programs
+        .map((p) => p.slqf)
+        .filter((level): level is string => !!level)
+    );
+    const sortedLevels = Array.from(activeLevels).sort((a, b) => {
+      const aNum = parseFloat(a.split('/')[0]);
+      const bNum = parseFloat(b.split('/')[0]);
+      return aNum - bNum;
+    });
+
+    const options = sortedLevels.map((lvl) => ({
+      value: lvl,
+      label: `Level ${lvl}`,
+    }));
+
+    const hasProgramsWithoutSlqf = programs.some((p) => !p.slqf);
+    if (hasProgramsWithoutSlqf) {
+      options.push({ value: 'N/A', label: 'Not Specified (N/A)' });
+    }
+
+    return options;
+  }, [programs]);
+
   const selectedUniversityData = universities.find(
     (u) => u.university_hei === singleUniversityFromUrl
   );
@@ -159,6 +224,8 @@ const ProgramsPage = () => {
     setSelectedUniversities([]);
     setSelectedTypes([]);
     setSelectedDisciplines([]);
+    setSelectedCoursesOfStudy([]);
+    setSelectedSlqfLevels([]);
     setSearchParams({});
   };
 
@@ -166,7 +233,9 @@ const ProgramsPage = () => {
     searchTerm ||
     selectedUniversities.length > 0 ||
     selectedTypes.length > 0 ||
-    selectedDisciplines.length > 0;
+    selectedDisciplines.length > 0 ||
+    selectedCoursesOfStudy.length > 0 ||
+    selectedSlqfLevels.length > 0;
 
   const showUgSection = selectedTypes.length === 0 || selectedTypes.includes('UG');
   const showPgSection = selectedTypes.length === 0 || selectedTypes.includes('PG');
@@ -358,7 +427,7 @@ const ProgramsPage = () => {
           </div>
 
           {showFilters && (
-            <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
               <MultiSelectFilter
                 label="Filter by university"
                 placeholder="All Universities"
@@ -381,6 +450,22 @@ const ProgramsPage = () => {
                 options={disciplineOptions}
                 selected={selectedDisciplines}
                 onChange={setSelectedDisciplines}
+              />
+
+              <MultiSelectFilter
+                label="Filter by Course of Study"
+                placeholder="All UGC Courses"
+                options={courseOfStudyOptions}
+                selected={selectedCoursesOfStudy}
+                onChange={setSelectedCoursesOfStudy}
+              />
+
+              <MultiSelectFilter
+                label="Filter by SLQF Level"
+                placeholder="All SLQF Levels"
+                options={slqfOptions}
+                selected={selectedSlqfLevels}
+                onChange={setSelectedSlqfLevels}
               />
             </div>
           )}

@@ -31,4 +31,6 @@ export interface ProgramData {
   approved_commission_no_: string | null;
   remarks: string | null;
   confirmation_from_university: string | null;
+  code_of_study?: string | null;
+  intake_count?: number | null;
 }

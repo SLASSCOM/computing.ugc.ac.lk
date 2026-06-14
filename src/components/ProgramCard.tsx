@@ -30,9 +30,16 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, university, onClick 
     >
       <div className="flex items-start justify-between">
         <div className="min-w-0 flex-1">
-          <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-ugc-navy transition-colors duration-200 group-hover:text-ugc-navyLight">
-            {program.name_of_the_course_s_}
-          </h3>
+          <div className="mb-2 flex flex-wrap items-center gap-2">
+            <h3 className="text-lg font-semibold text-ugc-navy transition-colors duration-200 group-hover:text-ugc-navyLight leading-snug">
+              {program.name_of_the_course_s_}
+            </h3>
+            {program.code_of_study && (
+              <span className="inline-flex items-center rounded-md bg-ugc-navy/5 px-2 py-0.5 text-xs font-semibold text-ugc-navy border border-ugc-navy/10 shrink-0">
+                Code: {program.code_of_study}
+              </span>
+            )}
+          </div>
 
           <p className="mb-3 line-clamp-1 text-slate-600">
             {program.university_hei} | {program.faculty_name} | {program.department_name}
@@ -41,8 +48,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, university, onClick 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
             {program.discipline && (
               <div className="flex items-center gap-1">
-                <Users className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <BookOpen className="h-4 w-4 shrink-0" aria-hidden="true" />
                 <span>{program.discipline}</span>
+              </div>
+            )}
+            {program.intake_count && (
+              <div className="flex items-center gap-1">
+                <Users className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <span>Intake: {program.intake_count}</span>
               </div>
             )}
             {program.duration && (
