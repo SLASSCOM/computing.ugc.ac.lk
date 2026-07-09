@@ -34,3 +34,16 @@ export interface ProgramData {
   code_of_study?: string | null;
   intake_count?: number | null;
 }
+
+export interface SlqfLevel {
+  level: number;
+  qualification_category: string;
+  qualification_awarded: string;
+  minimum_volume_of_learning: string;
+}
+
+export interface Discipline {
+  name: string;
+  code: string;
+  description: string;
+}

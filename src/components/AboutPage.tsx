@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { UniversityData } from '../types';
+import { UniversityData, SlqfLevel, Discipline } from '../types';
 import LoadingSpinner from './LoadingSpinner';
 import UniversityLogo from './UniversityLogo';
 import { BookOpen, Award, Users, ChevronRight, ExternalLink } from 'lucide-react';
 
 const AboutPage = () => {
   const [universities, setUniversities] = useState<UniversityData[]>([]);
-  const [slqfLevels, setSlqfLevels] = useState<any[]>([]);
-  const [disciplines, setDisciplines] = useState<any[]>([]);
+  const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
+  const [disciplines, setDisciplines] = useState<Discipline[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
