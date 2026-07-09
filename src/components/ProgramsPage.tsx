@@ -13,6 +13,15 @@ const TYPE_OPTIONS = [
   { value: 'PG', label: 'Postgraduate' },
 ];
 
+const GROUP_OPTIONS = [
+  { value: 'none', label: 'None' },
+  { value: 'university', label: 'University' },
+  { value: 'type', label: 'Program Type' },
+  { value: 'discipline', label: 'Discipline' },
+  { value: 'course', label: 'Course of Study' },
+  { value: 'slqf', label: 'SLQF Level' },
+];
+
 const ProgramsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [universities, setUniversities] = useState<UniversityData[]>([]);
@@ -30,6 +39,7 @@ const ProgramsPage = () => {
   const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
   const [showFilters, setShowFilters] = useState(false);
+  const [groupBy, setGroupBy] = useState<string>('none');
   const skipUniversityUrlSync = useRef(false);
 
   const singleUniversityFromUrl =
@@ -199,6 +209,68 @@ const ProgramsPage = () => {
     return options;
   }, [programs]);
 
+  const courseOfStudyMap = useMemo(() => {
+    const map = new Map<string, string>();
+    coursesOfStudy.forEach((c) => {
+      map.set(c.number, `${c.number} - ${c.name}`);
+    });
+    return map;
+  }, [coursesOfStudy]);
+
+  const groupedPrograms = useMemo(() => {
+    if (groupBy === 'none') return null;
+
+    const groups: { [key: string]: ProgramData[] } = {};
+
+    filteredPrograms.forEach((program) => {
+      let key = '';
+      if (groupBy === 'university') {
+        key = program.university_hei || 'Unknown';
+      } else if (groupBy === 'type') {
+        key = program.ug_pg === 'UG' ? 'Undergraduate' : 'Postgraduate';
+      } else if (groupBy === 'discipline') {
+        key = program.discipline || 'Not Specified';
+      } else if (groupBy === 'course') {
+        const code = program.code_of_study?.substring(0, 3) || 'Other';
+        key = courseOfStudyMap.get(code) || 'Other';
+      } else if (groupBy === 'slqf') {
+        key = program.slqf ? `Level ${program.slqf}` : 'Not Specified (N/A)';
+      }
+
+      if (!groups[key]) {
+        groups[key] = [];
+      }
+      groups[key].push(program);
+    });
+
+    const sortedKeys = Object.keys(groups).sort((a, b) => {
+      const aIsOther = a === 'Not Specified' || a === 'Other' || a === 'Not Specified (N/A)';
+      const bIsOther = b === 'Not Specified' || b === 'Other' || b === 'Not Specified (N/A)';
+      if (aIsOther && !bIsOther) return 1;
+      if (!aIsOther && bIsOther) return -1;
+
+      if (groupBy === 'slqf') {
+        const aNum = parseFloat(a.replace('Level ', ''));
+        const bNum = parseFloat(b.replace('Level ', ''));
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+          return aNum - bNum;
+        }
+      }
+
+      if (groupBy === 'type') {
+        if (a === 'Undergraduate') return -1;
+        if (b === 'Undergraduate') return 1;
+      }
+
+      return a.localeCompare(b);
+    });
+
+    return sortedKeys.map((key) => ({
+      title: key,
+      programs: groups[key],
+    }));
+  }, [filteredPrograms, groupBy, courseOfStudyMap]);
+
   const selectedUniversityData = universities.find(
     (u) => u.university_hei === singleUniversityFromUrl
   );
@@ -325,66 +397,85 @@ const ProgramsPage = () => {
         )}
 
         {/* Page Header */}
-        <div className="mb-8">
-          {selectedUniversityData ? (
-            <div className="flex items-start gap-4">
-              <UniversityLogo
-                universityHei={selectedUniversityData.university_hei}
-                image={selectedUniversityData.image}
-                className="h-16 w-16 shrink-0 rounded-full border border-slate-200 bg-white"
-                textClassName="text-xl font-bold text-ugc-navy"
-              />
-              <div>
-                <h1 className="font-display text-2xl font-bold text-ugc-navy sm:text-3xl">
-                  {singleUniversityFromUrl}
-                  {selectedUniversityData.abbreviation && ` (${selectedUniversityData.abbreviation})`}
-                </h1>
-                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
-                  <span>
-                    {filteredPrograms.length} computing program
-                    {filteredPrograms.length !== 1 ? 's' : ''} found
-                  </span>
-                  {selectedUniversityData.associated_university && (
-                    <>
-                      <span className="hidden text-slate-300 sm:inline">•</span>
-                      <span>Associated with {selectedUniversityData.associated_university}</span>
-                    </>
-                  )}
-                  {selectedUniversityData.established_under && (
-                    <>
-                      <span className="hidden text-slate-300 sm:inline">•</span>
-                      <span>Established under {selectedUniversityData.established_under}</span>
-                    </>
-                  )}
-                  {selectedUniversityData.url && (
-                    <>
-                      <span className="hidden text-slate-300 sm:inline">•</span>
-                      <a
-                        href={selectedUniversityData.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-medium text-ugc-navyLight hover:text-ugc-gold hover:underline transition-colors duration-150"
-                      >
-                        <span>Visit Website</span>
-                        <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                      </a>
-                    </>
-                  )}
+        <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            {selectedUniversityData ? (
+              <div className="flex items-start gap-4">
+                <UniversityLogo
+                  universityHei={selectedUniversityData.university_hei}
+                  image={selectedUniversityData.image}
+                  className="h-16 w-16 shrink-0 rounded-full border border-slate-200 bg-white"
+                  textClassName="text-xl font-bold text-ugc-navy"
+                />
+                <div>
+                  <h1 className="font-display text-2xl font-bold text-ugc-navy sm:text-3xl">
+                    {singleUniversityFromUrl}
+                    {selectedUniversityData.abbreviation && ` (${selectedUniversityData.abbreviation})`}
+                  </h1>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
+                    <span>
+                      {filteredPrograms.length} computing program
+                      {filteredPrograms.length !== 1 ? 's' : ''} found
+                    </span>
+                    {selectedUniversityData.associated_university && (
+                      <>
+                        <span className="hidden text-slate-300 sm:inline">•</span>
+                        <span>Associated with {selectedUniversityData.associated_university}</span>
+                      </>
+                    )}
+                    {selectedUniversityData.established_under && (
+                      <>
+                        <span className="hidden text-slate-300 sm:inline">•</span>
+                        <span>Established under {selectedUniversityData.established_under}</span>
+                      </>
+                    )}
+                    {selectedUniversityData.url && (
+                      <>
+                        <span className="hidden text-slate-300 sm:inline">•</span>
+                        <a
+                          href={selectedUniversityData.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 font-medium text-ugc-navyLight hover:text-ugc-gold hover:underline transition-colors duration-150"
+                        >
+                          <span>Visit Website</span>
+                          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                        </a>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : (
-            <>
-              <h1 className="font-display text-3xl font-bold text-ugc-navy">
-                Computing Programs
-              </h1>
-              <p className="mt-1 text-slate-600">
-                Showing {filteredPrograms.length} of {programs.length} programs
-                {selectedUniversities.length > 1 &&
-                  ` across ${selectedUniversities.length} universities`}
-              </p>
-            </>
-          )}
+            ) : (
+              <>
+                <h1 className="font-display text-3xl font-bold text-ugc-navy">
+                  Computing Programs
+                </h1>
+                <p className="mt-1 text-slate-600">
+                  Showing {filteredPrograms.length} of {programs.length} programs
+                  {selectedUniversities.length > 1 &&
+                    ` across ${selectedUniversities.length} universities`}
+                </p>
+              </>
+            )}
+          </div>
+          <div className="shrink-0 flex items-center gap-2 bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-lg shadow-sm self-start md:self-end">
+            <label htmlFor="groupBy" className="text-sm font-medium text-slate-600 whitespace-nowrap">
+              Group by:
+            </label>
+            <select
+              id="groupBy"
+              value={groupBy}
+              onChange={(e) => setGroupBy(e.target.value)}
+              className="rounded border border-slate-300 bg-white px-2 py-1 text-sm font-semibold text-slate-700 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-ugc-gold hover:border-slate-400 cursor-pointer transition-colors"
+            >
+              {GROUP_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Search and Filters */}
@@ -479,6 +570,35 @@ const ProgramsPage = () => {
             </div>
             <h3 className="mb-2 text-lg font-semibold text-ugc-navy">No programs found</h3>
             <p className="text-slate-600">Try adjusting your search or filter criteria</p>
+          </div>
+        ) : groupBy !== 'none' && groupedPrograms ? (
+          <div className="space-y-12">
+            {groupedPrograms.map((group, groupIdx) => (
+              <section key={groupIdx} aria-label={group.title}>
+                <div className="flex items-center my-8 select-none">
+                  <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-slate-300 to-slate-300"></div>
+                  <h2 className="mx-4 flex-shrink-0 font-display text-lg sm:text-xl font-bold text-ugc-navy tracking-wide flex items-center gap-2">
+                    <span>{group.title}</span>
+                    <span className="rounded-full bg-slate-100 px-2.5 py-0.5 font-sans text-xs font-semibold text-slate-500 border border-slate-200/60 shadow-sm">
+                      {group.programs.length} {group.programs.length === 1 ? 'program' : 'programs'}
+                    </span>
+                  </h2>
+                  <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent via-slate-300 to-slate-300"></div>
+                </div>
+                <div className="space-y-4">
+                  {group.programs.map((program, index) => (
+                    <ProgramCard
+                      key={`group-${groupIdx}-${index}`}
+                      program={program}
+                      university={universities.find(
+                        (u) => u.university_hei === program.university_hei
+                      )}
+                      onClick={() => setSelectedProgram(program)}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
         ) : (
           <>
