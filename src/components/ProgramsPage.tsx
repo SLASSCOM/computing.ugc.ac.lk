@@ -86,6 +86,16 @@ const ProgramsPage = () => {
     loadData();
   }, []);
 
+  const universityAssociationMap = useMemo(() => {
+    const map = new Map<string, string>();
+    universities.forEach((uni) => {
+      if (uni.associated_university) {
+        map.set(uni.university_hei, uni.associated_university);
+      }
+    });
+    return map;
+  }, [universities]);
+
   const filteredPrograms = useMemo(() => {
     return programs.filter((program) => {
       const matchesSearch =
@@ -97,7 +107,9 @@ const ProgramsPage = () => {
 
       const matchesUniversity =
         selectedUniversities.length === 0 ||
-        selectedUniversities.includes(program.university_hei);
+        selectedUniversities.includes(program.university_hei) ||
+        (program.university_hei &&
+          selectedUniversities.includes(universityAssociationMap.get(program.university_hei) || ''));
       const matchesType =
         selectedTypes.length === 0 || selectedTypes.includes(program.ug_pg);
       const matchesDiscipline =
@@ -129,6 +141,7 @@ const ProgramsPage = () => {
     selectedDisciplines,
     selectedCoursesOfStudy,
     selectedSlqfLevels,
+    universityAssociationMap,
   ]);
 
   const ugList = useMemo(
