@@ -560,7 +560,7 @@ const ProgramsPage = () => {
 
               <MultiSelectFilter
                 label="Filter by Course of Study"
-                placeholder="All UGC Courses"
+                placeholder="All UGC Course of Study"
                 options={courseOfStudyOptions}
                 selected={selectedCoursesOfStudy}
                 onChange={setSelectedCoursesOfStudy}
