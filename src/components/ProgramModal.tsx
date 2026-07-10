@@ -10,20 +10,49 @@ import {
   Hash,
   Users,
 } from 'lucide-react';
-import { ProgramData, UniversityData } from '../types';
+import { ProgramData, UniversityData, SlqfLevel } from '../types';
 import UniversityLogo from './UniversityLogo';
 
 interface ProgramModalProps {
   program: ProgramData;
   university?: UniversityData;
+  coursesOfStudy?: { number: string; name: string }[];
+  slqfLevels?: SlqfLevel[];
   onClose: () => void;
 }
 
-const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClose }) => {
+const ProgramModal: React.FC<ProgramModalProps> = ({
+  program,
+  university,
+  coursesOfStudy = [],
+  slqfLevels = [],
+  onClose,
+}) => {
   const isUg = program.ug_pg === 'UG';
   const typeColor = isUg
     ? 'bg-emerald-100 text-emerald-800 border-emerald-200'
     : 'bg-ugc-gold/20 text-ugc-goldSoft border-ugc-gold/40';
+
+  // Find SLQF value
+  const slqfLevel = program.slqf && slqfLevels
+    ? slqfLevels.find((s) => String(s.level) === program.slqf)
+    : null;
+  const slqfValue = program.slqf
+    ? slqfLevel
+      ? `Level ${program.slqf} - ${slqfLevel.qualification_awarded}`
+      : `Level ${program.slqf}`
+    : null;
+
+  // Find Course of Study value
+  const courseStudyNumber = program.code_of_study ? program.code_of_study.substring(0, 3) : null;
+  const courseStudyName = courseStudyNumber && coursesOfStudy
+    ? coursesOfStudy.find((c) => c.number === courseStudyNumber)?.name
+    : null;
+  const codeOfStudyValue = program.code_of_study
+    ? courseStudyName
+      ? `${program.code_of_study} - ${courseStudyName}`
+      : program.code_of_study
+    : null;
 
   const InfoRow: React.FC<{
     label: string;
@@ -98,11 +127,11 @@ const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClos
         </div>
 
         <div className="max-h-[calc(90vh-140px)] overflow-y-auto p-6">
+          <h3 className="mb-4 text-lg font-semibold text-ugc-navy border-b border-slate-100 pb-2">
+            Program Details
+          </h3>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="mb-4 text-lg font-semibold text-ugc-navy">
-                Program Information
-              </h3>
               <div>
                 <InfoRow label="Faculty" value={program.faculty_name} icon={University} />
                 <InfoRow
@@ -111,8 +140,8 @@ const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClos
                   icon={University}
                 />
                 <InfoRow
-                  label="Code of Study"
-                  value={program.code_of_study || null}
+                  label="Course of Study"
+                  value={codeOfStudyValue}
                   icon={Hash}
                 />
                 <InfoRow
@@ -135,12 +164,11 @@ const ProgramModal: React.FC<ProgramModalProps> = ({ program, university, onClos
                   value={program.abbreviated_qualification_if_relevant_}
                   icon={Award}
                 />
-                <InfoRow label="SLQF Level" value={program.slqf} icon={Award} />
+                <InfoRow label="SLQF Level" value={slqfValue} icon={Award} />
               </div>
             </div>
 
             <div>
-              <h3 className="mb-4 text-lg font-semibold text-ugc-navy">Program Details</h3>
               <div>
                 <InfoRow
                   label="UGC Intake Count"

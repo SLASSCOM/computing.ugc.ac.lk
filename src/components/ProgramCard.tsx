@@ -42,7 +42,9 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, university, onClick 
           </div>
 
           <p className="mb-3 line-clamp-1 text-slate-600">
-            {program.university_hei} | {program.faculty_name} | {program.department_name}
+            {[program.department_name, program.faculty_name, program.university_hei]
+              .filter((val) => val && val.trim() !== '' && val !== 'null')
+              .join(', ')}
           </p>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">

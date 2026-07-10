@@ -6,7 +6,7 @@ import ProgramModal from './ProgramModal';
 import MultiSelectFilter from './MultiSelectFilter';
 import LoadingSpinner from './LoadingSpinner';
 import UniversityLogo from './UniversityLogo';
-import { UniversityData, ProgramData } from '../types';
+import { UniversityData, ProgramData, SlqfLevel } from '../types';
 
 const TYPE_OPTIONS = [
   { value: 'UG', label: 'Undergraduate' },
@@ -37,6 +37,7 @@ const ProgramsPage = () => {
   const [selectedCoursesOfStudy, setSelectedCoursesOfStudy] = useState<string[]>([]);
   const [selectedSlqfLevels, setSelectedSlqfLevels] = useState<string[]>([]);
   const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
+  const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [groupBy, setGroupBy] = useState<string>('none');
@@ -76,6 +77,7 @@ const ProgramsPage = () => {
         setUniversities(universitiesData);
         setPrograms(programsData);
         setCoursesOfStudy(keysData.courses_of_study || []);
+        setSlqfLevels(keysData.slqf || []);
       } catch (error) {
         console.error('Error loading data:', error);
       } finally {
@@ -639,6 +641,8 @@ const ProgramsPage = () => {
           university={universities.find(
             (u) => u.university_hei === selectedProgram.university_hei
           )}
+          coursesOfStudy={coursesOfStudy}
+          slqfLevels={slqfLevels}
           onClose={() => setSelectedProgram(null)}
         />
       )}
