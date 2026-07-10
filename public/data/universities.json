@@ -6,7 +6,9 @@
     "associated_university": null,
     "established_under": "University Grants Commission",
     "abbreviation": "CMB",
-    "members": [],
+    "members": [
+      "Director, University of Colombo School of Computing"
+    ],
     "url": "http://www.cmb.ac.lk/",
     "uni_code": "A"
   },
@@ -18,7 +20,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "PDN",
     "members": [
-      "Head/ Dept. of Computer Engineering/Faculty of Engineering"
+      "Head, Dept. of Computer Engineering, Faculty of Engineering"
     ],
     "url": "http://www.pdn.ac.lk/",
     "uni_code": "B"
@@ -31,7 +33,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "SJP",
     "members": [
-      "Dean/Faculty of Computing"
+      "Dean, Faculty of Computing"
     ],
     "url": "http://www.sjp.ac.lk/",
     "uni_code": "C"
@@ -44,9 +46,9 @@
     "established_under": "University Grants Commission",
     "abbreviation": "KLN",
     "members": [
-      "Head/ Dept.of Computer Systems Engineering/ Faculty of Computing &Technology",
-      "Representative for the Dean/Faculty of Science",
-      "Dean/ Faculty of Computing & Technology"
+      "Head, Dept. of Computer Systems Engineering, Faculty of Computing & Technology",
+      "Representative for the Dean, Faculty of Science",
+      "Dean, Faculty of Computing & Technology"
     ],
     "url": "http://www.kln.ac.lk/",
     "uni_code": "D"
@@ -59,8 +61,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "MRT",
     "members": [
-      "Dean/ Faculty of Information Technology",
-      "Head /Dept. of Computer Science & Engineering"
+      "Dean, Faculty of Information Technology",
+      "Head, Dept. of Computer Science & Engineering"
     ],
     "url": "http://www.mrt.ac.lk/",
     "uni_code": "G"
@@ -73,7 +75,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "UJA",
     "members": [
-      "Head/Dept. of Computer Science"
+      "Head, Dept. of Computer Science"
     ],
     "url": "http://www.jfn.ac.lk/",
     "uni_code": "E"
@@ -86,7 +88,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "RUH",
     "members": [
-      "Head Dept. of Computer Science"
+      "Head, Dept. of Computer Science"
     ],
     "url": "http://www.ruh.ac.lk/",
     "uni_code": "F"
@@ -99,7 +101,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "OUSL",
     "members": [
-      "Representative/Head/ Electrical & Computer Engineering"
+      "Representative/ Head, Dept. of Electrical & Computer Engineering"
     ],
     "url": "http://www.ou.ac.lk/",
     "uni_code": null
@@ -112,7 +114,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "EUSL",
     "members": [
-      "Head/Dept. of Computing /Faculty of Science"
+      "Head, Dept. of Computing, Faculty of Science"
     ],
     "url": "http://www.esn.ac.lk/",
     "uni_code": "H"
@@ -125,7 +127,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "SEUSL",
     "members": [
-      "Head /Dept. of Computer Science /Faculty of Applied Sciences"
+      "Head, Dept. of Computer Science, Faculty of Applied Sciences"
     ],
     "url": "http://www.seu.ac.lk/",
     "uni_code": "J"
@@ -138,7 +140,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "RUSL",
     "members": [
-      "Head/ Dept. of Computer/ Faculty of Applied Science"
+      "Head, Dept. of Computer, Faculty of Applied Science"
     ],
     "url": "http://www.rjt.ac.lk/",
     "uni_code": "K"
@@ -151,7 +153,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "SUSL",
     "members": [
-      "Dean/Faculty of Computing"
+      "Dean, Faculty of Computing"
     ],
     "url": "http://www.sab.ac.lk/",
     "uni_code": "L"
@@ -164,7 +166,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "WUSL",
     "members": [
-      "Head/ Dept. of Computing & Information Systems"
+      "Head, Dept. of Computing & Information Systems, Faculty of Applied Sciences"
     ],
     "url": "http://www.wyb.ac.lk/",
     "uni_code": "M"
@@ -177,7 +179,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "UWU",
     "members": [
-      "Head/ Dept. of Computer Science & Informatics/Faculty of Science"
+      "Head, Dept. of Computer Science & Informatics, Faculty of Applied Sciences"
     ],
     "url": "http://www.uwu.ac.lk/",
     "uni_code": "U"
@@ -190,7 +192,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "UVPA",
     "members": [
-      "Head/ Dept. Information Technology/Faculty of Dance & Drama"
+      "Head, Dept. Information Technology, Faculty of Dance & Drama"
     ],
     "url": "http://www.vpa.ac.lk/",
     "uni_code": "Z"
@@ -214,8 +216,8 @@
     "established_under": "University Grants Commission",
     "abbreviation": "UOV",
     "members": [
-      "Dean/ Faculty of Technical Studies",
-      "Head/ Dept. of Physical Science/ Faculty of Applied Science"
+      "Dean, Faculty of Technological Studies",
+      "Head, Dept. of Physical Science, Faculty of Applied Science"
     ],
     "url": "http://www.vau.ac.lk/",
     "uni_code": "R"
@@ -239,7 +241,7 @@
     "established_under": "University Grants Commission",
     "abbreviation": "TRINCO",
     "members": [
-      "Head/Dept. of Computer Science/ Faculty of Applied Science"
+      "Head, Dept. of Computer Science, Faculty of Applied Science"
     ],
     "url": "https://trinco.esn.ac.lk/",
     "uni_code": "W"
@@ -298,7 +300,7 @@
     "established_under": "Sir John Kotelawala Defence Academy Act No. 68 of 1981",
     "abbreviation": "KDU",
     "members": [
-      "Dean/Faculty of Computing"
+      "Dean, Faculty of Computing"
     ],
     "url": "https://www.kdu.ac.lk",
     "uni_code": null

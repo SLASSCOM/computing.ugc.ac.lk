@@ -221,7 +221,7 @@ const AboutPage = () => {
                         <span className="font-medium text-slate-900">University Grants Commission</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-slate-700">Senior Assistant Secretary/Academic Affairs</td>
+                    <td className="px-6 py-4 text-slate-700">Senior Assistant Secretary/ Academic Affairs</td>
                   </tr>
 
                   {/* Universities Group */}
