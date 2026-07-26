@@ -55,7 +55,7 @@ const ProgramsPage = () => {
   const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
   const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
-  const [groupBy, setGroupBy] = useState<string>('none');
+  const [groupBy, setGroupBy] = useState<string>('slqf');
   const skipUniversityUrlSync = useRef(false);
   const skipTypeUrlSync = useRef(false);
 
