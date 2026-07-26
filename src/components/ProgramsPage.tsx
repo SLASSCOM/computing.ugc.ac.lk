@@ -55,7 +55,6 @@ const ProgramsPage = () => {
   const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
   const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
-  const [showFilters, setShowFilters] = useState(false);
   const [groupBy, setGroupBy] = useState<string>('none');
   const skipUniversityUrlSync = useRef(false);
   const skipTypeUrlSync = useRef(false);
@@ -546,69 +545,58 @@ const ProgramsPage = () => {
             />
           </div>
 
-          <div className="mb-4 flex items-center justify-between">
-            <button
-              type="button"
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 text-slate-600 transition-colors hover:text-ugc-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded"
-              aria-expanded={showFilters}
-            >
-              <Filter className="h-5 w-5" aria-hidden="true" />
-              <span>Advanced Filters</span>
-            </button>
-            {hasActiveFilters && (
+          <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
+            <MultiSelectFilter
+              label="Filter by university"
+              placeholder="All Universities"
+              options={universityOptions}
+              selected={selectedUniversities}
+              onChange={handleUniversitiesChange}
+            />
+
+            <MultiSelectFilter
+              label="Filter by program type"
+              placeholder="All Types"
+              options={TYPE_OPTIONS}
+              selected={selectedTypes}
+              onChange={handleTypesChange}
+            />
+
+            <MultiSelectFilter
+              label="Filter by discipline"
+              placeholder="All Disciplines"
+              options={disciplineOptions}
+              selected={selectedDisciplines}
+              onChange={setSelectedDisciplines}
+            />
+
+            <MultiSelectFilter
+              label="Filter by Course of Study"
+              placeholder="All UGC Course of Study"
+              options={courseOfStudyOptions}
+              selected={selectedCoursesOfStudy}
+              onChange={setSelectedCoursesOfStudy}
+            />
+
+            <MultiSelectFilter
+              label="Filter by SLQF Level"
+              placeholder="All SLQF Levels"
+              options={slqfOptions}
+              selected={selectedSlqfLevels}
+              onChange={setSelectedSlqfLevels}
+            />
+          </div>
+
+          {hasActiveFilters && (
+            <div className="mt-4 flex justify-end">
               <button
                 type="button"
                 onClick={clearFilters}
-                className="flex items-center gap-2 text-red-600 transition-colors hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded"
+                className="flex items-center gap-2 text-sm text-red-600 transition-colors hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
                 <span>Clear All</span>
               </button>
-            )}
-          </div>
-
-          {showFilters && (
-            <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
-              <MultiSelectFilter
-                label="Filter by university"
-                placeholder="All Universities"
-                options={universityOptions}
-                selected={selectedUniversities}
-                onChange={handleUniversitiesChange}
-              />
-
-              <MultiSelectFilter
-                label="Filter by program type"
-                placeholder="All Types"
-                options={TYPE_OPTIONS}
-                selected={selectedTypes}
-                onChange={handleTypesChange}
-              />
-
-              <MultiSelectFilter
-                label="Filter by discipline"
-                placeholder="All Disciplines"
-                options={disciplineOptions}
-                selected={selectedDisciplines}
-                onChange={setSelectedDisciplines}
-              />
-
-              <MultiSelectFilter
-                label="Filter by Course of Study"
-                placeholder="All UGC Course of Study"
-                options={courseOfStudyOptions}
-                selected={selectedCoursesOfStudy}
-                onChange={setSelectedCoursesOfStudy}
-              />
-
-              <MultiSelectFilter
-                label="Filter by SLQF Level"
-                placeholder="All SLQF Levels"
-                options={slqfOptions}
-                selected={selectedSlqfLevels}
-                onChange={setSelectedSlqfLevels}
-              />
             </div>
           )}
         </div>
