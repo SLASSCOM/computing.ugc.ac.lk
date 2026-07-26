@@ -120,7 +120,7 @@ const AboutPage = () => {
               Why this directory is needed
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Undergraduate computing programs in Sri Lanka have historically been scattered across the UGC handbook, while postgraduate programs were only available on individual university or Higher Educational Institution (HEI) websites. This made it difficult for students, educators, and industry professionals to identify all available programs in one centralized place. To address this gap, the Standing Committee on Computing curated this comprehensive directory to bring all approved computing programs into a single, easily accessible platform.
+              Undergraduate computing programs in Sri Lanka have historically been scattered across the UGC handbook, while postgraduate programs were only available on individual university or Higher Educational Institution (HEI) websites. This made it difficult for students, educators, and industry professionals to identify all available programs in one centralized place. To address this gap, the Standing Committee on Computing curated this comprehensive directory to bring all recognised computing programs into a single, easily accessible platform.
             </p>
           </div>
         </div>

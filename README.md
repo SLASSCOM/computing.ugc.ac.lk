@@ -1,6 +1,6 @@
 # UGC Computing Programs Directory
 
-A web directory of UGC-approved undergraduate and postgraduate computing degree programs offered by state universities and higher education institutes in Sri Lanka.
+A web directory of recognised undergraduate and postgraduate computing degree programs offered by state universities and higher education institutes in Sri Lanka.
 
 Published by the **Standing Committee of Computing**, University Grants Commission (UGC) of Sri Lanka.
 

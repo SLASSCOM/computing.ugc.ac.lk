@@ -67,7 +67,7 @@ const Footer = () => {
             <p className="text-sm leading-relaxed text-slate-400">
               This directory is a curated initiative by the Standing Committee of Computing,
               University Grants Commission (UGC) of Sri Lanka, to showcase undergraduate and
-              postgraduate computing programs offered by UGC-approved state universities and
+              postgraduate computing programs offered by recognised state universities and
               higher education institutes.
             </p>
           </div>

@@ -88,7 +88,7 @@ const HomePage = () => {
               <span className="mt-1 block text-ugc-goldSoft">Sri Lanka</span>
             </h1>
             <p className="mb-6 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Discover UGC-approved undergraduate and postgraduate computing degree programs
+              Discover recognised undergraduate and postgraduate computing degree programs
               across state universities and higher education institutes.
             </p>
             <button
