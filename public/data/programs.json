@@ -52,7 +52,7 @@
   {
     "ug_pg": "UG",
     "university_hei": "Institute of Technology University of Moratuwa",
-    "faculty_name": "Faculty of Information Technology",
+    "faculty_name": "Division of Information Technology",
     "department_name": null,
     "name_of_the_course_s_": "NDT in IT",
     "discipline": "Information Technology",
@@ -63,7 +63,7 @@
     "slqf": "4",
     "if_bachelor_general_special_honours_": null,
     "whether_part_time_full_time": null,
-    "duration": null,
+    "duration": "3",
     "credits": null,
     "medium_of_instruction": "English",
     "obtained_ugc_approval_y_n_": null,
