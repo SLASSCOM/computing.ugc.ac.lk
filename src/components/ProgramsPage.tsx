@@ -22,6 +22,19 @@ const GROUP_OPTIONS = [
   { value: 'slqf', label: 'SLQF Level' },
 ];
 
+const formatSlqfLevel = (lvl: string, slqfLevels: SlqfLevel[]) => {
+  const levelNum = parseFloat(lvl.split('/')[0]);
+  const matchingLevel = slqfLevels.find((s) => s.level === levelNum);
+  if (matchingLevel) {
+    let qual = matchingLevel.qualification_awarded;
+    if (qual.length > 30) {
+      qual = qual.substring(0, 30) + '...';
+    }
+    return `SLQF ${lvl}: ${qual}`;
+  }
+  return `Level ${lvl}`;
+};
+
 const ProgramsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [universities, setUniversities] = useState<UniversityData[]>([]);
@@ -32,7 +45,10 @@ const ProgramsPage = () => {
     const universityParam = searchParams.get('university');
     return universityParam ? [universityParam] : [];
   });
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {
+    const typeParam = searchParams.get('type');
+    return typeParam ? [typeParam] : [];
+  });
   const [selectedDisciplines, setSelectedDisciplines] = useState<string[]>([]);
   const [selectedCoursesOfStudy, setSelectedCoursesOfStudy] = useState<string[]>([]);
   const [selectedSlqfLevels, setSelectedSlqfLevels] = useState<string[]>([]);
@@ -42,6 +58,7 @@ const ProgramsPage = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [groupBy, setGroupBy] = useState<string>('none');
   const skipUniversityUrlSync = useRef(false);
+  const skipTypeUrlSync = useRef(false);
 
   const singleUniversityFromUrl =
     selectedUniversities.length === 1 ? selectedUniversities[0] : '';
@@ -53,12 +70,16 @@ const ProgramsPage = () => {
   }, [singleUniversityFromUrl]);
 
   useEffect(() => {
-    if (skipUniversityUrlSync.current) {
+    if (skipUniversityUrlSync.current || skipTypeUrlSync.current) {
       skipUniversityUrlSync.current = false;
+      skipTypeUrlSync.current = false;
       return;
     }
     const universityParam = searchParams.get('university') || '';
     setSelectedUniversities(universityParam ? [universityParam] : []);
+
+    const typeParam = searchParams.get('type') || '';
+    setSelectedTypes(typeParam ? [typeParam] : []);
   }, [searchParams]);
 
   useEffect(() => {
@@ -213,7 +234,7 @@ const ProgramsPage = () => {
 
     const options = sortedLevels.map((lvl) => ({
       value: lvl,
-      label: `Level ${lvl}`,
+      label: formatSlqfLevel(lvl, slqfLevels),
     }));
 
     const hasProgramsWithoutSlqf = programs.some((p) => !p.slqf);
@@ -222,7 +243,7 @@ const ProgramsPage = () => {
     }
 
     return options;
-  }, [programs]);
+  }, [programs, slqfLevels]);
 
   const courseOfStudyMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -249,7 +270,7 @@ const ProgramsPage = () => {
         const code = program.code_of_study?.substring(0, 3) || 'Other';
         key = courseOfStudyMap.get(code) || 'Other';
       } else if (groupBy === 'slqf') {
-        key = program.slqf ? `Level ${program.slqf}` : 'Not Specified (N/A)';
+        key = program.slqf ? formatSlqfLevel(program.slqf, slqfLevels) : 'Not Specified (N/A)';
       }
 
       if (!groups[key]) {
@@ -265,8 +286,10 @@ const ProgramsPage = () => {
       if (!aIsOther && bIsOther) return -1;
 
       if (groupBy === 'slqf') {
-        const aNum = parseFloat(a.replace('Level ', ''));
-        const bNum = parseFloat(b.replace('Level ', ''));
+        const aClean = a.replace('SLQF ', '').replace('Level ', '').split(':')[0];
+        const bClean = b.replace('SLQF ', '').replace('Level ', '').split(':')[0];
+        const aNum = parseFloat(aClean);
+        const bNum = parseFloat(bClean);
         if (!isNaN(aNum) && !isNaN(bNum)) {
           return aNum - bNum;
         }
@@ -284,26 +307,39 @@ const ProgramsPage = () => {
       title: key,
       programs: groups[key],
     }));
-  }, [filteredPrograms, groupBy, courseOfStudyMap]);
+  }, [filteredPrograms, groupBy, courseOfStudyMap, slqfLevels]);
 
   const selectedUniversityData = universities.find(
     (u) => u.university_hei === singleUniversityFromUrl
   );
 
-  const syncUniversityParams = (values: string[]) => {
-    if (values.length === 1) {
-      setSearchParams({ university: values[0] });
-    } else if (values.length === 0) {
-      setSearchParams({});
-    } else {
-      skipUniversityUrlSync.current = true;
-      setSearchParams({});
+  const updateUrlParams = (unis: string[], types: string[]) => {
+    const params: Record<string, string> = {};
+    if (unis.length === 1) {
+      params.university = unis[0];
     }
+    if (types.length === 1) {
+      params.type = types[0];
+    }
+
+    if (unis.length !== 1) {
+      skipUniversityUrlSync.current = true;
+    }
+    if (types.length !== 1) {
+      skipTypeUrlSync.current = true;
+    }
+
+    setSearchParams(params);
   };
 
   const handleUniversitiesChange = (values: string[]) => {
     setSelectedUniversities(values);
-    syncUniversityParams(values);
+    updateUrlParams(values, selectedTypes);
+  };
+
+  const handleTypesChange = (values: string[]) => {
+    setSelectedTypes(values);
+    updateUrlParams(selectedUniversities, values);
   };
 
   const clearFilters = () => {
@@ -547,7 +583,7 @@ const ProgramsPage = () => {
                 placeholder="All Types"
                 options={TYPE_OPTIONS}
                 selected={selectedTypes}
-                onChange={setSelectedTypes}
+                onChange={handleTypesChange}
               />
 
               <MultiSelectFilter

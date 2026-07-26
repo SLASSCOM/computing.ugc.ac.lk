@@ -66,8 +66,11 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, university, onClick 
                 <span>{program.duration} years</span>
               </div>
             )}
-            {program.medium_of_instruction && (
-              <span>{program.medium_of_instruction}</span>
+            {program.slqf && (
+              <span>SLQF {program.slqf}</span>
+            )}
+            {program.credits && (
+              <span>{program.credits} credits</span>
             )}
           </div>
         </div>
