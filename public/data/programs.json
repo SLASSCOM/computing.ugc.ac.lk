@@ -25,6 +25,31 @@
     "intake_count": null
   },
   {
+    "ug_pg": "UG",
+    "university_hei": "Eastern University, Sri Lanka",
+    "faculty_name": "Faculty of Technology",
+    "department_name": "Department of Information and Communication Technology",
+    "name_of_the_course_s_": "Bachelor of Information and Communication Technology Honours",
+    "discipline": "Information Technology",
+    "academic_stream": null,
+    "external": null,
+    "special_subject": null,
+    "abbreviated_qualification_if_relevant_": "BICT(Hons)",
+    "slqf": "6",
+    "if_bachelor_general_special_honours_": "Honours",
+    "whether_part_time_full_time": null,
+    "duration": "4",
+    "credits": null,
+    "medium_of_instruction": "English",
+    "obtained_ugc_approval_y_n_": null,
+    "approved_year": null,
+    "approved_commission_no_": null,
+    "remarks": null,
+    "confirmation_from_university": null,
+    "code_of_study": "104H",
+    "intake_count": 100
+  },
+  {
     "ug_pg": "PG",
     "university_hei": "Institute of Human Resource Advancement",
     "faculty_name": null,
@@ -252,6 +277,31 @@
   {
     "ug_pg": "UG",
     "university_hei": "Rajarata University of Sri Lanka",
+    "faculty_name": null,
+    "department_name": null,
+    "name_of_the_course_s_": "Bachelor of Science Honours in Information Technology",
+    "discipline": "Information Technology",
+    "academic_stream": "Science",
+    "external": null,
+    "special_subject": "Information Technology",
+    "abbreviated_qualification_if_relevant_": "BScHons(IT)",
+    "slqf": "6",
+    "if_bachelor_general_special_honours_": "Honours",
+    "whether_part_time_full_time": "Full time",
+    "duration": "4",
+    "credits": "90",
+    "medium_of_instruction": "English",
+    "obtained_ugc_approval_y_n_": "Yes",
+    "approved_year": null,
+    "approved_commission_no_": null,
+    "remarks": null,
+    "confirmation_from_university": null,
+    "code_of_study": "038K",
+    "intake_count": 142
+  },
+  {
+    "ug_pg": "UG",
+    "university_hei": "Rajarata University of Sri Lanka",
     "faculty_name": "Faculty of Technology",
     "department_name": "Department of Information & Communication Technology",
     "name_of_the_course_s_": "Bachelor of Information and Communication Technology Honours",
@@ -272,7 +322,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "104K",
-    "intake_count": 142
+    "intake_count": 125
   },
   {
     "ug_pg": "PG",
@@ -422,7 +472,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "136L",
-    "intake_count": 48
+    "intake_count": 65
   },
   {
     "ug_pg": "UG",
@@ -1147,7 +1197,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "012T",
-    "intake_count": 10
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
@@ -1519,10 +1569,10 @@
     "obtained_ugc_approval_y_n_": null,
     "approved_year": 2019,
     "approved_commission_no_": null,
-    "remarks": null,
+    "remarks": "50 Selected",
     "confirmation_from_university": null,
     "code_of_study": "012E",
-    "intake_count": 50
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
@@ -1647,7 +1697,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "012D",
-    "intake_count": 100
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
@@ -1922,7 +1972,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "119D",
-    "intake_count": 80
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
@@ -2697,20 +2747,20 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "012F",
-    "intake_count": 100
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
     "university_hei": "University of Ruhuna",
     "faculty_name": "Faculty of Science",
     "department_name": "Department of Computer Science",
-    "name_of_the_course_s_": "Bachelor of Science in Computer Science (Special) Degree",
+    "name_of_the_course_s_": "Bachelor of Science in Computer Science",
     "discipline": "Computer Science",
     "academic_stream": null,
     "external": null,
     "special_subject": null,
     "abbreviated_qualification_if_relevant_": null,
-    "slqf": "6",
+    "slqf": "5",
     "if_bachelor_general_special_honours_": null,
     "whether_part_time_full_time": null,
     "duration": null,
@@ -2722,7 +2772,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "012F",
-    "intake_count": 80
+    "intake_count": 100
   },
   {
     "ug_pg": "UG",
@@ -2747,7 +2797,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "104F",
-    "intake_count": 181
+    "intake_count": 80
   },
   {
     "ug_pg": "UG",
@@ -2797,57 +2847,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "108C",
-    "intake_count": 87
-  },
-  {
-    "ug_pg": "UG",
-    "university_hei": "University of Sri Jayewardenepura",
-    "faculty_name": "Faculty of Technology",
-    "department_name": null,
-    "name_of_the_course_s_": "Bachelor of Information and Communication Technology Honours",
-    "discipline": "Information Technology",
-    "academic_stream": null,
-    "external": null,
-    "special_subject": null,
-    "abbreviated_qualification_if_relevant_": "BICT(Hons)",
-    "slqf": "6",
-    "if_bachelor_general_special_honours_": "Honours",
-    "whether_part_time_full_time": null,
-    "duration": "4",
-    "credits": "120",
-    "medium_of_instruction": "English",
-    "obtained_ugc_approval_y_n_": null,
-    "approved_year": null,
-    "approved_commission_no_": null,
-    "remarks": null,
-    "confirmation_from_university": null,
-    "code_of_study": "104C",
-    "intake_count": 154
-  },
-  {
-    "ug_pg": "UG",
-    "university_hei": "University of Sri Jayewardenepura",
-    "faculty_name": "Faculty of Applied Sciences",
-    "department_name": null,
-    "name_of_the_course_s_": "Bachelor of Science in Physics and ICT",
-    "discipline": "Information Technology",
-    "academic_stream": null,
-    "external": null,
-    "special_subject": null,
-    "abbreviated_qualification_if_relevant_": null,
-    "slqf": "5",
-    "if_bachelor_general_special_honours_": null,
-    "whether_part_time_full_time": null,
-    "duration": "3",
-    "credits": null,
-    "medium_of_instruction": "English",
-    "obtained_ugc_approval_y_n_": null,
-    "approved_year": null,
-    "approved_commission_no_": null,
-    "remarks": null,
-    "confirmation_from_university": null,
-    "code_of_study": "013C",
-    "intake_count": 87
+    "intake_count": 156
   },
   {
     "ug_pg": "UG",
@@ -2947,7 +2947,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "096C",
-    "intake_count": 80
+    "intake_count": 50
   },
   {
     "ug_pg": "UG",
@@ -3022,7 +3022,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "012C",
-    "intake_count": 50
+    "intake_count": null
   },
   {
     "ug_pg": "UG",
