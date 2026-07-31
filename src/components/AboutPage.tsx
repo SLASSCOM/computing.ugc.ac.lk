@@ -188,15 +188,14 @@ const AboutPage = () => {
               <table className="w-full border-collapse text-left text-sm text-slate-600">
                 <thead>
                   <tr className="bg-ugc-navy text-xs font-semibold uppercase tracking-wider text-white">
-                    <th scope="col" className="px-6 py-4 font-semibold">Membership</th>
                     <th scope="col" className="px-6 py-4 font-semibold">Institution</th>
                     <th scope="col" className="px-6 py-4 font-semibold">Designation</th>
+                    <th scope="col" className="px-6 py-4 font-semibold">Membership</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {/* Office Bearers */}
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 font-semibold text-slate-900">Chairman</td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <img
@@ -208,9 +207,9 @@ const AboutPage = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Commission Member</td>
+                    <td className="px-6 py-4 font-semibold text-slate-900">Chairman</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 font-semibold text-slate-900">Secretary</td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <img
@@ -222,6 +221,7 @@ const AboutPage = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Senior Assistant Secretary/ Academic Affairs</td>
+                    <td className="px-6 py-4 font-semibold text-slate-900">Secretary</td>
                   </tr>
 
                   {/* Universities Group */}
@@ -234,7 +234,6 @@ const AboutPage = () => {
                       </tr>
                       {uniMembers.map((member, idx) => (
                         <tr key={`uni-${idx}`} className="hover:bg-slate-50/50">
-                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                           <td className="px-6 py-4">
                             <Link
                               to={`/programs?university=${encodeURIComponent(member.university.university_hei)}`}
@@ -252,6 +251,7 @@ const AboutPage = () => {
                             </Link>
                           </td>
                           <td className="px-6 py-4 text-slate-700">{member.designation}</td>
+                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                         </tr>
                       ))}
                     </>
@@ -267,7 +267,6 @@ const AboutPage = () => {
                       </tr>
                       {campusMembers.map((member, idx) => (
                         <tr key={`campus-${idx}`} className="hover:bg-slate-50/50">
-                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                           <td className="px-6 py-4">
                             <Link
                               to={`/programs?university=${encodeURIComponent(member.university.university_hei)}`}
@@ -285,6 +284,7 @@ const AboutPage = () => {
                             </Link>
                           </td>
                           <td className="px-6 py-4 text-slate-700">{member.designation}</td>
+                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                         </tr>
                       ))}
                     </>
@@ -300,7 +300,6 @@ const AboutPage = () => {
                       </tr>
                       {instituteMembers.map((member, idx) => (
                         <tr key={`institute-${idx}`} className="hover:bg-slate-50/50">
-                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                           <td className="px-6 py-4">
                             <Link
                               to={`/programs?university=${encodeURIComponent(member.university.university_hei)}`}
@@ -318,6 +317,7 @@ const AboutPage = () => {
                             </Link>
                           </td>
                           <td className="px-6 py-4 text-slate-700">{member.designation}</td>
+                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                         </tr>
                       ))}
                     </>
@@ -333,7 +333,6 @@ const AboutPage = () => {
                       </tr>
                       {otherGovMembers.map((member, idx) => (
                         <tr key={`other-${idx}`} className="hover:bg-slate-50/50">
-                          <td className="px-6 py-4 text-slate-500 italic">Member</td>
                           <td className="px-6 py-4">
                             <Link
                               to={`/programs?university=${encodeURIComponent(member.university.university_hei)}`}
@@ -351,6 +350,7 @@ const AboutPage = () => {
                             </Link>
                           </td>
                           <td className="px-6 py-4 text-slate-700">{member.designation}</td>
+                          <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                         </tr>
                       ))}
                     </>
@@ -363,7 +363,6 @@ const AboutPage = () => {
                     </td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Member</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://moe.gov.lk/"
@@ -380,6 +379,7 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Director, Non State Higher Education Division</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                   </tr>
 
                   {/* Industry/Professional Bodies */}
@@ -389,7 +389,6 @@ const AboutPage = () => {
                     </td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://cssl.lk/"
@@ -404,9 +403,9 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://slasscom.lk/"
@@ -421,9 +420,9 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://www.fitis.lk/"
@@ -438,9 +437,9 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://ieee.lk/"
@@ -455,6 +454,7 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Invited Member</td>
                   </tr>
 
                   {/* Observers */}
@@ -464,7 +464,6 @@ const AboutPage = () => {
                     </td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Observer</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://eugc.ugc.ac.lk/qac/"
@@ -483,9 +482,9 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative/ Quality Assurance Council (QAC)</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Observer</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
-                    <td className="px-6 py-4 text-slate-500 italic">Observer</td>
                     <td className="px-6 py-4">
                       <a
                         href="https://eugc.ugc.ac.lk/qac/"
@@ -504,6 +503,7 @@ const AboutPage = () => {
                       </a>
                     </td>
                     <td className="px-6 py-4 text-slate-700">Representative/ Quality Assurance Council (QAC)</td>
+                    <td className="px-6 py-4 text-slate-500 italic">Observer</td>
                   </tr>
                 </tbody>
               </table>
