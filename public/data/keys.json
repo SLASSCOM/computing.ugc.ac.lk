@@ -113,111 +113,138 @@
   "courses_of_study": [
     {
       "number": "008",
-      "name": "Engineering"
+      "name": "Engineering",
+      "intake": 2238
     },
     {
       "number": "009",
-      "name": "Engineering (EM)"
+      "name": "Engineering (EM)",
+      "intake": 80
     },
     {
       "number": "010",
-      "name": "Engineering (TM)"
+      "name": "Engineering (TM)",
+      "intake": 98
     },
     {
       "number": "012",
-      "name": "Computer Science"
+      "name": "Computer Science",
+      "intake": 716
     },
     {
       "number": "013",
-      "name": "Physical Science"
+      "name": "Physical Science",
+      "intake": 2312
     },
     {
       "number": "015",
-      "name": "Applied Sciences (Physical Science)"
+      "name": "Applied Sciences (Physical Science)",
+      "intake": 778
     },
     {
       "number": "026",
-      "name": "Information Technology (IT)"
+      "name": "Information Technology (IT)",
+      "intake": 251
     },
     {
       "number": "027",
-      "name": "Management and Information Technology (MIT)"
+      "name": "Management and Information Technology (MIT)",
+      "intake": 119
     },
     {
       "number": "038",
-      "name": "Information and Communication Technology (ICT)"
+      "name": "Information and Communication Technology (ICT)",
+      "intake": 285
     },
     {
       "number": "059",
-      "name": "Industrial Statistics & Mathematical Finance"
+      "name": "Industrial Statistics & Mathematical Finance",
+      "intake": 121
     },
     {
       "number": "065",
-      "name": "Computer Science & Technology"
+      "name": "Computer Science & Technology",
+      "intake": 101
     },
     {
       "number": "075",
-      "name": "Industrial Information Technology"
+      "name": "Industrial Information Technology",
+      "intake": 100
     },
     {
       "number": "077",
-      "name": "Business Information Systems (Honours) (BIS)"
+      "name": "Business Information Systems (Honours) (BIS)",
+      "intake": 80
     },
     {
       "number": "079",
-      "name": "Management and Information Technology (SEUSL)"
+      "name": "Management and Information Technology (SEUSL)",
+      "intake": 170
     },
     {
       "number": "091",
-      "name": "Information Technology & Management"
+      "name": "Information Technology & Management",
+      "intake": 127
     },
     {
       "number": "096",
-      "name": "Information Systems"
+      "name": "Information Systems",
+      "intake": 350
     },
     {
       "number": "099",
-      "name": "Software Engineering"
+      "name": "Software Engineering",
+      "intake": 186
     },
     {
       "number": "101",
-      "name": "Project Management"
+      "name": "Project Management",
+      "intake": 101
     },
     {
       "number": "102",
-      "name": "Engineering Technology (ET)"
+      "name": "Engineering Technology (ET)",
+      "intake": 1331
     },
     {
       "number": "104",
-      "name": "Information Communication Technology"
+      "name": "Information Communication Technology",
+      "intake": 1023
     },
     {
       "number": "108",
-      "name": "Physical Science - ICT"
+      "name": "Physical Science - ICT",
+      "intake": 156
     },
     {
       "number": "117",
-      "name": "Artificial Intelligence"
+      "name": "Artificial Intelligence",
+      "intake": 50
     },
     {
       "number": "119",
-      "name": "Electronics and Computer Science"
+      "name": "Electronics and Computer Science",
+      "intake": 80
     },
     {
       "number": "127",
-      "name": "Accounting Information Systems"
+      "name": "Accounting Information Systems",
+      "intake": 50
     },
     {
       "number": "128",
-      "name": "Arts - Information Technology"
+      "name": "Arts - Information Technology",
+      "intake": 50
     },
     {
       "number": "136",
-      "name": "Data Science"
+      "name": "Data Science",
+      "intake": 65
     },
     {
       "number": "143",
-      "name": "Electronic and Intelligent Systems Engineering"
+      "name": "Electronic and Intelligent Systems Engineering",
+      "intake": 50
     }
   ]
 }
