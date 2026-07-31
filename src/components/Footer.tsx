@@ -47,6 +47,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/stats"
+                  className="text-slate-300 transition-colors hover:text-ugc-goldSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold rounded"
+                >
+                  Stats
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://www.ugc.ac.lk/"
                   target="_blank"

@@ -7,6 +7,7 @@ export interface UniversityData {
   abbreviation: string | null;
   members?: string[];
   url?: string | null;
+  uni_code?: string | null;
 }
 
 export interface ProgramData {

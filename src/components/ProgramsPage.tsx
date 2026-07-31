@@ -50,7 +50,10 @@ const ProgramsPage = () => {
     return typeParam ? [typeParam] : [];
   });
   const [selectedDisciplines, setSelectedDisciplines] = useState<string[]>([]);
-  const [selectedCoursesOfStudy, setSelectedCoursesOfStudy] = useState<string[]>([]);
+  const [selectedCoursesOfStudy, setSelectedCoursesOfStudy] = useState<string[]>(() => {
+    const courseParam = searchParams.get('course');
+    return courseParam ? [courseParam] : [];
+  });
   const [selectedSlqfLevels, setSelectedSlqfLevels] = useState<string[]>([]);
   const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
   const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
@@ -58,6 +61,7 @@ const ProgramsPage = () => {
   const [groupBy, setGroupBy] = useState<string>('slqf');
   const skipUniversityUrlSync = useRef(false);
   const skipTypeUrlSync = useRef(false);
+  const skipCourseUrlSync = useRef(false);
 
   const singleUniversityFromUrl =
     selectedUniversities.length === 1 ? selectedUniversities[0] : '';
@@ -69,9 +73,10 @@ const ProgramsPage = () => {
   }, [singleUniversityFromUrl]);
 
   useEffect(() => {
-    if (skipUniversityUrlSync.current || skipTypeUrlSync.current) {
+    if (skipUniversityUrlSync.current || skipTypeUrlSync.current || skipCourseUrlSync.current) {
       skipUniversityUrlSync.current = false;
       skipTypeUrlSync.current = false;
+      skipCourseUrlSync.current = false;
       return;
     }
     const universityParam = searchParams.get('university') || '';
@@ -79,6 +84,9 @@ const ProgramsPage = () => {
 
     const typeParam = searchParams.get('type') || '';
     setSelectedTypes(typeParam ? [typeParam] : []);
+
+    const courseParam = searchParams.get('course') || '';
+    setSelectedCoursesOfStudy(courseParam ? [courseParam] : []);
   }, [searchParams]);
 
   useEffect(() => {
@@ -312,13 +320,16 @@ const ProgramsPage = () => {
     (u) => u.university_hei === singleUniversityFromUrl
   );
 
-  const updateUrlParams = (unis: string[], types: string[]) => {
+  const updateUrlParams = (unis: string[], types: string[], courses: string[]) => {
     const params: Record<string, string> = {};
     if (unis.length === 1) {
       params.university = unis[0];
     }
     if (types.length === 1) {
       params.type = types[0];
+    }
+    if (courses.length === 1) {
+      params.course = courses[0];
     }
 
     if (unis.length !== 1) {
@@ -327,18 +338,26 @@ const ProgramsPage = () => {
     if (types.length !== 1) {
       skipTypeUrlSync.current = true;
     }
+    if (courses.length !== 1) {
+      skipCourseUrlSync.current = true;
+    }
 
     setSearchParams(params);
   };
 
   const handleUniversitiesChange = (values: string[]) => {
     setSelectedUniversities(values);
-    updateUrlParams(values, selectedTypes);
+    updateUrlParams(values, selectedTypes, selectedCoursesOfStudy);
   };
 
   const handleTypesChange = (values: string[]) => {
     setSelectedTypes(values);
-    updateUrlParams(selectedUniversities, values);
+    updateUrlParams(selectedUniversities, values, selectedCoursesOfStudy);
+  };
+
+  const handleCoursesChange = (values: string[]) => {
+    setSelectedCoursesOfStudy(values);
+    updateUrlParams(selectedUniversities, selectedTypes, values);
   };
 
   const clearFilters = () => {
@@ -575,7 +594,7 @@ const ProgramsPage = () => {
               placeholder="All UGC Course of Study"
               options={courseOfStudyOptions}
               selected={selectedCoursesOfStudy}
-              onChange={setSelectedCoursesOfStudy}
+              onChange={handleCoursesChange}
             />
 
             <MultiSelectFilter
