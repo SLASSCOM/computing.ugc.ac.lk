@@ -5,14 +5,14 @@ import LoadingSpinner from './LoadingSpinner';
 import { Award, BookOpen, School, ExternalLink } from 'lucide-react';
 
 interface KeyData {
-  courses_of_study: { number: string; name: string; intake?: number }[];
+  courses_of_study: { number: string; name: string; intake?: Record<string, number> }[];
   slqf: SlqfLevel[];
 }
 
 const StatsPage = () => {
   const [universities, setUniversities] = useState<UniversityData[]>([]);
   const [programs, setPrograms] = useState<ProgramData[]>([]);
-  const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string; intake?: number }[]>([]);
+  const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string; intake?: Record<string, number> }[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -188,8 +188,9 @@ const StatsPage = () => {
     let sum = 0;
     let hasUnknown = false;
     filteredCoursesOfStudy.forEach((c) => {
-      if (c.intake !== undefined && c.intake !== null) {
-        sum += c.intake;
+      const intakeVal = c.intake?.["2025/2026"];
+      if (intakeVal !== undefined && intakeVal !== null) {
+        sum += intakeVal;
       } else {
         hasUnknown = true;
       }
@@ -403,7 +404,7 @@ const StatsPage = () => {
                       </div>
                     </td>
                     <td className="px-4 py-4 text-center border-r border-slate-200 font-bold bg-slate-100 text-slate-700">
-                      {course.intake !== undefined && course.intake !== null ? course.intake : '-'}
+                      {course.intake?.["2025/2026"] !== undefined && course.intake?.["2025/2026"] !== null ? course.intake["2025/2026"] : '-'}
                     </td>
                     <td className="px-4 py-4 text-center border-r border-slate-200 font-bold bg-slate-50 text-ugc-navy">
                       {totalStats.display}

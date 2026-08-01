@@ -112,139 +112,851 @@
   ],
   "courses_of_study": [
     {
+      "number": "001",
+      "name": "Medicine",
+      "intake": {
+        "2025/2026": 2095
+      }
+    },
+    {
+      "number": "002",
+      "name": "Dental Surgery",
+      "intake": {
+        "2025/2026": 130
+      }
+    },
+    {
+      "number": "003",
+      "name": "Veterinary Science",
+      "intake": {
+        "2025/2026": 110
+      }
+    },
+    {
+      "number": "004",
+      "name": "Agriculture",
+      "intake": {
+        "2025/2026": 820
+      }
+    },
+    {
+      "number": "005",
+      "name": "Food Science & Nutrition",
+      "intake": {
+        "2025/2026": 165
+      }
+    },
+    {
+      "number": "006",
+      "name": "Biological Science",
+      "intake": {
+        "2025/2026": 1683
+      }
+    },
+    {
+      "number": "007",
+      "name": "Applied Sciences (Biological Science)",
+      "intake": {
+        "2025/2026": 425
+      }
+    },
+    {
       "number": "008",
       "name": "Engineering",
-      "intake": 2238
+      "intake": {
+        "2025/2026": 2238
+      }
     },
     {
       "number": "009",
       "name": "Engineering (EM)",
-      "intake": 80
+      "intake": {
+        "2025/2026": 80
+      }
     },
     {
       "number": "010",
       "name": "Engineering (TM)",
-      "intake": 98
+      "intake": {
+        "2025/2026": 98
+      }
+    },
+    {
+      "number": "011",
+      "name": "Quantity Surveying",
+      "intake": {
+        "2025/2026": 152
+      }
     },
     {
       "number": "012",
       "name": "Computer Science",
-      "intake": 716
+      "intake": {
+        "2025/2026": 716
+      }
     },
     {
       "number": "013",
       "name": "Physical Science",
-      "intake": 2312
+      "intake": {
+        "2025/2026": 2312
+      }
+    },
+    {
+      "number": "014",
+      "name": "Surveying Science",
+      "intake": {
+        "2025/2026": 165
+      }
     },
     {
       "number": "015",
       "name": "Applied Sciences (Physical Science)",
-      "intake": 778
+      "intake": {
+        "2025/2026": 778
+      }
+    },
+    {
+      "number": "016",
+      "name": "Management",
+      "intake": {
+        "2025/2026": 5474
+      }
+    },
+    {
+      "number": "017",
+      "name": "Real Estate Management and Valuation",
+      "intake": {
+        "2025/2026": 70
+      }
+    },
+    {
+      "number": "018",
+      "name": "Commerce",
+      "intake": {
+        "2025/2026": 884
+      }
+    },
+    {
+      "number": "019",
+      "name": "Arts (including Additional Intake)",
+      "intake": {
+        "2025/2026": 6983
+      }
+    },
+    {
+      "number": "020",
+      "name": "Arts (SP) - Mass Media",
+      "intake": {
+        "2025/2026": 110
+      }
+    },
+    {
+      "number": "021",
+      "name": "Arts (SAB)",
+      "intake": {
+        "2025/2026": 350
+      }
+    },
+    {
+      "number": "022",
+      "name": "Management Studies (TV)",
+      "intake": {
+        "2025/2026": 462
+      }
+    },
+    {
+      "number": "023",
+      "name": "Architecture",
+      "intake": {
+        "2025/2026": 100
+      }
+    },
+    {
+      "number": "024",
+      "name": "Design",
+      "intake": {
+        "2025/2026": 87
+      }
+    },
+    {
+      "number": "025",
+      "name": "Law",
+      "intake": {
+        "2025/2026": 495
+      }
     },
     {
       "number": "026",
       "name": "Information Technology (IT)",
-      "intake": 251
+      "intake": {
+        "2025/2026": 251
+      }
     },
     {
       "number": "027",
       "name": "Management and Information Technology (MIT)",
-      "intake": 119
+      "intake": {
+        "2025/2026": 119
+      }
+    },
+    {
+      "number": "028",
+      "name": "Management and Public Policy",
+      "intake": {
+        "2025/2026": 100
+      }
+    },
+    {
+      "number": "029",
+      "name": "Communication Studies",
+      "intake": {
+        "2025/2026": 200
+      }
+    },
+    {
+      "number": "030",
+      "name": "Urban Informatics and Planning",
+      "intake": {
+        "2025/2026": 88
+      }
+    },
+    {
+      "number": "031",
+      "name": "Peace and Conflict Resolution",
+      "intake": {
+        "2025/2026": 33
+      }
+    },
+    {
+      "number": "032",
+      "name": "Ayurveda Medicine and Surgery",
+      "intake": {
+        "2025/2026": 383
+      }
+    },
+    {
+      "number": "033",
+      "name": "Unani Medicine and Surgery",
+      "intake": {
+        "2025/2026": 89
+      }
+    },
+    {
+      "number": "034",
+      "name": "Fashion Design & Product Development",
+      "intake": {
+        "2025/2026": 79
+      }
+    },
+    {
+      "number": "035",
+      "name": "Food Science & Technology",
+      "intake": {
+        "2025/2026": 220
+      }
+    },
+    {
+      "number": "036",
+      "name": "Siddha Medicine and Surgery",
+      "intake": {
+        "2025/2026": 247
+      }
+    },
+    {
+      "number": "037",
+      "name": "Nursing",
+      "intake": {
+        "2025/2026": 573
+      }
     },
     {
       "number": "038",
       "name": "Information and Communication Technology (ICT)",
-      "intake": 285
+      "intake": {
+        "2025/2026": 285
+      }
+    },
+    {
+      "number": "039",
+      "name": "Agricultural Technology & Management",
+      "intake": {
+        "2025/2026": 221
+      }
+    },
+    {
+      "number": "041",
+      "name": "Arts (SP) - Performing Arts",
+      "intake": {
+        "2025/2026": 110
+      }
+    },
+    {
+      "number": "050",
+      "name": "Health Promotion",
+      "intake": {
+        "2025/2026": 103
+      }
+    },
+    {
+      "number": "051",
+      "name": "Pharmacy",
+      "intake": {
+        "2025/2026": 239
+      }
+    },
+    {
+      "number": "052",
+      "name": "Medical Laboratory Sciences",
+      "intake": {
+        "2025/2026": 226
+      }
+    },
+    {
+      "number": "053",
+      "name": "Radiography",
+      "intake": {
+        "2025/2026": 68
+      }
+    },
+    {
+      "number": "054",
+      "name": "Physiotherapy",
+      "intake": {
+        "2025/2026": 111
+      }
+    },
+    {
+      "number": "055",
+      "name": "Environmental Conservation & Management",
+      "intake": {
+        "2025/2026": 109
+      }
+    },
+    {
+      "number": "056",
+      "name": "Facilities Management",
+      "intake": {
+        "2025/2026": 81
+      }
+    },
+    {
+      "number": "057",
+      "name": "Transport Management & Logistics Engineering (TMLE)",
+      "intake": {
+        "2025/2026": 91
+      }
+    },
+    {
+      "number": "058",
+      "name": "Biochemistry & Molecular Biology",
+      "intake": {
+        "2025/2026": 80
+      }
     },
     {
       "number": "059",
       "name": "Industrial Statistics & Mathematical Finance",
-      "intake": 121
+      "intake": {
+        "2025/2026": 121
+      }
+    },
+    {
+      "number": "060",
+      "name": "Statistics & Operations Research",
+      "intake": {
+        "2025/2026": 79
+      }
+    },
+    {
+      "number": "062",
+      "name": "Fisheries & Marine Sciences",
+      "intake": {
+        "2025/2026": 150
+      }
+    },
+    {
+      "number": "063",
+      "name": "Islamic Studies",
+      "intake": {
+        "2025/2026": 278
+      }
+    },
+    {
+      "number": "064",
+      "name": "Science and Technology",
+      "intake": {
+        "2025/2026": 107
+      }
     },
     {
       "number": "065",
       "name": "Computer Science & Technology",
-      "intake": 101
+      "intake": {
+        "2025/2026": 101
+      }
+    },
+    {
+      "number": "066",
+      "name": "Entrepreneurship and Management",
+      "intake": {
+        "2025/2026": 101
+      }
+    },
+    {
+      "number": "067",
+      "name": "Animal Production and Food Technology",
+      "intake": {
+        "2025/2026": 108
+      }
+    },
+    {
+      "number": "068",
+      "name": "Music",
+      "intake": {
+        "2025/2026": 570
+      }
+    },
+    {
+      "number": "069",
+      "name": "Dance",
+      "intake": {
+        "2025/2026": 494
+      }
+    },
+    {
+      "number": "070",
+      "name": "Art & Design",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "071",
+      "name": "Drama & Theatre",
+      "intake": {
+        "2025/2026": 178
+      }
+    },
+    {
+      "number": "072",
+      "name": "Visual & Technological Arts",
+      "intake": {
+        "2025/2026": 94
+      }
+    },
+    {
+      "number": "073",
+      "name": "Export Agriculture",
+      "intake": {
+        "2025/2026": 105
+      }
     },
     {
       "number": "075",
       "name": "Industrial Information Technology",
-      "intake": 100
+      "intake": {
+        "2025/2026": 100
+      }
+    },
+    {
+      "number": "076",
+      "name": "Mineral Resources and Technology",
+      "intake": {
+        "2025/2026": 106
+      }
     },
     {
       "number": "077",
       "name": "Business Information Systems (Honours) (BIS)",
-      "intake": 80
+      "intake": {
+        "2025/2026": 80
+      }
     },
     {
       "number": "079",
       "name": "Management and Information Technology (SEUSL)",
-      "intake": 170
+      "intake": {
+        "2025/2026": 170
+      }
+    },
+    {
+      "number": "081",
+      "name": "Physical Education",
+      "intake": {
+        "2025/2026": 150
+      }
+    },
+    {
+      "number": "082",
+      "name": "Sports Science & Management",
+      "intake": {
+        "2025/2026": 178
+      }
+    },
+    {
+      "number": "083",
+      "name": "Speech and Hearing Sciences",
+      "intake": {
+        "2025/2026": 75
+      }
+    },
+    {
+      "number": "084",
+      "name": "Arabic Language",
+      "intake": {
+        "2025/2026": 225
+      }
+    },
+    {
+      "number": "085",
+      "name": "Visual Arts",
+      "intake": {
+        "2025/2026": 120
+      }
+    },
+    {
+      "number": "086",
+      "name": "Animal Science & Fisheries",
+      "intake": {
+        "2025/2026": 74
+      }
+    },
+    {
+      "number": "087",
+      "name": "Food Production & Technology Management",
+      "intake": {
+        "2025/2026": 140
+      }
+    },
+    {
+      "number": "088",
+      "name": "Aquatic Resources Technology",
+      "intake": {
+        "2025/2026": 114
+      }
+    },
+    {
+      "number": "090",
+      "name": "Hospitality, Tourism and Events Management",
+      "intake": {
+        "2025/2026": 107
+      }
     },
     {
       "number": "091",
       "name": "Information Technology & Management",
-      "intake": 127
+      "intake": {
+        "2025/2026": 127
+      }
+    },
+    {
+      "number": "092",
+      "name": "Tourism & Hospitality Management",
+      "intake": {
+        "2025/2026": 181
+      }
+    },
+    {
+      "number": "093",
+      "name": "Agricultural Resource Management and Technology",
+      "intake": {
+        "2025/2026": 181
+      }
+    },
+    {
+      "number": "094",
+      "name": "Agribusiness Management",
+      "intake": {
+        "2025/2026": 78
+      }
+    },
+    {
+      "number": "095",
+      "name": "Green Technology",
+      "intake": {
+        "2025/2026": 72
+      }
     },
     {
       "number": "096",
       "name": "Information Systems",
-      "intake": 350
+      "intake": {
+        "2025/2026": 350
+      }
+    },
+    {
+      "number": "097",
+      "name": "Landscape Architecture",
+      "intake": {
+        "2025/2026": 81
+      }
+    },
+    {
+      "number": "098",
+      "name": "Translation Studies",
+      "intake": {
+        "2025/2026": 155
+      }
     },
     {
       "number": "099",
       "name": "Software Engineering",
-      "intake": 186
+      "intake": {
+        "2025/2026": 186
+      }
+    },
+    {
+      "number": "100",
+      "name": "Film & Television Studies",
+      "intake": {
+        "2025/2026": 50
+      }
     },
     {
       "number": "101",
       "name": "Project Management",
-      "intake": 101
+      "intake": {
+        "2025/2026": 101
+      }
     },
     {
       "number": "102",
       "name": "Engineering Technology (ET)",
-      "intake": 1331
+      "intake": {
+        "2025/2026": 1331
+      }
+    },
+    {
+      "number": "103",
+      "name": "Biosystems Technology (BST)",
+      "intake": {
+        "2025/2026": 1320
+      }
     },
     {
       "number": "104",
       "name": "Information Communication Technology",
-      "intake": 1023
+      "intake": {
+        "2025/2026": 1023
+      }
+    },
+    {
+      "number": "105",
+      "name": "Teaching English as a Second Language (TESL)",
+      "intake": {
+        "2025/2026": 150
+      }
+    },
+    {
+      "number": "106",
+      "name": "Marine and Freshwater Sciences",
+      "intake": {
+        "2025/2026": 100
+      }
+    },
+    {
+      "number": "107",
+      "name": "Food Business Management",
+      "intake": {
+        "2025/2026": 135
+      }
     },
     {
       "number": "108",
       "name": "Physical Science - ICT",
-      "intake": 156
+      "intake": {
+        "2025/2026": 156
+      }
+    },
+    {
+      "number": "109",
+      "name": "Business Science",
+      "intake": {
+        "2025/2026": 150
+      }
+    },
+    {
+      "number": "110",
+      "name": "Financial Engineering",
+      "intake": {
+        "2025/2026": 80
+      }
+    },
+    {
+      "number": "111",
+      "name": "Geographical Information Science",
+      "intake": {
+        "2025/2026": 75
+      }
+    },
+    {
+      "number": "112",
+      "name": "Social Work",
+      "intake": {
+        "2025/2026": 101
+      }
+    },
+    {
+      "number": "113",
+      "name": "Financial Mathematics and Industrial Statistics",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "114",
+      "name": "Human Resource Development",
+      "intake": {
+        "2025/2026": 85
+      }
+    },
+    {
+      "number": "115",
+      "name": "Occupational Therapy",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "116",
+      "name": "Optometry",
+      "intake": {
+        "2025/2026": 60
+      }
     },
     {
       "number": "117",
       "name": "Artificial Intelligence",
-      "intake": 50
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "118",
+      "name": "Applied Chemistry",
+      "intake": {
+        "2025/2026": 60
+      }
     },
     {
       "number": "119",
       "name": "Electronics and Computer Science",
-      "intake": 80
+      "intake": {
+        "2025/2026": 80
+      }
     },
     {
       "number": "127",
       "name": "Accounting Information Systems",
-      "intake": 50
+      "intake": {
+        "2025/2026": 50
+      }
     },
     {
       "number": "128",
-      "name": "Arts - Information Technology",
-      "intake": 50
+      "name": "Arts-Information Technology",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "129",
+      "name": "Aquatic Bioresources",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "130",
+      "name": "Urban Bioresources",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "131",
+      "name": "Financial Economics",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "132",
+      "name": "English Language & Applied Linguistics",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "133",
+      "name": "Banking and Insurance",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "134",
+      "name": "Creative Music Technology and Production",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "135",
+      "name": "Plantation Management and Technology",
+      "intake": {
+        "2025/2026": 216
+      }
     },
     {
       "number": "136",
       "name": "Data Science",
-      "intake": 65
+      "intake": {
+        "2025/2026": 65
+      }
+    },
+    {
+      "number": "137",
+      "name": "Primary Education",
+      "intake": {
+        "2025/2026": 125
+      }
+    },
+    {
+      "number": "138",
+      "name": "Medical Imaging Technology",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "139",
+      "name": "Polymer Science and Industrial Management",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "141",
+      "name": "Sports Science",
+      "intake": {
+        "2025/2026": 50
+      }
+    },
+    {
+      "number": "142",
+      "name": "Geographical Information Systems",
+      "intake": {
+        "2025/2026": 50
+      }
     },
     {
       "number": "143",
       "name": "Electronic and Intelligent Systems Engineering",
-      "intake": 50
+      "intake": {
+        "2025/2026": 50
+      }
     }
   ]
 }
