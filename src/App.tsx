@@ -5,6 +5,7 @@ import ProgramsPage from './components/ProgramsPage';
 import AboutPage from './components/AboutPage';
 import StatsPage from './components/StatsPage';
 import AnalysisPage from './components/AnalysisPage';
+import DistrictMatrixPage from './components/DistrictMatrixPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/stats" element={<StatsPage />} />
             {showAnalysis && <Route path="/analysis" element={<AnalysisPage />} />}
+            {showAnalysis && <Route path="/analysis/matrix" element={<DistrictMatrixPage />} />}
           </Routes>
         </main>
         <Footer />

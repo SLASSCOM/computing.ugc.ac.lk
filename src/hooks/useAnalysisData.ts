@@ -300,6 +300,12 @@ export const useAnalysisData = () => {
     uniqueUniversities,
     uniqueCoursesOfStudy,
     showAll,
-    setShowAll
+    setShowAll,
+    cop2024,
+    cop2025,
+    activePrograms,
+    universities,
+    keyCourses
   };
 };
+
