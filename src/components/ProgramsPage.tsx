@@ -564,45 +564,50 @@ const ProgramsPage = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5 items-end">
             <MultiSelectFilter
-              label="Filter by university"
+              label="University"
               placeholder="All Universities"
               options={universityOptions}
               selected={selectedUniversities}
               onChange={handleUniversitiesChange}
+              showLabel
             />
 
             <MultiSelectFilter
-              label="Filter by program type"
+              label="Program Type"
               placeholder="All Types"
               options={TYPE_OPTIONS}
               selected={selectedTypes}
               onChange={handleTypesChange}
+              showLabel
             />
 
             <MultiSelectFilter
-              label="Filter by discipline"
+              label="Discipline"
               placeholder="All Disciplines"
               options={disciplineOptions}
               selected={selectedDisciplines}
               onChange={setSelectedDisciplines}
+              showLabel
             />
 
             <MultiSelectFilter
-              label="Filter by Course of Study"
-              placeholder="All UGC Course of Study"
+              label="Course of Study"
+              placeholder="All UGC Courses"
               options={courseOfStudyOptions}
               selected={selectedCoursesOfStudy}
               onChange={handleCoursesChange}
+              showLabel
             />
 
             <MultiSelectFilter
-              label="Filter by SLQF Level"
+              label="SLQF Level"
               placeholder="All SLQF Levels"
               options={slqfOptions}
               selected={selectedSlqfLevels}
               onChange={setSelectedSlqfLevels}
+              showLabel
             />
           </div>
 

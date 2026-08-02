@@ -33,7 +33,7 @@ const StatsPage = () => {
         const keysData: KeyData = await keysRes.json();
 
         setUniversities(uniData);
-        setPrograms(progData);
+        setPrograms(progData.filter((p: ProgramData) => p.external !== 'External'));
         setCoursesOfStudy(keysData.courses_of_study || []);
       } catch (error) {
         console.error('Error loading stats data:', error);

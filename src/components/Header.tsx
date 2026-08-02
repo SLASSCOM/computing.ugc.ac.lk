@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ExternalLink, Home, Menu, Search, X, Info, BarChart3 } from 'lucide-react';
+import { ExternalLink, Home, Menu, Search, X, Info, BarChart3, TrendingUp } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const showAnalysis = import.meta.env.VITE_ENABLE_ANALYSIS_PAGE === 'true';
 
   const navLinkClass = (path: string) =>
     `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ugc-gold ${
@@ -52,6 +53,12 @@ const Header = () => {
               <BarChart3 className="h-4 w-4" aria-hidden="true" />
               <span>Stats</span>
             </Link>
+            {showAnalysis && (
+              <Link to="/analysis" className={navLinkClass('/analysis')}>
+                <TrendingUp className="h-4 w-4" aria-hidden="true" />
+                <span>Analysis</span>
+              </Link>
+            )}
             <Link to="/about" className={navLinkClass('/about')}>
               <Info className="h-4 w-4" aria-hidden="true" />
               <span>About</span>
@@ -93,6 +100,12 @@ const Header = () => {
                 <BarChart3 className="h-4 w-4" aria-hidden="true" />
                 <span>Stats</span>
               </Link>
+              {showAnalysis && (
+                <Link to="/analysis" className={navLinkClass('/analysis')} onClick={closeMobile}>
+                  <TrendingUp className="h-4 w-4" aria-hidden="true" />
+                  <span>Analysis</span>
+                </Link>
+              )}
               <Link to="/about" className={navLinkClass('/about')} onClick={closeMobile}>
                 <Info className="h-4 w-4" aria-hidden="true" />
                 <span>About</span>

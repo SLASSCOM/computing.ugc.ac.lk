@@ -14,7 +14,7 @@ export interface ProgramData {
   ug_pg: 'UG' | 'PG';
   university_hei: string;
   faculty_name: string;
-  department_name: string;
+  department_name: string | null;
   name_of_the_course_s_: string;
   discipline: string | null;
   academic_stream: string | null;
@@ -47,4 +47,34 @@ export interface Discipline {
   name: string;
   code: string;
   description: string;
+}
+
+export interface AnalysisRecord {
+  code_of_study: string;
+  course_number: string;
+  ugc_course_name: string;
+  course_name: string;
+  university: string;
+  faculty: string;
+  intake_count: number | null;
+  zScore2024: number | 'NQC' | null;
+  zScore2025: number | 'NQC' | null;
+  rank2024: number | null;
+  rank2025: number | null;
+  zScoreDiff: number | null;
+  rankDiff: number | null;
+  merit_base?: boolean;
+}
+
+export interface COPRecord {
+  district: string;
+  courses_of_study: string;
+  z_score?: number;
+  nqc?: boolean;
+  merit_base?: boolean;
+}
+
+export interface KeyCourse {
+  number: string;
+  name: string;
 }
