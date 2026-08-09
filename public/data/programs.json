@@ -1704,7 +1704,7 @@
     "university_hei": "University of Kelaniya",
     "faculty_name": "Faculty of Science",
     "department_name": "Department of Statistics & Computer Science",
-    "name_of_the_course_s_": "BA Hons in Computer Studies",
+    "name_of_the_course_s_": "BA Hons in Computer Studies (COST)",
     "discipline": "Computer Science",
     "academic_stream": "Arts",
     "external": null,
@@ -1722,7 +1722,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "019D",
-    "intake_count": null
+    "intake_count": 50
   },
   {
     "ug_pg": "PG",
