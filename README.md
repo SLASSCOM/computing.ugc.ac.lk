@@ -8,30 +8,14 @@ Published by the **Standing Committee of Computing**, University Grants Commissi
 
 This application helps students, educators, and policymakers explore computing programs across Sri Lankan universities and institutes. Browse by institution, search by keyword, and filter programs by type and computing discipline.
 
-The directory currently lists **155 programs** (96 undergraduate, 59 postgraduate) from **29 universities and institutes**.
-
 ## Features
 
 - **Home page** — overview statistics and a browsable grid of universities and institutes
 - **Programs page** — searchable, filterable listing of all computing programs
-- **Multi-select filters** — combine universities, program types (UG/PG), and disciplines
+- **Statistics page** — interactive admissions summary, stream-based categorization, and dynamic pivot tables of student intake counts
+- **Multi-select filters** — combine universities, program types (UG/PG), disciplines, and academic streams
 - **Program details** — modal view with faculty, department, discipline, duration, SLQF level, UGC approval, and related metadata
-- **Deep linking** — selecting a university from the home page opens `/programs?university=...` pre-filtered to that institution
-
-## Computing Disciplines
-
-Programs are classified using the seven core computing disciplines defined by the [IEEE / ACM Computing Curricula](https://www.acm.org/education/curricula-recommendations), plus an **Other** category for programs that do not map cleanly to a single discipline:
-
-| Discipline | Description |
-| --- | --- |
-| **Computer Science (CS)** | Theoretical foundations, algorithms, software development, AI/ML |
-| **Computer Engineering (CE)** | Hardware design and the hardware–software interface |
-| **Software Engineering (SE)** | Large-scale, reliable, safety-critical software systems |
-| **Cybersecurity (CSEC)** | Data privacy, digital forensics, system security, risk management |
-| **Data Science (DS)** | Data analysis, statistical modelling, big data platforms |
-| **Information Systems (IS)** | Business needs and corporate technology infrastructure |
-| **Information Technology (IT)** | User support, networking, web applications, technology lifecycle |
-| **Other** | Programs outside the above categories |
+- **Deep linking** — selecting a university or academic stream from home/stats page opens pre-filtered views
 
 ## Tech Stack
 

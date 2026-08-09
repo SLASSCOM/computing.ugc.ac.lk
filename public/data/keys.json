@@ -110,853 +110,1862 @@
       "description": "User support, networking, web applications, technology lifecycle"
     }
   ],
+  "streams": [
+    {
+      "id": "maths",
+      "name": "Physical Science Stream (Mathematics)"
+    },
+    {
+      "id": "bio",
+      "name": "Biological Science Stream"
+    },
+    {
+      "id": "com",
+      "name": "Commerce Stream"
+    },
+    {
+      "id": "et",
+      "name": "Engineering Technology Stream"
+    },
+    {
+      "id": "bst",
+      "name": "Biosystems Technology Stream"
+    },
+    {
+      "id": "art",
+      "name": "Arts Stream"
+    }
+  ],
   "courses_of_study": [
     {
       "number": "001",
       "name": "Medicine",
       "intake": {
         "2025/2026": 2095
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOM",
+        "UOP",
+        "UOR",
+        "USJ",
+        "UWU",
+        "WUSL"
+      ]
     },
     {
       "number": "002",
       "name": "Dental Surgery",
       "intake": {
         "2025/2026": 130
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOP",
+        "USJ"
+      ]
     },
     {
       "number": "003",
       "name": "Veterinary Science",
       "intake": {
         "2025/2026": 110
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "004",
       "name": "Agriculture",
       "intake": {
         "2025/2026": 820
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SUSL",
+        "WUSL"
+      ]
     },
     {
       "number": "005",
       "name": "Food Science & Nutrition",
       "intake": {
         "2025/2026": 165
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "WUSL"
+      ]
     },
     {
       "number": "006",
       "name": "Biological Science",
       "intake": {
         "2025/2026": 1683
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "EUSL",
+        "SEUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "007",
       "name": "Applied Sciences (Biological Science)",
       "intake": {
         "2025/2026": 425
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "RUSL",
+        "SUSL",
+        "UOV"
+      ]
     },
     {
       "number": "008",
       "name": "Engineering",
       "intake": {
         "2025/2026": 2238
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "SEUSL",
+        "UOJ",
+        "UOM",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "009",
       "name": "Engineering (EM)",
       "intake": {
         "2025/2026": 80
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "010",
       "name": "Engineering (TM)",
       "intake": {
         "2025/2026": 98
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "011",
       "name": "Quantity Surveying",
       "intake": {
         "2025/2026": 152
-      }
+      },
+      "streams": {
+        "art": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "012",
       "name": "Computer Science",
       "intake": {
         "2025/2026": 716
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "TC",
+        "UCSC",
+        "UOJ",
+        "UOK",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "013",
       "name": "Physical Science",
       "intake": {
         "2025/2026": 2312
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "EUSL",
+        "SEUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "014",
       "name": "Surveying Science",
       "intake": {
         "2025/2026": 165
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "SUSL"
+      ]
     },
     {
       "number": "015",
       "name": "Applied Sciences (Physical Science)",
       "intake": {
         "2025/2026": 778
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "RUSL",
+        "SUSL",
+        "TC",
+        "UOV",
+        "WUSL"
+      ]
     },
     {
       "number": "016",
       "name": "Management",
       "intake": {
         "2025/2026": 5474
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SUSL",
+        "SEUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOP",
+        "UOR",
+        "USJ",
+        "WUSL"
+      ]
     },
     {
       "number": "017",
       "name": "Real Estate Management and Valuation",
       "intake": {
         "2025/2026": 70
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "018",
       "name": "Commerce",
       "intake": {
         "2025/2026": 884
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "EUSL",
+        "SEUSL",
+        "UOJ",
+        "UOK",
+        "USJ"
+      ]
     },
     {
       "number": "019",
       "name": "Arts",
       "intake": {
         "2025/2026": 6983
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SEUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "020",
       "name": "Arts (SP) - Mass Media",
       "intake": {
         "2025/2026": 110
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SPC"
+      ]
     },
     {
       "number": "021",
       "name": "Arts (SAB)",
       "intake": {
         "2025/2026": 350
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SUSL"
+      ]
     },
     {
       "number": "022",
       "name": "Management Studies (TV)",
       "intake": {
         "2025/2026": 462
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "TC",
+        "UOV"
+      ]
     },
     {
       "number": "023",
       "name": "Architecture",
       "intake": {
         "2025/2026": 100
-      }
+      },
+      "streams": {
+        "art": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "024",
       "name": "Design",
       "intake": {
         "2025/2026": 87
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "025",
       "name": "Law",
       "intake": {
         "2025/2026": 495
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOC",
+        "UOJ",
+        "UOP"
+      ]
     },
     {
       "number": "026",
       "name": "Information Technology (IT)",
       "intake": {
         "2025/2026": 251
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "027",
       "name": "Management and Information Technology (MIT)",
       "intake": {
         "2025/2026": 119
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "028",
       "name": "Management and Public Policy",
       "intake": {
         "2025/2026": 100
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "029",
       "name": "Communication Studies",
       "intake": {
         "2025/2026": 200
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "TC"
+      ]
     },
     {
       "number": "030",
       "name": "Urban Informatics and Planning",
       "intake": {
         "2025/2026": 88
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "031",
       "name": "Peace and Conflict Resolution",
       "intake": {
         "2025/2026": 33
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "032",
       "name": "Ayurveda Medicine and Surgery",
       "intake": {
         "2025/2026": 383
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "GWUIM",
+        "UOC"
+      ]
     },
     {
       "number": "033",
       "name": "Unani Medicine and Surgery",
       "intake": {
         "2025/2026": 89
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOC"
+      ]
     },
     {
       "number": "034",
       "name": "Fashion Design & Product Development",
       "intake": {
         "2025/2026": 79
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "035",
       "name": "Food Science & Technology",
       "intake": {
         "2025/2026": 220
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "SUSL",
+        "UOP",
+        "USJ"
+      ]
     },
     {
       "number": "036",
       "name": "Siddha Medicine and Surgery",
       "intake": {
         "2025/2026": 247
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "TC",
+        "UOJ"
+      ]
     },
     {
       "number": "037",
       "name": "Nursing",
       "intake": {
         "2025/2026": 573
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "EUSL",
+        "UOC",
+        "UOJ",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "038",
       "name": "Information and Communication Technology (ICT)",
       "intake": {
         "2025/2026": 285
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "RUSL",
+        "UOV"
+      ]
     },
     {
       "number": "039",
       "name": "Agricultural Technology & Management",
       "intake": {
         "2025/2026": 221
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "041",
       "name": "Arts (SP) - Performing Arts",
       "intake": {
         "2025/2026": 110
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SPC"
+      ]
     },
     {
       "number": "050",
       "name": "Health Promotion",
       "intake": {
         "2025/2026": 103
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "RUSL"
+      ]
     },
     {
       "number": "051",
       "name": "Pharmacy",
       "intake": {
         "2025/2026": 239
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOJ",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "052",
       "name": "Medical Laboratory Sciences",
       "intake": {
         "2025/2026": 226
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOJ",
+        "UOP",
+        "UOR",
+        "USJ"
+      ]
     },
     {
       "number": "053",
       "name": "Radiography",
       "intake": {
         "2025/2026": 68
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "054",
       "name": "Physiotherapy",
       "intake": {
         "2025/2026": 111
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOC",
+        "UOP"
+      ]
     },
     {
       "number": "055",
       "name": "Environmental Conservation & Management",
       "intake": {
         "2025/2026": 109
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "056",
       "name": "Facilities Management",
       "intake": {
         "2025/2026": 81
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "057",
       "name": "Transport Management & Logistics Engineering (TMLE)",
       "intake": {
         "2025/2026": 91
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "058",
       "name": "Biochemistry & Molecular Biology",
       "intake": {
         "2025/2026": 80
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOC"
+      ]
     },
     {
       "number": "059",
       "name": "Industrial Statistics & Mathematical Finance",
       "intake": {
         "2025/2026": 121
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOC"
+      ]
     },
     {
       "number": "060",
       "name": "Statistics & Operations Research",
       "intake": {
         "2025/2026": 79
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "062",
       "name": "Fisheries & Marine Sciences",
       "intake": {
         "2025/2026": 150
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "063",
       "name": "Islamic Studies",
       "intake": {
         "2025/2026": 278
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SEUSL"
+      ]
     },
     {
       "number": "064",
       "name": "Science and Technology",
       "intake": {
         "2025/2026": 107
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "065",
       "name": "Computer Science & Technology",
       "intake": {
         "2025/2026": 101
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "066",
       "name": "Entrepreneurship and Management",
       "intake": {
         "2025/2026": 101
-      }
+      },
+      "streams": {
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "067",
       "name": "Animal Production and Food Technology",
       "intake": {
         "2025/2026": 108
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "068",
       "name": "Music",
       "intake": {
         "2025/2026": 570
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SVIAS",
+        "UOJ",
+        "USJ",
+        "UVPA"
+      ]
     },
     {
       "number": "069",
       "name": "Dance",
       "intake": {
         "2025/2026": 494
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SVIAS",
+        "UOJ",
+        "UVPA"
+      ]
     },
     {
       "number": "070",
       "name": "Art & Design",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "UOJ"
+      ]
     },
     {
       "number": "071",
       "name": "Drama & Theatre",
       "intake": {
         "2025/2026": 178
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SVIAS",
+        "UVPA"
+      ]
     },
     {
       "number": "072",
       "name": "Visual & Technological Arts",
       "intake": {
         "2025/2026": 94
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SVIAS"
+      ]
     },
     {
       "number": "073",
       "name": "Export Agriculture",
       "intake": {
         "2025/2026": 105
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "075",
       "name": "Industrial Information Technology",
       "intake": {
         "2025/2026": 100
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "076",
       "name": "Mineral Resources and Technology",
       "intake": {
         "2025/2026": 106
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "077",
       "name": "Business Information Systems (Honours) (BIS)",
       "intake": {
         "2025/2026": 80
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "079",
       "name": "Management and Information Technology (SEUSL)",
       "intake": {
         "2025/2026": 170
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "SEUSL"
+      ]
     },
     {
       "number": "081",
       "name": "Physical Education",
       "intake": {
         "2025/2026": 150
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "SUSL",
+        "UOJ"
+      ]
     },
     {
       "number": "082",
       "name": "Sports Science & Management",
       "intake": {
         "2025/2026": 178
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "SUSL",
+        "USJ"
+      ]
     },
     {
       "number": "083",
       "name": "Speech and Hearing Sciences",
       "intake": {
         "2025/2026": 75
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "084",
       "name": "Arabic Language",
       "intake": {
         "2025/2026": 225
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SEUSL"
+      ]
     },
     {
       "number": "085",
       "name": "Visual Arts",
       "intake": {
         "2025/2026": 120
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "UVPA"
+      ]
     },
     {
       "number": "086",
       "name": "Animal Science & Fisheries",
       "intake": {
         "2025/2026": 74
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "087",
       "name": "Food Production & Technology Management",
       "intake": {
         "2025/2026": 140
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "WUSL"
+      ]
     },
     {
       "number": "088",
       "name": "Aquatic Resources Technology",
       "intake": {
         "2025/2026": 114
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "090",
       "name": "Hospitality, Tourism and Events Management",
       "intake": {
         "2025/2026": 107
-      }
+      },
+      "streams": {
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "091",
       "name": "Information Technology & Management",
       "intake": {
         "2025/2026": 127
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "092",
       "name": "Tourism & Hospitality Management",
       "intake": {
         "2025/2026": 181
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "RUSL",
+        "SUSL"
+      ]
     },
     {
       "number": "093",
       "name": "Agricultural Resource Management and Technology",
       "intake": {
         "2025/2026": 181
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "094",
       "name": "Agribusiness Management",
       "intake": {
         "2025/2026": 78
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "095",
       "name": "Green Technology",
       "intake": {
         "2025/2026": 72
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "096",
       "name": "Information Systems",
       "intake": {
         "2025/2026": 350
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "SUSL",
+        "UCSC",
+        "USJ"
+      ]
     },
     {
       "number": "097",
       "name": "Landscape Architecture",
       "intake": {
         "2025/2026": 81
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "098",
       "name": "Translation Studies",
       "intake": {
         "2025/2026": 155
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "EUSL",
+        "SUSL",
+        "UOJ",
+        "UOK"
+      ]
     },
     {
       "number": "099",
       "name": "Software Engineering",
       "intake": {
         "2025/2026": 186
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "SUSL",
+        "UOK",
+        "USJ"
+      ]
     },
     {
       "number": "100",
       "name": "Film & Television Studies",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "101",
       "name": "Project Management",
       "intake": {
         "2025/2026": 101
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOV"
+      ]
     },
     {
       "number": "102",
       "name": "Engineering Technology (ET)",
       "intake": {
         "2025/2026": 1331
-      }
+      },
+      "streams": {
+        "et": true
+      },
+      "conducted by": [
+        "RUSL",
+        "SUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOR",
+        "USJ",
+        "UWU",
+        "WUSL"
+      ]
     },
     {
       "number": "103",
       "name": "Biosystems Technology (BST)",
       "intake": {
         "2025/2026": 1320
-      }
+      },
+      "streams": {
+        "bst": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SUSL",
+        "SEUSL",
+        "UOC",
+        "UOJ",
+        "UOK",
+        "UOR",
+        "USJ",
+        "UWU",
+        "WUSL"
+      ]
     },
     {
       "number": "104",
       "name": "Information Communication Technology",
       "intake": {
         "2025/2026": 1023
-      }
+      },
+      "streams": {
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "EUSL",
+        "RUSL",
+        "SEUSL",
+        "UOC",
+        "UOK",
+        "UOR",
+        "USJ",
+        "UOV",
+        "UWU"
+      ]
     },
     {
       "number": "105",
       "name": "Teaching English as a Second Language (TESL)",
       "intake": {
         "2025/2026": 150
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "SUSL",
+        "UOK",
+        "USJ"
+      ]
     },
     {
       "number": "106",
       "name": "Marine and Freshwater Sciences",
       "intake": {
         "2025/2026": 100
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "107",
       "name": "Food Business Management",
       "intake": {
         "2025/2026": 135
-      }
+      },
+      "streams": {
+        "com": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "SUSL"
+      ]
     },
     {
       "number": "108",
       "name": "Physical Science - ICT",
       "intake": {
         "2025/2026": 156
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOK",
+        "USJ"
+      ]
     },
     {
       "number": "109",
       "name": "Business Science",
       "intake": {
         "2025/2026": 150
-      }
+      },
+      "streams": {
+        "com": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "110",
       "name": "Financial Engineering",
       "intake": {
         "2025/2026": 80
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "111",
       "name": "Geographical Information Science",
       "intake": {
         "2025/2026": 75
-      }
+      },
+      "streams": {
+        "art": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     },
     {
       "number": "112",
       "name": "Social Work",
       "intake": {
         "2025/2026": 101
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "UOP",
+        "USJ"
+      ]
     },
     {
       "number": "113",
       "name": "Financial Mathematics and Industrial Statistics",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "114",
       "name": "Human Resource Development",
       "intake": {
         "2025/2026": 85
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "115",
       "name": "Occupational Therapy",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "116",
       "name": "Optometry",
       "intake": {
         "2025/2026": 60
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "117",
       "name": "Artificial Intelligence",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOM"
+      ]
     },
     {
       "number": "118",
       "name": "Applied Chemistry",
       "intake": {
         "2025/2026": 60
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "119",
       "name": "Electronics and Computer Science",
       "intake": {
         "2025/2026": 80
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "127",
       "name": "Accounting Information Systems",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "128",
       "name": "Arts-Information Technology",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "129",
       "name": "Aquatic Bioresources",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "130",
       "name": "Urban Bioresources",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "131",
       "name": "Financial Economics",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "132",
       "name": "English Language & Applied Linguistics",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "133",
       "name": "Banking and Insurance",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "com": true
+      },
+      "conducted by": [
+        "UOV"
+      ]
     },
     {
       "number": "134",
       "name": "Creative Music Technology and Production",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "135",
       "name": "Plantation Management and Technology",
       "intake": {
         "2025/2026": 216
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UWU"
+      ]
     },
     {
       "number": "136",
       "name": "Data Science",
       "intake": {
         "2025/2026": 65
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "SUSL"
+      ]
     },
     {
       "number": "137",
       "name": "Primary Education",
       "intake": {
         "2025/2026": 125
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOC"
+      ]
     },
     {
       "number": "138",
       "name": "Medical Imaging Technology",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "bio": true
+      },
+      "conducted by": [
+        "UOC"
+      ]
     },
     {
       "number": "139",
       "name": "Polymer Science and Industrial Management",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "USJ"
+      ]
     },
     {
       "number": "141",
       "name": "Sports Science",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "com": true,
+        "bio": true,
+        "maths": true,
+        "et": true,
+        "bst": true
+      },
+      "conducted by": [
+        "UOK"
+      ]
     },
     {
       "number": "142",
       "name": "Geographical Information Systems",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "art": true,
+        "bio": true,
+        "maths": true
+      },
+      "conducted by": [
+        "UOR"
+      ]
     },
     {
       "number": "143",
       "name": "Electronic and Intelligent Systems Engineering",
       "intake": {
         "2025/2026": 50
-      }
+      },
+      "streams": {
+        "maths": true
+      },
+      "conducted by": [
+        "UOP"
+      ]
     }
   ]
 }
