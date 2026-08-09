@@ -4,15 +4,34 @@ import { UniversityData, ProgramData, SlqfLevel } from '../types';
 import LoadingSpinner from './LoadingSpinner';
 import { Award, BookOpen, School, ExternalLink } from 'lucide-react';
 
+interface StreamInfo {
+  id: string;
+  name: string;
+}
+
 interface KeyData {
-  courses_of_study: { number: string; name: string; intake?: Record<string, number> }[];
+  courses_of_study: {
+    number: string;
+    name: string;
+    intake?: Record<string, number>;
+    streams?: Record<string, boolean>;
+    "conducted by"?: string[];
+  }[];
   slqf: SlqfLevel[];
+  streams?: StreamInfo[];
 }
 
 const StatsPage = () => {
   const [universities, setUniversities] = useState<UniversityData[]>([]);
   const [programs, setPrograms] = useState<ProgramData[]>([]);
-  const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string; intake?: Record<string, number> }[]>([]);
+  const [coursesOfStudy, setCoursesOfStudy] = useState<{
+    number: string;
+    name: string;
+    intake?: Record<string, number>;
+    streams?: Record<string, boolean>;
+    "conducted by"?: string[];
+  }[]>([]);
+  const [streamsList, setStreamsList] = useState<StreamInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -35,6 +54,22 @@ const StatsPage = () => {
         setUniversities(uniData);
         setPrograms(progData);
         setCoursesOfStudy(keysData.courses_of_study || []);
+
+        // Combine et and bst into a single stream item "et/bst"
+        const rawStreams = keysData.streams || [];
+        const mergedStreams: StreamInfo[] = [];
+        let addedTech = false;
+        for (const s of rawStreams) {
+          if (s.id === 'et' || s.id === 'bst') {
+            if (!addedTech) {
+              mergedStreams.push({ id: 'et/bst', name: 'Technology Stream (ET/BST)' });
+              addedTech = true;
+            }
+          } else {
+            mergedStreams.push(s);
+          }
+        }
+        setStreamsList(mergedStreams);
       } catch (error) {
         console.error('Error loading stats data:', error);
       } finally {
@@ -316,25 +351,36 @@ const StatsPage = () => {
         </div>
 
         {/* Pivot Table */}
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-slate-200 text-left text-sm font-sans">
-            <thead className="bg-slate-50">
+        <div className="overflow-auto max-h-[75vh] border-b border-slate-200">
+          <table className="min-w-full divide-y divide-slate-200 text-left text-sm font-sans border-collapse">
+            <thead className="bg-slate-50 sticky top-0 z-20 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
               <tr className="h-32">
                 <th
                   scope="col"
-                  className="sticky left-0 z-10 bg-slate-50 py-3 pl-4 pr-3 text-left font-semibold text-slate-900 border-r border-slate-200 w-80 sm:w-96 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] align-bottom pb-3"
+                  className="sticky left-0 top-0 z-30 bg-slate-50 py-3 pl-4 pr-3 text-left font-semibold text-slate-900 border-r border-b border-slate-200 w-[200px] min-w-[200px] max-w-[200px] align-bottom pb-3"
                 >
                   Course of Study
                 </th>
+                {streamsList.map((stream) => (
+                  <th
+                    key={stream.id}
+                    scope="col"
+                    className="sticky top-0 z-20 px-0.5 py-3 text-center border-r border-b border-slate-200 min-w-[28px] align-bottom font-medium text-slate-700 bg-slate-50"
+                    title={stream.name}
+                  >
+                    <div className="flex h-full flex-col justify-end items-center pb-2">
+                      <span
+                        className="font-bold text-[10px] uppercase whitespace-nowrap tracking-wider"
+                        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                      >
+                        {stream.id}
+                      </span>
+                    </div>
+                  </th>
+                ))}
                 <th
                   scope="col"
-                  className="px-4 py-3 text-center font-bold text-slate-900 border-r border-slate-200 w-20 bg-slate-100 align-bottom pb-3"
-                >
-                  Intake 2025/ 2026 (Ref)
-                </th>
-                <th
-                  scope="col"
-                  className="px-4 py-3 text-center font-bold text-slate-900 border-r border-slate-200 w-20 bg-slate-100 align-bottom pb-3"
+                  className="sticky top-0 z-20 px-2 py-3 text-center font-bold text-slate-900 border-r border-b border-slate-200 w-16 bg-slate-100 align-bottom pb-3 text-xs"
                 >
                   Total Intake
                 </th>
@@ -342,13 +388,13 @@ const StatsPage = () => {
                   <th
                     key={uni.university_hei}
                     scope="col"
-                    className="px-1 py-3 text-center border-r border-slate-100 last:border-r-0 min-w-[40px] align-bottom font-medium text-slate-900"
+                    className="sticky top-0 z-20 px-0.5 py-3 text-center border-r border-b border-slate-100 last:border-r-0 min-w-[28px] align-bottom font-medium text-slate-900 bg-slate-50"
                     title={uni.university_hei}
                   >
                     <div className="flex h-full flex-col justify-end items-center pb-2">
                       <Link
                         to={`/programs?university=${encodeURIComponent(uni.university_hei)}&type=UG`}
-                        className="cursor-help hover:text-ugc-gold font-semibold text-xs whitespace-nowrap tracking-wider transition-colors"
+                        className="cursor-help hover:text-ugc-gold font-semibold text-[10px] whitespace-nowrap tracking-wider transition-colors"
                         style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                       >
                         {uni.abbreviation || uni.university_hei.substring(0, 4)} ({uni.uni_code})
@@ -361,20 +407,30 @@ const StatsPage = () => {
             <tbody className="divide-y divide-slate-200 bg-white">
               {/* Column Totals Row */}
               {filteredCoursesOfStudy.length > 0 && (
-                <tr className="bg-slate-100/70 font-bold border-b border-slate-300">
-                  <td className="sticky left-0 z-10 bg-slate-100 py-4 pl-4 pr-3 text-ugc-navy border-r border-slate-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
-                    <span>Total Intake</span>
+                <tr className="bg-slate-100 font-bold border-b border-slate-300 sticky top-[128px] z-20 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                  <td className="sticky left-0 top-[128px] z-30 bg-slate-100 py-4 pl-4 pr-3 text-ugc-navy border-r border-slate-200 w-[200px] min-w-[200px] max-w-[200px] shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                    <span>Total</span>
                   </td>
-                  <td className="px-4 py-4 text-center border-r border-slate-200 text-slate-800">
-                    {overallIntakeTotal}
-                  </td>
-                  <td className="px-4 py-4 text-center border-r border-slate-200 text-ugc-navy bg-slate-100/50">
+                  {streamsList.map((stream) => {
+                    const count = filteredCoursesOfStudy.filter((course) => {
+                      if (stream.id === 'et/bst') {
+                        return course.streams?.['et'] === true || course.streams?.['bst'] === true;
+                      }
+                      return course.streams?.[stream.id] === true;
+                    }).length;
+                    return (
+                      <td key={`total-stream-${stream.id}`} className="px-0.5 py-4 text-center border-r border-slate-200 bg-slate-100 text-slate-800 font-bold text-xs">
+                        {count}
+                      </td>
+                    );
+                  })}
+                  <td className="px-2 py-4 text-center border-r border-slate-200 text-ugc-navy bg-slate-200 text-xs">
                     {overallUniSum}
                   </td>
                   {ugcUniversities.map((uni) => (
                     <td
                       key={`total-${uni.university_hei}`}
-                      className="px-3 py-4 text-center border-r border-slate-100 last:border-r-0 text-slate-800 animate-fade-in"
+                      className="px-1 py-4 text-center border-r border-slate-100 last:border-r-0 text-slate-800 animate-fade-in text-xs bg-slate-100"
                     >
                       {universityTotals[uni.university_hei]?.display || '-'}
                     </td>
@@ -390,23 +446,40 @@ const StatsPage = () => {
                     className={`hover:bg-slate-50/80 transition-colors ${!totalStats.isOffered ? 'opacity-50 bg-slate-50/30' : ''
                       }`}
                   >
-                    <td className="sticky left-0 z-10 bg-white py-4 pl-4 pr-3 font-medium text-ugc-navy border-r border-slate-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
-                      <div className="flex items-start gap-2">
-                        <span className="inline-flex items-center rounded-md bg-slate-100 px-1.5 py-0.5 text-xs font-semibold text-slate-600">
+                    <td className="sticky left-0 z-10 bg-white py-4 pl-4 pr-3 font-medium text-ugc-navy border-r border-slate-200 w-[200px] min-w-[200px] max-w-[200px] shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                      <div className="flex items-start gap-2 whitespace-normal break-words">
+                        <span className="inline-flex items-center rounded-md bg-slate-100 px-1.5 py-0.5 text-xs font-semibold text-slate-600 shrink-0">
                           {course.number}
                         </span>
                         <Link
                           to={`/programs?course=${course.number}&type=UG`}
-                          className="hover:underline hover:text-ugc-gold transition-colors text-left"
+                          className="hover:underline hover:text-ugc-gold transition-colors text-left break-words"
                         >
                           {course.name}
                         </Link>
                       </div>
                     </td>
-                    <td className="px-4 py-4 text-center border-r border-slate-200 font-bold bg-slate-100 text-slate-700">
-                      {course.intake?.["2025/2026"] !== undefined && course.intake?.["2025/2026"] !== null ? course.intake["2025/2026"] : '-'}
-                    </td>
-                    <td className="px-4 py-4 text-center border-r border-slate-200 font-bold bg-slate-50 text-ugc-navy">
+                    {streamsList.map((stream) => {
+                      const isTrue = stream.id === 'et/bst'
+                        ? (course.streams?.['et'] === true || course.streams?.['bst'] === true)
+                        : (course.streams?.[stream.id] === true);
+                      return (
+                        <td
+                          key={stream.id}
+                          className="px-0.5 py-4 text-center border-r border-slate-200 font-medium text-slate-700 bg-white"
+                          title={`${course.name} - ${stream.name}`}
+                        >
+                          {isTrue ? (
+                            <span className="inline-flex items-center justify-center font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">
+                              ✓
+                            </span>
+                          ) : (
+                            <span className="text-slate-300">-</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                    <td className="px-2 py-4 text-center border-r border-slate-200 font-bold bg-slate-50 text-ugc-navy text-xs">
                       {totalStats.display}
                     </td>
                     {ugcUniversities.map((uni) => {
@@ -446,7 +519,7 @@ const StatsPage = () => {
               {filteredCoursesOfStudy.length === 0 && (
                 <tr>
                   <td
-                    colSpan={ugcUniversities.length + 3}
+                    colSpan={ugcUniversities.length + 2 + streamsList.length}
                     className="py-10 text-center text-slate-500"
                   >
                     No courses of study found matching "{searchTerm}".
