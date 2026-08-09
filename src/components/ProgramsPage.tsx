@@ -35,6 +35,11 @@ const formatSlqfLevel = (lvl: string, slqfLevels: SlqfLevel[]) => {
   return `Level ${lvl}`;
 };
 
+interface StreamInfo {
+  id: string;
+  name: string;
+}
+
 const ProgramsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [universities, setUniversities] = useState<UniversityData[]>([]);
@@ -54,14 +59,27 @@ const ProgramsPage = () => {
     const courseParam = searchParams.get('course');
     return courseParam ? [courseParam] : [];
   });
+  const [selectedStreams, setSelectedStreams] = useState<string[]>(() => {
+    const streamParam = searchParams.get('stream');
+    if (streamParam === 'et/bst') {
+      return ['et', 'bst'];
+    }
+    return streamParam ? [streamParam] : [];
+  });
   const [selectedSlqfLevels, setSelectedSlqfLevels] = useState<string[]>([]);
-  const [coursesOfStudy, setCoursesOfStudy] = useState<{ number: string; name: string }[]>([]);
+  const [coursesOfStudy, setCoursesOfStudy] = useState<{
+    number: string;
+    name: string;
+    streams?: Record<string, boolean>;
+  }[]>([]);
+  const [streamsList, setStreamsList] = useState<StreamInfo[]>([]);
   const [slqfLevels, setSlqfLevels] = useState<SlqfLevel[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<ProgramData | null>(null);
   const [groupBy, setGroupBy] = useState<string>('slqf');
   const skipUniversityUrlSync = useRef(false);
   const skipTypeUrlSync = useRef(false);
   const skipCourseUrlSync = useRef(false);
+  const skipStreamUrlSync = useRef(false);
 
   const singleUniversityFromUrl =
     selectedUniversities.length === 1 ? selectedUniversities[0] : '';
@@ -73,10 +91,11 @@ const ProgramsPage = () => {
   }, [singleUniversityFromUrl]);
 
   useEffect(() => {
-    if (skipUniversityUrlSync.current || skipTypeUrlSync.current || skipCourseUrlSync.current) {
+    if (skipUniversityUrlSync.current || skipTypeUrlSync.current || skipCourseUrlSync.current || skipStreamUrlSync.current) {
       skipUniversityUrlSync.current = false;
       skipTypeUrlSync.current = false;
       skipCourseUrlSync.current = false;
+      skipStreamUrlSync.current = false;
       return;
     }
     const universityParam = searchParams.get('university') || '';
@@ -87,6 +106,13 @@ const ProgramsPage = () => {
 
     const courseParam = searchParams.get('course') || '';
     setSelectedCoursesOfStudy(courseParam ? [courseParam] : []);
+
+    const streamParam = searchParams.get('stream') || '';
+    if (streamParam === 'et/bst') {
+      setSelectedStreams(['et', 'bst']);
+    } else {
+      setSelectedStreams(streamParam ? [streamParam] : []);
+    }
   }, [searchParams]);
 
   useEffect(() => {
@@ -105,6 +131,7 @@ const ProgramsPage = () => {
         setUniversities(universitiesData);
         setPrograms(programsData);
         setCoursesOfStudy(keysData.courses_of_study || []);
+        setStreamsList(keysData.streams || []);
         setSlqfLevels(keysData.slqf || []);
       } catch (error) {
         console.error('Error loading data:', error);
@@ -149,6 +176,14 @@ const ProgramsPage = () => {
         selectedCoursesOfStudy.length === 0 ||
         (program.code_of_study && selectedCoursesOfStudy.includes(program.code_of_study.substring(0, 3))) ||
         (!program.code_of_study && selectedCoursesOfStudy.includes('Other'));
+      const matchesStreams =
+        selectedStreams.length === 0 ||
+        (program.code_of_study && (() => {
+          const courseCode = program.code_of_study.substring(0, 3);
+          const course = coursesOfStudy.find(c => c.number === courseCode);
+          if (!course || !course.streams) return false;
+          return selectedStreams.some(streamId => course.streams?.[streamId] === true);
+        })());
       const matchesSlqfLevel =
         selectedSlqfLevels.length === 0 ||
         (program.slqf !== null && selectedSlqfLevels.includes(program.slqf)) ||
@@ -160,6 +195,7 @@ const ProgramsPage = () => {
         matchesType &&
         matchesDiscipline &&
         matchesCourseOfStudy &&
+        matchesStreams &&
         matchesSlqfLevel
       );
     });
@@ -170,8 +206,10 @@ const ProgramsPage = () => {
     selectedTypes,
     selectedDisciplines,
     selectedCoursesOfStudy,
+    selectedStreams,
     selectedSlqfLevels,
     universityAssociationMap,
+    coursesOfStudy,
   ]);
 
   const ugList = useMemo(
@@ -252,6 +290,13 @@ const ProgramsPage = () => {
     return options;
   }, [programs, slqfLevels]);
 
+  const streamOptions = useMemo(() => {
+    return streamsList.map((s) => ({
+      value: s.id,
+      label: s.name,
+    }));
+  }, [streamsList]);
+
   const courseOfStudyMap = useMemo(() => {
     const map = new Map<string, string>();
     coursesOfStudy.forEach((c) => {
@@ -320,7 +365,7 @@ const ProgramsPage = () => {
     (u) => u.university_hei === singleUniversityFromUrl
   );
 
-  const updateUrlParams = (unis: string[], types: string[], courses: string[]) => {
+  const updateUrlParams = (unis: string[], types: string[], courses: string[], streams: string[]) => {
     const params: Record<string, string> = {};
     if (unis.length === 1) {
       params.university = unis[0];
@@ -330,6 +375,9 @@ const ProgramsPage = () => {
     }
     if (courses.length === 1) {
       params.course = courses[0];
+    }
+    if (streams.length === 1) {
+      params.stream = streams[0];
     }
 
     if (unis.length !== 1) {
@@ -341,23 +389,31 @@ const ProgramsPage = () => {
     if (courses.length !== 1) {
       skipCourseUrlSync.current = true;
     }
+    if (streams.length !== 1) {
+      skipStreamUrlSync.current = true;
+    }
 
     setSearchParams(params);
   };
 
   const handleUniversitiesChange = (values: string[]) => {
     setSelectedUniversities(values);
-    updateUrlParams(values, selectedTypes, selectedCoursesOfStudy);
+    updateUrlParams(values, selectedTypes, selectedCoursesOfStudy, selectedStreams);
   };
 
   const handleTypesChange = (values: string[]) => {
     setSelectedTypes(values);
-    updateUrlParams(selectedUniversities, values, selectedCoursesOfStudy);
+    updateUrlParams(selectedUniversities, values, selectedCoursesOfStudy, selectedStreams);
   };
 
   const handleCoursesChange = (values: string[]) => {
     setSelectedCoursesOfStudy(values);
-    updateUrlParams(selectedUniversities, selectedTypes, values);
+    updateUrlParams(selectedUniversities, selectedTypes, values, selectedStreams);
+  };
+
+  const handleStreamsChange = (values: string[]) => {
+    setSelectedStreams(values);
+    updateUrlParams(selectedUniversities, selectedTypes, selectedCoursesOfStudy, values);
   };
 
   const clearFilters = () => {
@@ -366,6 +422,7 @@ const ProgramsPage = () => {
     setSelectedTypes([]);
     setSelectedDisciplines([]);
     setSelectedCoursesOfStudy([]);
+    setSelectedStreams([]);
     setSelectedSlqfLevels([]);
     setSearchParams({});
   };
@@ -376,6 +433,7 @@ const ProgramsPage = () => {
     selectedTypes.length > 0 ||
     selectedDisciplines.length > 0 ||
     selectedCoursesOfStudy.length > 0 ||
+    selectedStreams.length > 0 ||
     selectedSlqfLevels.length > 0;
 
   const showUgSection = selectedTypes.length === 0 || selectedTypes.includes('UG');
@@ -549,30 +607,33 @@ const ProgramsPage = () => {
 
         {/* Search and Filters */}
         <div className="mb-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="relative mb-6">
-            <Search
-              className="absolute left-3 top-3 h-5 w-5 text-slate-400"
-              aria-hidden="true"
-            />
-            <input
-              type="search"
-              placeholder="Search programs, universities, disciplines..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 py-3 pl-10 pr-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-ugc-gold"
-              aria-label="Search programs"
-            />
+          <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
+            <div className="w-full md:w-80 shrink-0">
+              <MultiSelectFilter
+                label="Filter by university"
+                placeholder="All Universities"
+                options={universityOptions}
+                selected={selectedUniversities}
+                onChange={handleUniversitiesChange}
+              />
+            </div>
+            <div className="relative flex-grow w-full">
+              <Search
+                className="absolute left-3 top-2.5 h-5 w-5 text-slate-400"
+                aria-hidden="true"
+              />
+              <input
+                type="search"
+                placeholder="Search programs, universities, disciplines..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full rounded-lg border border-slate-300 py-2 pl-10 pr-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-ugc-gold text-sm"
+                aria-label="Search programs"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
-            <MultiSelectFilter
-              label="Filter by university"
-              placeholder="All Universities"
-              options={universityOptions}
-              selected={selectedUniversities}
-              onChange={handleUniversitiesChange}
-            />
-
             <MultiSelectFilter
               label="Filter by program type"
               placeholder="All Types"
@@ -595,6 +656,14 @@ const ProgramsPage = () => {
               options={courseOfStudyOptions}
               selected={selectedCoursesOfStudy}
               onChange={handleCoursesChange}
+            />
+
+            <MultiSelectFilter
+              label="Filter by Stream"
+              placeholder="All Streams"
+              options={streamOptions}
+              selected={selectedStreams}
+              onChange={handleStreamsChange}
             />
 
             <MultiSelectFilter

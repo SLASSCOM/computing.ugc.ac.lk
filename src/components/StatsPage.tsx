@@ -361,7 +361,7 @@ const StatsPage = () => {
                 >
                   Course of Study
                 </th>
-                {streamsList.map((stream) => (
+                 {streamsList.map((stream) => (
                   <th
                     key={stream.id}
                     scope="col"
@@ -369,12 +369,13 @@ const StatsPage = () => {
                     title={stream.name}
                   >
                     <div className="flex h-full flex-col justify-end items-center pb-2">
-                      <span
-                        className="font-bold text-[10px] uppercase whitespace-nowrap tracking-wider"
+                      <Link
+                        to={`/programs?stream=${encodeURIComponent(stream.id)}`}
+                        className="font-bold text-[10px] uppercase whitespace-nowrap tracking-wider hover:text-ugc-gold hover:underline transition-colors"
                         style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                       >
                         {stream.id}
-                      </span>
+                      </Link>
                     </div>
                   </th>
                 ))}
@@ -420,7 +421,16 @@ const StatsPage = () => {
                     }).length;
                     return (
                       <td key={`total-stream-${stream.id}`} className="px-0.5 py-4 text-center border-r border-slate-200 bg-slate-100 text-slate-800 font-bold text-xs">
-                        {count}
+                        {count > 0 ? (
+                          <Link
+                            to={`/programs?stream=${encodeURIComponent(stream.id)}`}
+                            className="hover:underline hover:text-ugc-gold transition-colors block w-full"
+                          >
+                            {count}
+                          </Link>
+                        ) : (
+                          count
+                        )}
                       </td>
                     );
                   })}
@@ -463,6 +473,7 @@ const StatsPage = () => {
                       const isTrue = stream.id === 'et/bst'
                         ? (course.streams?.['et'] === true || course.streams?.['bst'] === true)
                         : (course.streams?.[stream.id] === true);
+
                       return (
                         <td
                           key={stream.id}
