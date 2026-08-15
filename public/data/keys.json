@@ -847,6 +847,55 @@
       }
     },
     {
+      "number": "120",
+      "name": "Indigenous Medicinal Resources",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "121",
+      "name": "Health Information & Communication Technology",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "122",
+      "name": "Health Tourism & Hospitality Management",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "123",
+      "name": "Biomedical Technology",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "124",
+      "name": "Indigenous Pharmaceutical Technology",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "125",
+      "name": "Yoga & Parapsychology",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
+      "number": "126",
+      "name": "Social Studies in Indigenous Knowledge",
+      "intake": {
+        "2024/2025": 80
+      }
+    },
+    {
       "number": "127",
       "name": "Accounting Information Systems",
       "intake": {
@@ -935,6 +984,13 @@
       "name": "Polymer Science and Industrial Management",
       "intake": {
         "2025/2026": 50
+      }
+    },
+    {
+      "number": "140",
+      "name": "Service Management",
+      "intake": {
+        "2024/2025": 50
       }
     },
     {
