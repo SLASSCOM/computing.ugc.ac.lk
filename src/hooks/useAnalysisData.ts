@@ -6,6 +6,7 @@ export const useAnalysisData = () => {
   const [cop2024, setCop2024] = useState<COPRecord[]>([]);
   const [cop2025, setCop2025] = useState<COPRecord[]>([]);
   const [keyCourses, setKeyCourses] = useState<KeyCourse[]>([]);
+  const [streamsList, setStreamsList] = useState<{id: string, name: string}[]>([]);
   const [universities, setUniversities] = useState<UniversityData[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedDistrict, setSelectedDistrict] = useState('SRI LANKA (MEDIAN)');
@@ -42,6 +43,7 @@ export const useAnalysisData = () => {
         setCop2024(cop24Data);
         setCop2025(cop25Data);
         setKeyCourses(keysData.courses_of_study || []);
+        setStreamsList(keysData.streams || []);
         setUniversities(uniData);
       } catch (error) {
         console.error("Failed to load analysis data:", error);
@@ -51,6 +53,19 @@ export const useAnalysisData = () => {
     };
     fetchData();
   }, []);
+
+  const courseStreamsMap = useMemo(() => {
+    const map = new Map<string, string[]>();
+    keyCourses.forEach(c => {
+      if (c.streams) {
+        const active = Object.entries(c.streams)
+          .filter(([_, enabled]) => enabled)
+          .map(([id]) => id);
+        map.set(c.number, active);
+      }
+    });
+    return map;
+  }, [keyCourses]);
 
   const courseMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -249,6 +264,7 @@ export const useAnalysisData = () => {
 
       const isMeritBase = cop2025.some(r => r.courses_of_study === code && r.merit_base) ||
         cop2024.some(r => r.courses_of_study === code && r.merit_base);
+      const streams = courseStreamsMap.get(courseNum) || [];
 
       return {
         code_of_study: code,
@@ -264,7 +280,8 @@ export const useAnalysisData = () => {
         rank2025: r25,
         zScoreDiff,
         rankDiff,
-        merit_base: isMeritBase
+        merit_base: isMeritBase,
+        streams
       };
     });
   }, [loading, activePrograms, cop2024, cop2025, selectedDistrict, courseMap]);
@@ -305,7 +322,8 @@ export const useAnalysisData = () => {
     cop2025,
     activePrograms,
     universities,
-    keyCourses
+    keyCourses,
+    streamsList
   };
 };
 
