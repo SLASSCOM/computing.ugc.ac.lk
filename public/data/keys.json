@@ -253,16 +253,34 @@
     },
     {
       "number": "021",
-      "name": "Arts (SAB)",
+      "name": "Arts (SAB) B - Commerce Stream",
       "intake": {
-        "2025/2026": 350
+        "2024/2025": null,
+        "stream": "commerce"
+      }
+    },
+    {
+      "number": "021",
+      "name": "Arts (SAB) A - Arts Stream",
+      "intake": {
+        "2025/2026": 350,
+        "stream": "arts"
       }
     },
     {
       "number": "022",
-      "name": "Management Studies (TV)",
+      "name": "Management Studies (TV) B - Any subject combination",
       "intake": {
-        "2025/2026": 462
+        "2024/2025": null,
+        "stream": "other"
+      }
+    },
+    {
+      "number": "022",
+      "name": "Management Studies (TV) A - Commerce Stream",
+      "intake": {
+        "2025/2026": 462,
+        "stream": "commerce"
       }
     },
     {
@@ -295,9 +313,18 @@
     },
     {
       "number": "027",
-      "name": "Management and Information Technology (MIT)",
+      "name": "Management and Information Technology (MIT) - Bio Science Stream",
       "intake": {
-        "2025/2026": 119
+        "2025/2026": 119, 
+        "stream": "bio_science"
+      }
+    },
+    {
+      "number": "027",
+      "name": "Management and Information Technology (MIT) - Other Streams",
+      "intake": {
+        "2025/2026": 119, 
+        "stream": "other"
       }
     },
     {

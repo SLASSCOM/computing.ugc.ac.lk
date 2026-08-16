@@ -14080,12 +14080,14 @@
   {
     "district": "COLOMBO",
     "courses_of_study": "027D",
-    "z_score": 1.4652
+    "z_score": 1.4652,
+    "ref": "stream.bio_science"
   },
   {
     "district": "COLOMBO",
     "courses_of_study": "027D",
-    "z_score": 1.4612
+    "z_score": 1.4612,
+    "ref": "stream.other"
   },
   {
     "district": "COLOMBO",
@@ -14223,12 +14225,14 @@
   {
     "district": "GAMPAHA",
     "courses_of_study": "027D",
-    "z_score": 1.414
+    "z_score": 1.414,
+    "ref": "stream.bio_science"
   },
   {
     "district": "GAMPAHA",
     "courses_of_study": "027D",
-    "z_score": 1.4101
+    "z_score": 1.4101,
+    "ref": "stream.other"
   },
   {
     "district": "GAMPAHA",
@@ -14366,12 +14370,14 @@
   {
     "district": "KALUTARA",
     "courses_of_study": "027D",
-    "z_score": 1.3542
+    "z_score": 1.3542,
+    "ref": "stream.bio_science"
   },
   {
     "district": "KALUTARA",
     "courses_of_study": "027D",
-    "z_score": 1.4635
+    "z_score": 1.4635,
+    "ref": "stream.other"
   },
   {
     "district": "KALUTARA",
@@ -14509,12 +14515,14 @@
   {
     "district": "MATALE",
     "courses_of_study": "027D",
-    "z_score": 1.2674
+    "z_score": 1.2674,
+    "ref": "stream.bio_science"
   },
   {
     "district": "MATALE",
     "courses_of_study": "027D",
-    "z_score": 1.3914
+    "z_score": 1.3914,
+    "ref": "stream.other"
   },
   {
     "district": "MATALE",
@@ -14652,12 +14660,14 @@
   {
     "district": "KANDY",
     "courses_of_study": "027D",
-    "z_score": 1.4209
+    "z_score": 1.4209,
+    "ref": "stream.bio_science"
   },
   {
     "district": "KANDY",
     "courses_of_study": "027D",
-    "z_score": 1.4244
+    "z_score": 1.4244,
+    "ref": "stream.other"
   },
   {
     "district": "KANDY",
@@ -14795,12 +14805,14 @@
   {
     "district": "NUWARA ELIYA",
     "courses_of_study": "027D",
-    "z_score": 1.4343
+    "z_score": 1.4343,
+    "ref": "stream.bio_science"
   },
   {
     "district": "NUWARA ELIYA",
     "courses_of_study": "027D",
-    "z_score": 1.0353
+    "z_score": 1.0353,
+    "ref": "stream.other"
   },
   {
     "district": "NUWARA ELIYA",
@@ -14938,12 +14950,14 @@
   {
     "district": "GALLE",
     "courses_of_study": "027D",
-    "z_score": 1.5098
+    "z_score": 1.5098,
+    "ref": "stream.bio_science"
   },
   {
     "district": "GALLE",
     "courses_of_study": "027D",
-    "z_score": 1.4215
+    "z_score": 1.4215,
+    "ref": "stream.other"
   },
   {
     "district": "GALLE",
@@ -15081,12 +15095,14 @@
   {
     "district": "MATARA",
     "courses_of_study": "027D",
-    "z_score": 1.5055
+    "z_score": 1.5055,
+    "ref": "stream.bio_science"
   },
   {
     "district": "MATARA",
     "courses_of_study": "027D",
-    "z_score": 1.4481
+    "z_score": 1.4481,
+    "ref": "stream.other"
   },
   {
     "district": "MATARA",
@@ -15224,12 +15240,14 @@
   {
     "district": "HAMBANTOTA",
     "courses_of_study": "027D",
-    "z_score": 1.4872
+    "z_score": 1.4872,
+    "ref": "stream.bio_science"
   },
   {
     "district": "HAMBANTOTA",
     "courses_of_study": "027D",
-    "z_score": 1.4653
+    "z_score": 1.4653,
+    "ref": "stream.other"
   },
   {
     "district": "HAMBANTOTA",
@@ -15367,12 +15385,14 @@
   {
     "district": "JAFFNA",
     "courses_of_study": "027D",
-    "z_score": 1.4721
+    "z_score": 1.4721,
+    "ref": "stream.bio_science"
   },
   {
     "district": "JAFFNA",
     "courses_of_study": "027D",
-    "z_score": 1.4536
+    "z_score": 1.4536,
+    "ref": "stream.other"
   },
   {
     "district": "JAFFNA",
@@ -15510,12 +15530,14 @@
   {
     "district": "KILINOCHCHI",
     "courses_of_study": "027D",
-    "z_score": 0.9583
+    "z_score": 0.9583,
+    "ref": "stream.bio_science"
   },
   {
     "district": "KILINOCHCHI",
     "courses_of_study": "027D",
-    "z_score": 1.1612
+    "z_score": 1.1612,
+    "ref": "stream.other"
   },
   {
     "district": "KILINOCHCHI",
@@ -15653,12 +15675,14 @@
   {
     "district": "MANNAR",
     "courses_of_study": "027D",
-    "z_score": 1.1889
+    "z_score": 1.1889,
+    "ref": "stream.bio_science"
   },
   {
     "district": "MANNAR",
     "courses_of_study": "027D",
-    "z_score": 0.8178
+    "z_score": 0.8178,
+    "ref": "stream.other"
   },
   {
     "district": "MANNAR",
@@ -15796,12 +15820,14 @@
   {
     "district": "MULLAITIVU",
     "courses_of_study": "027D",
-    "z_score": 1.1165
+    "z_score": 1.1165,
+    "ref": "stream.bio_science"
   },
   {
     "district": "MULLAITIVU",
     "courses_of_study": "027D",
-    "z_score": 0.7092
+    "z_score": 0.7092,
+    "ref": "stream.other"
   },
   {
     "district": "MULLAITIVU",
@@ -15939,12 +15965,14 @@
   {
     "district": "VAVUNIYA",
     "courses_of_study": "027D",
-    "z_score": 1.26
+    "z_score": 1.26,
+    "ref": "stream.bio_science"
   },
   {
     "district": "VAVUNIYA",
     "courses_of_study": "027D",
-    "z_score": 1.0776
+    "z_score": 1.0776,
+    "ref": "stream.other"
   },
   {
     "district": "VAVUNIYA",
@@ -16082,12 +16110,14 @@
   {
     "district": "TRINCOMALEE",
     "courses_of_study": "027D",
-    "z_score": 1.3704
+    "z_score": 1.3704,
+    "ref": "stream.bio_science"
   },
   {
     "district": "TRINCOMALEE",
     "courses_of_study": "027D",
-    "z_score": 1.0481
+    "z_score": 1.0481,
+    "ref": "stream.other"
   },
   {
     "district": "TRINCOMALEE",
@@ -16225,12 +16255,14 @@
   {
     "district": "BATTICALOA",
     "courses_of_study": "027D",
-    "z_score": 1.3478
+    "z_score": 1.3478,
+    "ref": "stream.bio_science"
   },
   {
     "district": "BATTICALOA",
     "courses_of_study": "027D",
-    "z_score": 1.4189
+    "z_score": 1.4189,
+    "ref": "stream.other"
   },
   {
     "district": "BATTICALOA",
@@ -16368,12 +16400,14 @@
   {
     "district": "AMPARA",
     "courses_of_study": "027D",
-    "z_score": 1.4587
+    "z_score": 1.4587,
+    "ref": "stream.bio_science"
   },
   {
     "district": "AMPARA",
     "courses_of_study": "027D",
-    "z_score": 1.2577
+    "z_score": 1.2577,
+    "ref": "stream.other"
   },
   {
     "district": "AMPARA",
@@ -16511,12 +16545,14 @@
   {
     "district": "PUTTALAM",
     "courses_of_study": "027D",
-    "z_score": 1.3123
+    "z_score": 1.3123,
+    "ref": "stream.bio_science"
   },
   {
     "district": "PUTTALAM",
     "courses_of_study": "027D",
-    "z_score": 1.3326
+    "z_score": 1.3326,
+    "ref": "stream.other"
   },
   {
     "district": "PUTTALAM",
@@ -16654,12 +16690,14 @@
   {
     "district": "KURUNEGALA",
     "courses_of_study": "027D",
-    "z_score": 1.4951
+    "z_score": 1.4951,
+    "ref": "stream.bio_science"
   },
   {
     "district": "KURUNEGALA",
     "courses_of_study": "027D",
-    "z_score": 1.4587
+    "z_score": 1.4587,
+    "ref": "stream.other"
   },
   {
     "district": "KURUNEGALA",
@@ -16797,12 +16835,14 @@
   {
     "district": "ANURADHAPURA",
     "courses_of_study": "027D",
-    "z_score": 1.4089
+    "z_score": 1.4089,
+    "ref": "stream.bio_science"
   },
   {
     "district": "ANURADHAPURA",
     "courses_of_study": "027D",
-    "z_score": 1.2617
+    "z_score": 1.2617,
+    "ref": "stream.other"
   },
   {
     "district": "ANURADHAPURA",
@@ -16940,12 +16980,14 @@
   {
     "district": "POLONNARUWA",
     "courses_of_study": "027D",
-    "z_score": 1.0819
+    "z_score": 1.0819,
+    "ref": "stream.bio_science"
   },
   {
     "district": "POLONNARUWA",
     "courses_of_study": "027D",
-    "z_score": 1.0929
+    "z_score": 1.0929,
+    "ref": "stream.other"
   },
   {
     "district": "POLONNARUWA",
@@ -17083,12 +17125,14 @@
   {
     "district": "BADULLA",
     "courses_of_study": "027D",
-    "z_score": 1.3951
+    "z_score": 1.3951,
+    "ref": "stream.bio_science"
   },
   {
     "district": "BADULLA",
     "courses_of_study": "027D",
-    "z_score": 1.3853
+    "z_score": 1.3853,
+    "ref": "stream.other"
   },
   {
     "district": "BADULLA",
@@ -17226,12 +17270,14 @@
   {
     "district": "MONARAGALA",
     "courses_of_study": "027D",
-    "z_score": 1.4791
+    "z_score": 1.4791,
+    "ref": "stream.bio_science"
   },
   {
     "district": "MONARAGALA",
     "courses_of_study": "027D",
-    "z_score": 1.3321
+    "z_score": 1.3321,
+    "ref": "stream.other"
   },
   {
     "district": "MONARAGALA",
@@ -17369,12 +17415,14 @@
   {
     "district": "KEGALLE",
     "courses_of_study": "027D",
-    "z_score": 1.5264
+    "z_score": 1.5264,
+    "ref": "stream.bio_science"
   },
   {
     "district": "KEGALLE",
     "courses_of_study": "027D",
-    "z_score": 1.4084
+    "z_score": 1.4084,
+    "ref": "stream.other"
   },
   {
     "district": "KEGALLE",
@@ -17512,12 +17560,14 @@
   {
     "district": "RATNAPURA",
     "courses_of_study": "027D",
-    "z_score": 1.4363
+    "z_score": 1.4363,
+    "ref": "stream.bio_science"
   },
   {
     "district": "RATNAPURA",
     "courses_of_study": "027D",
-    "z_score": 1.4138
+    "z_score": 1.4138,
+    "ref": "stream.other"
   },
   {
     "district": "RATNAPURA",
