@@ -29,12 +29,14 @@ const AnalysisPage = () => {
     uniqueUniversities,
     uniqueCoursesOfStudy,
     showAll,
-    setShowAll
+    setShowAll,
+    streamsList
   } = useAnalysisData();
 
 
   const [selectedUniversities, setSelectedUniversities] = useState<string[]>([]);
   const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
+  const [selectedStreams, setSelectedStreams] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<SortKey>('zScore2025');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
@@ -56,12 +58,13 @@ const AnalysisPage = () => {
     }
   };
 
-  const hasActiveFilters = selectedUniversities.length > 0 || selectedCourses.length > 0 || searchQuery !== '' || selectedDistrict !== 'SRI LANKA (MEDIAN)';
+  const hasActiveFilters = selectedUniversities.length > 0 || selectedCourses.length > 0 || selectedStreams.length > 0 || searchQuery !== '' || selectedDistrict !== 'SRI LANKA (MEDIAN)';
 
   const clearFilters = () => {
     setSelectedDistrict('SRI LANKA (MEDIAN)');
     setSelectedUniversities([]);
     setSelectedCourses([]);
+    setSelectedStreams([]);
     setSearchQuery('');
   };
 
@@ -76,6 +79,19 @@ const AnalysisPage = () => {
     // Filter by course of study dropdown
     if (selectedCourses.length > 0) {
       result = result.filter(r => selectedCourses.includes(`${r.course_number} - ${r.ugc_course_name}`));
+    }
+
+    // Filter by streams dropdown
+    if (selectedStreams.length > 0) {
+      result = result.filter(r => {
+        if (!r.streams) return false;
+        return selectedStreams.some(streamId => {
+          if (streamId === 'et/bst') {
+            return r.streams?.includes('et') || r.streams?.includes('bst');
+          }
+          return r.streams?.includes(streamId);
+        });
+      });
     }
 
     // Filter by text search term
@@ -121,7 +137,24 @@ const AnalysisPage = () => {
     });
 
     return result;
-  }, [analysisData, selectedUniversities, selectedCourses, searchQuery, sortBy, sortOrder]);
+  }, [analysisData, selectedUniversities, selectedCourses, selectedStreams, searchQuery, sortBy, sortOrder]);
+
+
+  const formattedStreams = useMemo(() => {
+    const merged: {id: string, name: string}[] = [];
+    let addedTech = false;
+    for (const s of streamsList) {
+      if (s.id === 'et' || s.id === 'bst') {
+        if (!addedTech) {
+          merged.push({ id: 'et/bst', name: 'Technology Stream (ET/BST)' });
+          addedTech = true;
+        }
+      } else {
+        merged.push(s);
+      }
+    }
+    return merged;
+  }, [streamsList]);
 
   const renderSortIcon = (key: SortKey) => {
     if (sortBy !== key) {
@@ -182,8 +215,9 @@ const AnalysisPage = () => {
     );
   }
 
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-[1600px] px-4 py-8 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -204,21 +238,28 @@ const AnalysisPage = () => {
       </div>
 
       {selectedDistrict === 'SRI LANKA (MEDIAN)' && (
-        <div className="mb-6 rounded-lg bg-indigo-50 border border-indigo-100 p-4 shadow-sm flex items-start gap-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-100">
-            <FlaskConical className="h-4 w-4 text-indigo-600" />
+        <div className="mb-6 rounded-lg bg-amber-50/80 border border-amber-200 p-4 shadow-sm flex items-start gap-3">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 border border-amber-200 mt-0.5">
+            <FlaskConical className="h-4 w-4 text-amber-700" />
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-indigo-900">Experimental National Normalization</h3>
-            <p className="mt-1 text-xs text-indigo-700 leading-relaxed max-w-4xl">
-              UGC cut-off marks are naturally district-based and highly varied due to regional quotas and educational disadvantages. This view calculates a <strong>National Normalized Z-Score Cut-off</strong> by taking the <strong>Median</strong> of all available district cut-offs for each program. This smooths out extreme outliers to provide a general indicator of the program's national competitiveness.
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="text-sm font-bold text-amber-950">
+                Experimental National Median View
+              </h3>
+              <span className="inline-flex items-center rounded-full bg-amber-200/70 px-2.5 py-0.5 text-[11px] font-bold text-amber-900 border border-amber-300">
+                For Comparison Only • Not Official
+              </span>
+            </div>
+            <p className="mt-1.5 text-xs text-amber-900/90 leading-relaxed ">
+              <strong>Important Disclaimer:</strong> UGC cut-off marks in Sri Lanka are strictly district-based based on regional quota rules. This median option is <strong>an experimental calculation for comparison purposes only and is NOT an official UGC cut-off mark</strong>. It calculates the median across all district cut-offs for each program to smooth out regional variations and provide a single national benchmark.
             </p>
-            <div className="mt-2.5 text-[11px] font-mono text-indigo-850 bg-indigo-100/50 px-3 py-2 rounded-md border border-indigo-200/60 max-w-xl">
-              <span className="font-semibold text-indigo-900 block mb-1">Median Formula & NQC Handling:</span>
+            <div className="mt-2.5 text-[11px] font-mono text-amber-900 bg-amber-100/60 px-3 py-2 rounded-md border border-amber-200 w-full">
+              <span className="font-semibold text-amber-950 block mb-1">Median Formula & NQC Handling:</span>
               <ul className="list-disc pl-4 space-y-1">
                 <li>If the number of numeric district cut-offs (n) is odd: <span className="font-bold">Median = sorted[floor(n / 2)]</span></li>
                 <li>If the number of numeric district cut-offs (n) is even: <span className="font-bold">Median = (sorted[n / 2 - 1] + sorted[n / 2]) / 2</span></li>
-                <li>If there is a mix of numeric cut-offs and NQCs: the NQCs are ignored, and the median is calculated <span className="font-bold">only from the numeric cut-offs</span>.</li>
+                <li>If there is a mix of numeric cut-offs and NQCs: NQCs are ignored, and the median is calculated <span className="font-bold">only from numeric cut-offs</span>.</li>
               </ul>
             </div>
           </div>
@@ -227,7 +268,7 @@ const AnalysisPage = () => {
 
       {/* Control Panel / Filters */}
       <div className="mb-6 rounded-lg bg-white p-4 shadow border border-slate-200 space-y-4">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 items-end">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 items-end">
           {/* District Selector */}
           <div>
             <label htmlFor="district-select" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
@@ -246,7 +287,7 @@ const AnalysisPage = () => {
           </div>
 
           {/* University MultiSelect Filter */}
-          <div className="relative z-20">
+          <div className="relative z-30">
             <MultiSelectFilter
               label="University"
               placeholder="All Universities"
@@ -258,13 +299,25 @@ const AnalysisPage = () => {
           </div>
 
           {/* Course of Study MultiSelect Filter */}
-          <div className="relative z-10">
+          <div className="relative z-20">
             <MultiSelectFilter
               label="Course of Study (UGC)"
               placeholder="All Courses"
               options={uniqueCoursesOfStudy.map(c => ({ value: c.label, label: c.label }))}
               selected={selectedCourses}
               onChange={setSelectedCourses}
+              showLabel
+            />
+          </div>
+
+          {/* Stream MultiSelect Filter */}
+          <div className="relative z-10">
+            <MultiSelectFilter
+              label="Stream"
+              placeholder="All Streams"
+              options={formattedStreams.map(s => ({ value: s.id, label: s.name }))}
+              selected={selectedStreams}
+              onChange={setSelectedStreams}
               showLabel
             />
           </div>
@@ -343,6 +396,14 @@ const AnalysisPage = () => {
                 >
                   <div className="flex items-center">
                     Course of Study (UGC) {renderSortIcon('ugc_course_name')}
+                  </div>
+                </th>
+                <th
+                  scope="col"
+                  className="px-4 py-3.5 font-semibold text-slate-900 border-r border-slate-200"
+                >
+                  <div className="flex items-center">
+                    Streams
                   </div>
                 </th>
                 <th
@@ -433,10 +494,28 @@ const AnalysisPage = () => {
                     <td className="px-4 py-4 text-sm text-slate-700 border-r border-slate-200">
                       <div className="flex flex-col gap-1.5 items-start">
                         <span>{record.ugc_course_name}</span>
-                        {record.merit_base && (
-                          <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800 ring-1 ring-inset ring-amber-600/20">
-                            Merit Based
-                          </span>
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          {record.merit_base && (
+                            <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800 ring-1 ring-inset ring-amber-600/20">
+                              Merit Based
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-4 py-4 border-r border-slate-200">
+                      <div className="flex flex-wrap gap-1">
+                        {record.streams && record.streams.length > 0 ? (
+                          record.streams.map((streamId) => (
+                            <span
+                              key={streamId}
+                              className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium uppercase text-slate-600 border border-slate-200"
+                            >
+                              {streamId}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-slate-300 text-xs">-</span>
                         )}
                       </div>
                     </td>
@@ -472,7 +551,7 @@ const AnalysisPage = () => {
               })}
               {filteredAndSortedData.length === 0 && (
                 <tr>
-                  <td colSpan={10} className="py-12 text-center text-slate-500">
+                  <td colSpan={11} className="py-12 text-center text-slate-500">
                     <div className="max-w-sm mx-auto">
                       <p className="font-semibold text-slate-700 text-base">No programs found</p>
                       <p className="text-xs text-slate-400 mt-1">Try clearing your filters or choosing a different district.</p>

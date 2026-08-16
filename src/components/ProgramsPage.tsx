@@ -635,49 +635,60 @@ const ProgramsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2 lg:grid-cols-5">
-            <MultiSelectFilter
-              label="Program Type"
-              placeholder="All Types"
-              options={TYPE_OPTIONS}
-              selected={selectedTypes}
-              onChange={handleTypesChange}
-              showLabel
-            />
+            <div className="relative z-50">
+              <MultiSelectFilter
+                label="Program Type"
+                placeholder="All Types"
+                options={TYPE_OPTIONS}
+                selected={selectedTypes}
+                onChange={handleTypesChange}
+                showLabel
+              />
+            </div>
 
-            <MultiSelectFilter
-              label="Discipline"
-              placeholder="All Disciplines"
-              options={disciplineOptions}
-              selected={selectedDisciplines}
-              onChange={setSelectedDisciplines}
-              showLabel
-            />
+            <div className="relative z-40">
+              <MultiSelectFilter
+                label="Discipline"
+                placeholder="All Disciplines"
+                options={disciplineOptions}
+                selected={selectedDisciplines}
+                onChange={setSelectedDisciplines}
+                showLabel
+              />
+            </div>
 
-            <MultiSelectFilter
-              label="Course of Study"
-              placeholder="All UGC Courses"
-              options={courseOfStudyOptions}
-              selected={selectedCoursesOfStudy}
-              onChange={handleCoursesChange}
-              showLabel
-            />
+            <div className="relative z-30">
+              <MultiSelectFilter
+                label="Course of Study"
+                placeholder="All UGC Courses"
+                options={courseOfStudyOptions}
+                selected={selectedCoursesOfStudy}
+                onChange={handleCoursesChange}
+                showLabel
+              />
+            </div>
 
-            <MultiSelectFilter
-              label="Filter by Stream"
-              placeholder="All Streams"
-              options={streamOptions}
-              selected={selectedStreams}
-              onChange={handleStreamsChange}
-            />
+            <div className="relative z-20">
+              <MultiSelectFilter
+                label="Stream"
+                placeholder="All Streams"
+                options={streamOptions}
+                selected={selectedStreams}
+                onChange={handleStreamsChange}
+                showLabel
+              />
+            </div>
 
-            <MultiSelectFilter
-              label="SLQF Level"
-              placeholder="All SLQF Levels"
-              options={slqfOptions}
-              selected={selectedSlqfLevels}
-              onChange={setSelectedSlqfLevels}
-              showLabel
-            />
+            <div className="relative z-10">
+              <MultiSelectFilter
+                label="SLQF Level"
+                placeholder="All SLQF Levels"
+                options={slqfOptions}
+                selected={selectedSlqfLevels}
+                onChange={setSelectedSlqfLevels}
+                showLabel
+              />
+            </div>
           </div>
 
           {hasActiveFilters && (

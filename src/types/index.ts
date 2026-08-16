@@ -64,6 +64,7 @@ export interface AnalysisRecord {
   zScoreDiff: number | null;
   rankDiff: number | null;
   merit_base?: boolean;
+  streams?: string[];
 }
 
 export interface COPRecord {
@@ -77,4 +78,5 @@ export interface COPRecord {
 export interface KeyCourse {
   number: string;
   name: string;
+  streams?: Record<string, boolean>;
 }
