@@ -7,6 +7,7 @@ interface MultiSelectFilterProps {
   options: { value: string; label: string }[];
   selected: string[];
   onChange: (selected: string[]) => void;
+  showLabel?: boolean;
 }
 
 const MultiSelectFilter: React.FC<MultiSelectFilterProps> = ({
@@ -15,6 +16,7 @@ const MultiSelectFilter: React.FC<MultiSelectFilterProps> = ({
   options,
   selected,
   onChange,
+  showLabel = false,
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,15 +49,20 @@ const MultiSelectFilter: React.FC<MultiSelectFilterProps> = ({
 
   return (
     <div ref={containerRef} className="relative">
+      {showLabel && (
+        <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
+          {label}
+        </label>
+      )}
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg border border-slate-300 bg-white px-3 py-2 text-left text-sm focus:outline-none focus:ring-2 focus:ring-ugc-gold"
+        className="flex w-full items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 py-2 text-left text-sm focus:outline-none focus:ring-1 focus:ring-ugc-gold focus:border-ugc-gold"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={label}
       >
-        <span className={selected.length === 0 ? 'text-slate-500' : 'text-slate-900'}>
+        <span className={`block truncate min-w-0 flex-1 ${selected.length === 0 ? 'text-slate-500' : 'text-slate-900 font-medium'}`}>
           {displayLabel}
         </span>
         <ChevronDown

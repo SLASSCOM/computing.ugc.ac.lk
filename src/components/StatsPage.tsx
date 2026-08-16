@@ -52,7 +52,7 @@ const StatsPage = () => {
         const keysData: KeyData = await keysRes.json();
 
         setUniversities(uniData);
-        setPrograms(progData);
+        setPrograms(progData.filter((p: ProgramData) => p.external !== 'External'));
         setCoursesOfStudy(keysData.courses_of_study || []);
 
         // Combine et and bst into a single stream item "et/bst"
