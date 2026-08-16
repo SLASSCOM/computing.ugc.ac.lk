@@ -467,34 +467,46 @@
     },
     {
       "number": "021",
-      "name": "Arts (SAB) B - Commerce Stream",
+      "name": "Arts (SAB) A - Arts Stream",
       "intake": {
-        "2024/2025": null,
-        "stream": "commerce"
+        "id": "A",
+        "2025/2026": 350
+      },
+      "streams": {
+        "art": true
       }
     },
     {
       "number": "021",
-      "name": "Arts (SAB) A - Arts Stream",
+      "name": "Arts (SAB) B - Commerce Stream",
       "intake": {
-        "2025/2026": 350,
-        "stream": "arts"
-      }
-    },
-    {
-      "number": "022",
-      "name": "Management Studies (TV) B - Any subject combination",
-      "intake": {
-        "2024/2025": null,
-        "stream": "other"
+        "id": "B",
+        "2024/2025": null
+      },
+      "streams": {
+        "com": true
       }
     },
     {
       "number": "022",
       "name": "Management Studies (TV) A - Commerce Stream",
       "intake": {
-        "2025/2026": 462,
-        "stream": "commerce"
+        "id": "A",
+        "2025/2026": 462
+      },
+      "streams": {
+        "com": true
+      }
+    },
+    {
+      "number": "022",
+      "name": "Management Studies (TV) B - Any subject combination",
+      "intake": {
+        "id": "B",
+        "2024/2025": null
+      },
+      "streams": {
+        "all": true
       }
     },
     {
@@ -568,16 +580,23 @@
       "number": "027",
       "name": "Management and Information Technology (MIT) - Bio Science Stream",
       "intake": {
-        "2025/2026": 119, 
-        "stream": "bio_science"
+        "id": "A",
+        "2025/2026": 119
+      },
+      "streams": {
+        "bio": true,
+        "maths": true
       }
     },
     {
       "number": "027",
       "name": "Management and Information Technology (MIT) - Other Streams",
       "intake": {
-        "2025/2026": 119, 
-        "stream": "other"
+        "id": "B",
+        "2025/2026": 119
+      },
+      "streams": {
+        "all": true
       }
     },
     {
@@ -1561,14 +1580,28 @@
     },
     {
       "number": "107",
-      "name": "Food Business Management",
+      "name": "Food Business Management A - Biological / Physical Science Stream",
       "intake": {
-        "2025/2026": 135
+        "2025/2026": 135,
+        "id": "A"
       },
       "streams": {
-        "com": true,
         "bio": true,
         "maths": true
+      },
+      "conducted by": [
+        "SUSL"
+      ]
+    },
+    {
+      "number": "107",
+      "name": "Food Business Management B - Commerce Stream",
+      "intake": {
+        "2025/2026": 135,
+        "id": "B"
+      },
+      "streams": {
+        "com": true
       },
       "conducted by": [
         "SUSL"

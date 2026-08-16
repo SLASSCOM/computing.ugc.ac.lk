@@ -28,7 +28,7 @@ const DistrictMatrixPage = () => {
   const courseNameMap = useMemo(() => {
     const map = new Map<string, string>();
     keyCourses.forEach(c => {
-      map.set(c.number, c.name);
+      map.set(`${c.number}_${c.intake?.id || ''}`, c.name);
     });
     return map;
   }, [keyCourses]);
@@ -58,7 +58,7 @@ const DistrictMatrixPage = () => {
   const copLookupMap = useMemo(() => {
     const map = new Map<string, typeof activeCOP[0]>();
     activeCOP.forEach(record => {
-      map.set(`${record.district}_${record.courses_of_study}`, record);
+      map.set(`${record.district}_${record.courses_of_study}_${record.intake ?? ''}`, record);
     });
     return map;
   }, [activeCOP]);
@@ -68,14 +68,16 @@ const DistrictMatrixPage = () => {
     const codes = new Set<string>();
     activeCOP.forEach(r => {
       if (r.courses_of_study) {
-        codes.add(r.courses_of_study);
+          codes.add(r.courses_of_study+"."+(r.intake??''));
       }
     });
     
     return Array.from(codes).sort().map(code => {
       const courseNum = code.substring(0, 3);
-      const uniCode = code.substring(3);
-      const courseName = courseNameMap.get(courseNum) || `Course ${courseNum}`;
+      const uniCode = code.substring(3,4);
+      const intake = code.substring(5) || '';
+      // console.log(courseNameMap.keys());
+      const courseName = courseNameMap.get(courseNum+"_"+intake) || `Course ${courseNum}`;
       const uniAbbr = uniCodeToAbbrMap.get(uniCode) || `Uni ${uniCode}`;
       const fullUniName = universities.find(u => u.uni_code === uniCode)?.university_hei || uniAbbr;
       
@@ -340,7 +342,9 @@ const DistrictMatrixPage = () => {
                   {/* Cut-off Mark Data Cells - Highly compact row padding */}
                   {filteredPrograms.map(prog => {
                     const code = prog.code || '';
-                    const record = copLookupMap.get(`${district}_${code}`);
+                    const ccode = code.substring(0,4);
+                    const intake = code.substring(5) || '';
+                    const record = copLookupMap.get(`${district}_${ccode}_${intake}`);
 
                     let displayVal: React.ReactNode = <span className="text-slate-300">-</span>;
                     let cellBg = '';

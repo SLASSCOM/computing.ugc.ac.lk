@@ -51,6 +51,7 @@ export interface Discipline {
 
 export interface AnalysisRecord {
   code_of_study: string;
+  intake?: string;
   course_number: string;
   ugc_course_name: string;
   course_name: string;
@@ -69,12 +70,15 @@ export interface AnalysisRecord {
 export interface COPRecord {
   district: string;
   courses_of_study: string;
+  intake?: string;
   z_score?: number;
   nqc?: boolean;
   merit_base?: boolean;
+  tests_conducted: true;
 }
 
 export interface KeyCourse {
   number: string;
   name: string;
+  intake?: { id?: string; [year: string]: number | string | null | undefined };
 }
