@@ -3572,7 +3572,7 @@
     "remarks": null,
     "confirmation_from_university": null,
     "code_of_study": "015M",
-    "intake_count": null
+    "intake_count": 12
   },
   {
     "ug_pg": "UG",
@@ -3585,10 +3585,10 @@
     "external": null,
     "special_subject": "Comuter Science",
     "abbreviated_qualification_if_relevant_": "B.Sc. (Joint Major)",
-    "slqf": "5",
+    "slqf": "6",
     "if_bachelor_general_special_honours_": null,
     "whether_part_time_full_time": null,
-    "duration": null,
+    "duration": "4",
     "credits": null,
     "medium_of_instruction": "English",
     "obtained_ugc_approval_y_n_": null,
@@ -3597,7 +3597,7 @@
     "remarks": "Joint Major combinations: (1) Computing & Information Systems and Electronics, (2) Electronics and Computing & Information Systems, (3) Computing & Information Systems and Industrial Management, (4) Industrial Management and Computing & Information Systems, (5) Computing & Information Systems and Mathematics, Mathematical Modelling & Statistics, (6) Mathematics, Mathematical Modelling & Statistics and Computing & Information Systems",
     "confirmation_from_university": null,
     "code_of_study": "015M",
-    "intake_count": null
+    "intake_count": 30
   },
   {
     "ug_pg": "UG",
@@ -3613,7 +3613,7 @@
     "slqf": "5",
     "if_bachelor_general_special_honours_": null,
     "whether_part_time_full_time": null,
-    "duration": null,
+    "duration": "3",
     "credits": null,
     "medium_of_instruction": "English",
     "obtained_ugc_approval_y_n_": null,
